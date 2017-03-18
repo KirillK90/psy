@@ -161,11 +161,10 @@ class BSF_Envato_Activate {
 			$html .= 		'<p class="envato-oauth-subheading">' . $envato_not_active_oauth_subtitle . '</p>';
 			$html .=  '</div>';
 
-			$html .= '<input type="hidden" readonly class="' . $license_active_class . ' ' . $size . '-text" id="bsf_license_manager[license_key]" name="token" value="' . sha1( $this->create_token( $product_id ) ) . '"/>';
 			$html .= '<input type="hidden" readonly class="' . $license_active_class . ' ' . $size . '-text" id="bsf_license_manager[license_key]" name="url" value="' . get_site_url() . '"/>';
 			$html .= '<input type="hidden" readonly class="' . $license_active_class . ' ' . $size . '-text" id="bsf_license_manager[license_key]" name="redirect" value="' . $this->get_redirect_url() . '"/>';
 			$html .= '<input type="hidden" readonly class="' . $license_active_class . ' ' . $size . '-text" id="bsf_license_manager[license_key]" name="product_id" value="' . $product_id . '"/>';
-			$html .= '<input type="submit" class="button ' . $submit_button_class . '" name="bsf_activate_license" value="' . esc_attr__( $button_text_activate, 'bsf' ) . '"/>';
+			$html .= '<input type="button" class="button bsf-envato-form-activation ' . $submit_button_class . '" name="bsf_activate_license" value="' . esc_attr__( $button_text_activate, 'bsf' ) . '"/>';
 			$html .= "<p>If you don't have a license, you can <a target='_blank' href='$purchase_url'>get it here »</a></p>";
 		}
 
@@ -178,6 +177,21 @@ class BSF_Envato_Activate {
 		}
 
 		return $html;
+	}
+
+	public function envato_activation_url( $form_data ) {
+		$product_id = isset( $form_data['product_id'] ) ? esc_attr( $form_data['product_id'] ) : '';
+
+		$form_data['token'] = sha1( $this->create_token( $product_id ) );
+		$url 				= get_api_site() . 'envato-validation-callback/?wp-envato-validate';
+
+		$envato_activation_url =  add_query_arg( 
+			$form_data, 
+			$url 
+		);
+
+
+		return $envato_activation_url;
 	}
 
 	protected function get_redirect_url() {
@@ -214,10 +228,10 @@ class BSF_Envato_Activate {
 				return false;
 			}
 
-			$timestamp  = $token_atts[1];
+			$timestamp  = (int) $token_atts[1];
 			$validUltil = $timestamp + 900;
 
-			if ( time() > $validUltil ) {
+			if ( current_time( 'timestamp' ) > $validUltil ) {
 				// Timestamp has expired.
 				return false;
 			}

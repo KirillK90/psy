@@ -108,8 +108,18 @@ if ( ! class_exists( 'The7_Remote_API', false ) ) {
 				return $response;
 			}
 
-			if ( '200' != wp_remote_retrieve_response_code( $response ) ) {
-				return new WP_Error( 'bad_request', $this->strings['bad_request'] );
+			$response_code = wp_remote_retrieve_response_code( $response );
+			if ( '200' != $response_code ) {
+				$error_msg = $response_code . ': ' . $this->strings['bad_request'];
+
+				if ( the7_is_debug_on() ) {
+					$error_msg .= '<br>Response dump:';
+					ob_start();
+					var_dump( $response );
+					$error_msg .= ob_get_clean();
+				}
+
+				return new WP_Error( 'bad_request', $error_msg );
 			}
 
 			$code_check = json_decode( wp_remote_retrieve_body( $response ), true );
@@ -119,7 +129,16 @@ if ( ! class_exists( 'The7_Remote_API', false ) ) {
 			}
 
 			if ( empty( $code_check['success'] ) ) {
-				return new WP_Error( 'invalid_response', $this->strings['invalid_response'] );
+				$error_msg = $this->strings['invalid_response'];
+
+				if ( the7_is_debug_on() ) {
+					$error_msg .= '<br>Response dump:';
+					ob_start();
+					var_dump( $response );
+					$error_msg .= ob_get_clean();
+				}
+
+				return new WP_Error( 'invalid_response', $error_msg );
 			}
 
 			return true;

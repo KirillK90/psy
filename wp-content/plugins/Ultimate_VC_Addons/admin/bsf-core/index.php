@@ -507,6 +507,9 @@ if(!function_exists('register_bsf_core_admin_styles')) {
 			
 			wp_register_script( 'brainstorm-switch', $bsf_core_url.'/assets/js/switch.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'brainstorm-switch' );
+
+			wp_register_script( 'bsf-core', $bsf_core_url . '/assets/js/bsf-core.js', array( 'jquery' ), '', true );
+			wp_enqueue_script( 'bsf-core' );
 		}
 
 		// frosty script
@@ -1420,3 +1423,29 @@ function get_bsf_systeminfo() {
 	return $table;
 
 }
+
+function bsf_envato_redirect_url_callback() {
+
+	// bail if current user cannot manage_options.
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return false;
+	}
+
+	$envato_activate = new BSF_Envato_Activate();
+
+	$form_data = array();
+
+	$form_data['product_id'] 	= isset( $_GET['product_id'] ) ? esc_attr( $_GET['product_id'] ) : '';
+	$form_data['url'] 			= isset( $_GET['url'] ) ? esc_url_raw( $_GET['url'] ) : '';
+	$form_data['redirect'] 		= isset( $_GET['redirect'] ) ? esc_url_raw( $_GET['redirect'] ) : '';
+
+	$url = $envato_activate->envato_activation_url( $form_data );
+
+	$data = array(
+		'url' => esc_url_raw( $url )
+	);
+
+	return wp_send_json_success( $data );
+}
+
+add_action( 'wp_ajax_bsf_envato_redirect_url', 'bsf_envato_redirect_url_callback' );

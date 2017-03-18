@@ -266,7 +266,7 @@ endif;
 if ( ! function_exists( 'presscore_theme_update_get_changelog_url' ) ) :
 
 	function presscore_theme_update_get_changelog_url() {
-		return 'http://the7.io/changelog.txt';
+		return 'http://the7.io/changelog/';
 	}
 
 endif;

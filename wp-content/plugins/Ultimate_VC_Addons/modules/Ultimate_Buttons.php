@@ -30,7 +30,7 @@ if(!class_exists("Ultimate_Buttons")){
 			$btn_shadow_color = $btn_bg_color_hover = $btn_border_style = $btn_color_border = $btn_border_size = $btn_shadow_size = $el_class = '';
 			$btn_font_family = $btn_font_style = $btn_title_color = $btn_font_size = $icon = $icon_size = $icon_color = $btn_icon_pos = $btn_anim_effect = '';
 			$btn_padding_left = $btn_padding_top = $button_bg_img = $btn_title_color_hover = $btn_align = $btn_color_border_hover = $btn_shadow_color_hover = '';
-			$btn_shadow_click = $enable_tooltip = $tooltip_text = $tooltip_pos = $rel = $btn_line_height = $target = $link_title  = $rel = '';
+			$btn_shadow_click = $enable_tooltip = $tooltip_text = $tooltip_pos = $rel = $btn_line_height = $target = $link_title = '';
 			extract(shortcode_atts(array(
 				'btn_title' => '',
 				'btn_link' => '',
@@ -111,7 +111,7 @@ if(!class_exists("Ultimate_Buttons")){
 					$url 			= ( isset( $href['url'] ) && $href['url'] !== '' ) ? $href['url']  : '';
 					$target 		= ( isset( $href['target'] ) && $href['target'] !== '' ) ? "target='" . trim( $href['target'] ) . "'" : '';
 					$link_title 	= ( isset( $href['title'] ) && $href['title'] !== '' ) ? "title='".$href['title']."'" : '';
-					$rel 			= ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? "rel='".$href['rel']."'" : '';
+					$rel 			= ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? "rel='" . $rel . ' ' . $href['rel'] . "'" : "rel='" . $rel . "'";
 
 					if($btn_size == "ubtn-block"){
 						$tooltip_class .= ' ubtn-block';
@@ -133,17 +133,9 @@ if(!class_exists("Ultimate_Buttons")){
 			{
 				$mhfont_family = get_ultimate_font_family($btn_font_family);
 				$btn_style_inline .= 'font-family:\''.$mhfont_family.'\';';
-
-				//enqueue google font
-				/*$args = array(
-					$mhfont_family
-				);
-				enquque_ultimate_google_fonts($args);*/
 			}
 			$btn_style_inline .= get_ultimate_font_style($btn_font_style);
-			// if($btn_font_size !== ''){
-			// 	$btn_style_inline .= 'font-size:'.$btn_font_size.'px;';
-			// }
+
 			$adv_btn_id = 'ubtn-'.rand(1000, 9999);
 
 			if (is_numeric($btn_font_size)) {

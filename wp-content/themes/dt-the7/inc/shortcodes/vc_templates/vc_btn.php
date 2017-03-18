@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var $link
  * @var $title
  * @var $button_block
+ * @var $el_id
  * @var $el_class
  * @var $outline_custom_color
  * @var $outline_custom_hover_background
@@ -50,23 +51,23 @@ $icon_html = false;
 $attributes = array();
 
 $colors = array(
-    'blue' => '#5472d2',
-    'turquoise' => '#00c1cf',
-    'pink' => '#fe6c61',
-    'violet' => '#8d6dc4',
-    'peacoc' => '#4cadc9',
-    'chino' => '#cec2ab',
-    'mulled-wine' => '#50485b',
-    'vista-blue' => '#75d69c',
-    'orange' => '#f7be68',
-    'sky' => '#5aa1e3',
-    'green' => '#6dab3c',
-    'juicy-pink' => '#f4524d',
-    'sandy-brown' => '#f79468',
-    'purple' => '#b97ebb',
-    'black' => '#2a2a2a',
-    'grey' => '#ebebeb',
-    'white' => '#ffffff',
+	'blue' => '#5472d2',
+	'turquoise' => '#00c1cf',
+	'pink' => '#fe6c61',
+	'violet' => '#8d6dc4',
+	'peacoc' => '#4cadc9',
+	'chino' => '#cec2ab',
+	'mulled-wine' => '#50485b',
+	'vista-blue' => '#75d69c',
+	'orange' => '#f7be68',
+	'sky' => '#5aa1e3',
+	'green' => '#6dab3c',
+	'juicy-pink' => '#f4524d',
+	'sandy-brown' => '#f79468',
+	'purple' => '#b97ebb',
+	'black' => '#2a2a2a',
+	'grey' => '#ebebeb',
+	'white' => '#ffffff',
 );
 
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
@@ -177,13 +178,13 @@ if ( 'custom' === $style ) {
 		}
 		$button_classes[] = 'vc_btn3-style-outline';
 	}
-} elseif( 'gradient' === $style || 'gradient-custom' === $style ) {
+} elseif ( 'gradient' === $style || 'gradient-custom' === $style ) {
 
-	$gradient_color_1 = $colors[$gradient_color_1];
-	$gradient_color_2 = $colors[$gradient_color_2];
+	$gradient_color_1 = $colors[ $gradient_color_1 ];
+	$gradient_color_2 = $colors[ $gradient_color_2 ];
 
-	$button_text_color = "#fff";
-	if('gradient-custom' === $style ){
+	$button_text_color = '#fff';
+	if ( 'gradient-custom' === $style ) {
 		$gradient_color_1 = $gradient_custom_color_1;
 		$gradient_color_2 = $gradient_custom_color_2;
 		$button_text_color = $gradient_text_color;
@@ -207,10 +208,8 @@ if ( 'custom' === $style ) {
 	$gradient_css_hover[] = 'background-position: 100% 0';
 
 	$uid = uniqid();
-	echo '<style type="text/css">.vc_btn3-style-' . $style . '.vc_btn-gradient-btn-' . $uid . ':hover{' . implode( ';',
-			$gradient_css_hover ) . ';' . '}</style>';
-	echo '<style type="text/css">.vc_btn3-style-' . $style . '.vc_btn-gradient-btn-' . $uid . '{' . implode( ';',
-			$gradient_css ) . ';' . '}</style>';
+	echo '<style type="text/css">.vc_btn3-style-' . $style . '.vc_btn-gradient-btn-' . $uid . ':hover{' . implode( ';', $gradient_css_hover ) . ';' . '}</style>';
+	echo '<style type="text/css">.vc_btn3-style-' . $style . '.vc_btn-gradient-btn-' . $uid . '{' . implode( ';', $gradient_css ) . ';' . '}</style>';
 	$button_classes[] = 'vc_btn-gradient-btn-' . $uid;
 	$attributes[] = 'data-vc-gradient-1="' . $gradient_color_1 . '"';
 	$attributes[] = 'data-vc-gradient-2="' . $gradient_color_2 . '"';
@@ -251,10 +250,16 @@ if ( ! empty( $custom_onclick ) && $custom_onclick_code ) {
 }
 
 $attributes = implode( ' ', $attributes );
-
+$wrapper_attributes = array();
+if ( ! empty( $el_id ) ) {
+	$wrapper_attributes[] = 'id="' . esc_attr( $el_id ) . '"';
+}
 ?>
-<div class="<?php echo trim( esc_attr( $css_class ) ) ?>"><?php if ( $use_link ) {
+<div class="<?php echo trim( esc_attr( $css_class ) ) ?>" <?php echo implode( ' ', $wrapper_attributes ); ?>>
+	<?php
+	if ( $use_link ) {
 		echo '<a ' . $attributes . '>' . $button_html . '</a>';
-} else {
-	echo '<button ' . $attributes . '>' . $button_html . '</button>';
-} ?></div>
+	} else {
+		echo '<button ' . $attributes . '>' . $button_html . '</button>';
+	}
+	?></div>

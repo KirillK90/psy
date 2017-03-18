@@ -8,7 +8,8 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 ?>
 				<div class="branding">
-
+					<div id="site-title" class="assistive-text"><?php bloginfo( 'name' ); ?></div>
+					<div id="site-description" class="assistive-text"><?php bloginfo( 'description' ); ?></div>
 					<?php
 					$logo = '';
 					$logo .= presscore_get_the_main_logo();
@@ -22,8 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 					unset( $logo );
 					?>
 
-					<div id="site-title" class="assistive-text"><?php bloginfo( 'name' ); ?></div>
-					<div id="site-description" class="assistive-text"><?php bloginfo( 'description' ); ?></div>
+					
 
 					<?php presscore_render_header_elements( 'near_logo_left' ); ?>
 

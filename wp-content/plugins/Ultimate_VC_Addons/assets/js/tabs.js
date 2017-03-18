@@ -556,15 +556,17 @@ jQuery(document).ready(function(){
     // call setmytime function to active any tab on click of menu
     jQuery(this).find("a").click(function(b) {
         var href= jQuery(this).attr("href");
-        var type = escape(href.substring(href.indexOf('#')+1));
-        var maintab=jQuery("a.ult_a[href$='"+type+"']");   
-        var tabid = maintab.attr('href');
-        if( typeof tabid!='undefined' && tabid !== '' ){ 
-            tabid = tabid.replace("#", "");   
-        }
-        if(maintab.parents(".ult_tabs").length > 0 && type == tabid )
-        {        
-            setmytime(tabid);
+        if( typeof href !== 'undefined' && href.length > 0 ){
+          var type = escape(href.substring(href.indexOf('#')+1));
+          var maintab=jQuery("a.ult_a[href$='"+type+"']");   
+          var tabid = maintab.attr('href');
+          if( typeof tabid!='undefined' && tabid !== '' ){ 
+              tabid = tabid.replace("#", "");   
+          }
+          if(maintab.parents(".ult_tabs").length > 0 && type == tabid )
+          {        
+              setmytime(tabid);
+          }
         }
     });
 

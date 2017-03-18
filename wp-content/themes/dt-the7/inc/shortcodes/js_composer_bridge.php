@@ -472,6 +472,12 @@ vc_map( array(
 			"admin_label"	=> true,
 		),
 		array(
+			'type' => 'el_id',
+			'heading' => __( 'Element ID', 'the7mk2' ),
+			'param_name' => 'el_id',
+			'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'the7mk2' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
+		),
+		array(
 			'type' => 'css_editor',
 			'heading' => __( 'CSS box', 'the7mk2' ),
 			'param_name' => 'css',

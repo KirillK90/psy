@@ -2,9 +2,9 @@
 # This file is distributed under the This WordPress theme is comprised of two parts: (1) The PHP code and integrated HTML are licensed under the GPL license as is WordPress itself.  You will find a copy of the license text in the same directory as this text file. Or you can read it here: http://wordpress.org/about/gpl/ (2) All other parts of the theme including, but not limited to the CSS code, images, and design are licensed according to the license purchased. Read about licensing details here: http://themeforest.net/licenses/regular_extended.
 msgid ""
 msgstr ""
-"Project-Id-Version: The7 5.0.1\n"
+"Project-Id-Version: The7 5.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-02-28 11:30:12+00:00\n"
+"POT-Creation-Date: 2017-03-15 14:06:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -125,7 +125,7 @@ msgid "Plugins"
 msgstr ""
 
 #: inc/admin/class-the7-admin-dashboard.php:28
-#: inc/admin/screens/the7-status.php:9
+#: inc/admin/screens/the7-status.php:11
 msgid "Service Information"
 msgstr ""
 
@@ -230,7 +230,8 @@ msgid "Uploads Folder Writable:"
 msgstr ""
 
 #: inc/admin/screens/the7-dashboard.php:99
-#: inc/admin/screens/the7-dashboard.php:111
+#: inc/admin/screens/the7-dashboard.php:113
+#: inc/admin/screens/the7-dashboard.php:126
 msgid "<code class=\"status-good\">Yes</code>"
 msgstr ""
 
@@ -243,90 +244,104 @@ msgid ""
 msgstr ""
 
 #: inc/admin/screens/the7-dashboard.php:107
+msgid "File System Accessible:"
+msgstr ""
+
+#: inc/admin/screens/the7-dashboard.php:115
+msgid ""
+"<code class=\"status-bad\">No</code> Theme has no direct access to the file "
+"system. Therefore plugins and pre-made websites installation is not "
+"possible.<br>\n"
+"Please try to insert the following code:<br><code>define( \"FS_METHOD\", "
+"\"direct\" );</code><br> before <code>/* That's all, stop editing! Happy "
+"blogging. */</code> in <code>wp-config.php</code>."
+msgstr ""
+
+#: inc/admin/screens/the7-dashboard.php:122
 msgid "ZipArchive Support:"
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:113
+#: inc/admin/screens/the7-dashboard.php:128
 msgid ""
 "<code class=\"status-bad\">No</code> ZipArchive is required for plugins "
 "installation and pre-made websites import.<br><span "
 "class=\"the7-tip\">Please contact your hosting provider.</span>"
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:119
-#: inc/admin/screens/the7-status.php:38
+#: inc/admin/screens/the7-dashboard.php:134
+#: inc/admin/screens/the7-status.php:40
 msgid "WP Memory Limit:"
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:123
+#: inc/admin/screens/the7-dashboard.php:138
 msgid ""
 "<br><span class=\"the7-tip\">See <a href=\"%1$s\" target=\"_blank\" "
 "rel=\"noopener noreferrer\">increasing memory allocated to PHP</a> or "
 "contact your hosting provider.</span>"
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:126
+#: inc/admin/screens/the7-dashboard.php:141
 msgid ""
 "<code class=\"status-bad\">%1$s</code> Minimum value is <strong>32 "
 "MB</strong>. <strong>64&ndash;128 MB</strong> is recommended. <strong>256 "
 "MB</strong> is required to install the main demo."
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:130
+#: inc/admin/screens/the7-dashboard.php:145
 msgid ""
 "<code class=\"status-okay\">%1$s</code> Current memory limit is sufficient "
 "for most tasks. However, recommended value is <strong>64&ndash;128 "
 "MB</strong>. <strong>256 MB</strong> is required to install the main demo."
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:134
+#: inc/admin/screens/the7-dashboard.php:149
 msgid ""
 "<code class=\"status-good\">%1$s</code> Current memory limit is sufficient. "
 "However, <strong>256 MB</strong> is required to install the main demo."
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:138
+#: inc/admin/screens/the7-dashboard.php:153
 msgid "<code class=\"status-good\">%1$s</code> Current memory limit is sufficient."
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:145
-#: inc/admin/screens/the7-status.php:81
+#: inc/admin/screens/the7-dashboard.php:160
+#: inc/admin/screens/the7-status.php:93
 msgid "PHP Time Limit:"
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:149
+#: inc/admin/screens/the7-dashboard.php:164
 msgid ""
 "<br><span class=\"the7-tip\">See <a href=\"%1$s\" target=\"_blank\" "
 "rel=\"noopener noreferrer\">increasing max PHP execution time</a> or "
 "contact your hosting provider.</span>"
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:152
+#: inc/admin/screens/the7-dashboard.php:167
 msgid ""
 "<code class=\"status-bad\">%1$s</code> Minimum value is "
 "<strong>30</strong>. <strong>60</strong> is recommended. Up to "
 "<strong>300</strong> seconds may be required to install the main demo."
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:156
+#: inc/admin/screens/the7-dashboard.php:171
 msgid ""
 "<code class=\"status-okay\">%1$s</code> Current time limit is sufficient "
 "for most tasks. However, recommended value is <strong>60</strong>. Up to "
 "<strong>300</strong> seconds may be required to install the main demo."
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:160
+#: inc/admin/screens/the7-dashboard.php:175
 msgid ""
 "<code class=\"status-good\">%1$s</code> Current time limit is sufficient. "
 "However, up to <strong>300</strong> seconds may be required to install the "
 "main demo."
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:163
+#: inc/admin/screens/the7-dashboard.php:178
 msgid "<code class=\"status-good\">%1$s</code> Current time limit is sufficient."
 msgstr ""
 
-#: inc/admin/screens/the7-dashboard.php:173
+#: inc/admin/screens/the7-dashboard.php:188
 msgid "Changelog"
 msgstr ""
 
@@ -340,111 +355,127 @@ msgid ""
 "off plugin that uses TGM_Plugin_Activation or contact our support."
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:17
+#: inc/admin/screens/the7-status.php:19
 msgid "WordPress Environment"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:22
+#: inc/admin/screens/the7-status.php:24
 msgid "Home URL:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:26
+#: inc/admin/screens/the7-status.php:28
 msgid "Site URL:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:30
+#: inc/admin/screens/the7-status.php:32
 msgid "WP Version:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:34
+#: inc/admin/screens/the7-status.php:36
 msgid "WP Multisite:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:44
+#: inc/admin/screens/the7-status.php:46
+msgid "FS Accessible:"
+msgstr ""
+
+#: inc/admin/screens/the7-status.php:56
 msgid "WP Debug Mode:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:54
+#: inc/admin/screens/the7-status.php:66
 msgid "Language:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:63
+#: inc/admin/screens/the7-status.php:75
 #: inc/mods/demo-content/admin/partials/notices/status.php:26
 #: inc/mods/demo-content/admin/partials/notices/status.php:27
 msgid "Server Environment"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:68
+#: inc/admin/screens/the7-status.php:80
 msgid "Server Info:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:72
+#: inc/admin/screens/the7-status.php:84
 msgid "PHP Version:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:77
+#: inc/admin/screens/the7-status.php:89
 msgid "PHP Post Max Size:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:90
+#: inc/admin/screens/the7-status.php:102
 msgid "PHP Max Input Vars:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:114
+#: inc/admin/screens/the7-status.php:126
 msgid "SUHOSIN Installed:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:119
+#: inc/admin/screens/the7-status.php:131
 msgid "Suhosin Post Max Vars:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:143
+#: inc/admin/screens/the7-status.php:155
 msgid "Suhosin Request Max Vars:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:166
+#: inc/admin/screens/the7-status.php:178
 msgid "Suhosin Post Max Value Length:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:176
+#: inc/admin/screens/the7-status.php:188
 msgid "ZipArchive:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:180
+#: inc/admin/screens/the7-status.php:192
 msgid "MySQL Version:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:187
+#: inc/admin/screens/the7-status.php:199
 msgid "Max Upload Size:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:191
+#: inc/admin/screens/the7-status.php:203
 msgid "GD Library:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:194
+#: inc/admin/screens/the7-status.php:206
 #: inc/mods/tgmpa/class-tgm-plugin-activation.php:2400
 #: inc/mods/tgmpa/class-the7-plugins-list-table.php:49
 msgid "Not Installed"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:196
+#: inc/admin/screens/the7-status.php:208
 msgid "Installed"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:216
-msgid "The7 Versions"
+#: inc/admin/screens/the7-status.php:228
+msgid "The7 Information"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:221
+#: inc/admin/screens/the7-status.php:233
 msgid "Current Version:"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:230
+#: inc/admin/screens/the7-status.php:237
+msgid "The7 Server Available:"
+msgstr ""
+
+#: inc/admin/screens/the7-status.php:244
+msgid ""
+"<span class=\"error\">No</span> Service is temporary unavailable. Please "
+"check back later.\n"
+"If the issue persists, contact your hosting provider and make sure that "
+"%1$s is not blocked."
+msgstr ""
+
+#: inc/admin/screens/the7-status.php:256
 msgid "Active Plugins"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:254
+#: inc/admin/screens/the7-status.php:280
 msgid "Visit plugin homepage"
 msgstr ""
 
@@ -561,89 +592,89 @@ msgid "Find Address"
 msgstr ""
 
 #: inc/extensions/meta-box/inc/fields/post.php:54
-#: inc/shortcodes/js_composer_bridge.php:2233
-#: inc/shortcodes/js_composer_bridge.php:2240
-#: inc/shortcodes/js_composer_bridge.php:2250
-#: inc/shortcodes/js_composer_bridge.php:2260
-#: inc/shortcodes/js_composer_bridge.php:2268
-#: inc/shortcodes/js_composer_bridge.php:2276
-#: inc/shortcodes/js_composer_bridge.php:2284
-#: inc/shortcodes/js_composer_bridge.php:2295
-#: inc/shortcodes/js_composer_bridge.php:2306
-#: inc/shortcodes/js_composer_bridge.php:2317
-#: inc/shortcodes/js_composer_bridge.php:2328
-#: inc/shortcodes/js_composer_bridge.php:2335
-#: inc/shortcodes/js_composer_bridge.php:2345
-#: inc/shortcodes/js_composer_bridge.php:2355
-#: inc/shortcodes/js_composer_bridge.php:2363
-#: inc/shortcodes/js_composer_bridge.php:2372
-#: inc/shortcodes/js_composer_bridge.php:2380
-#: inc/shortcodes/js_composer_bridge.php:2393
-#: inc/shortcodes/js_composer_bridge.php:2405
-#: inc/shortcodes/js_composer_bridge.php:2416
-#: inc/shortcodes/js_composer_bridge.php:2430
-#: inc/shortcodes/js_composer_bridge.php:2444
-#: inc/shortcodes/js_composer_bridge.php:2456
-#: inc/shortcodes/js_composer_bridge.php:2469
-#: inc/shortcodes/js_composer_bridge.php:2477
-#: inc/shortcodes/js_composer_bridge.php:2490
-#: inc/shortcodes/js_composer_bridge.php:2505
-#: inc/shortcodes/js_composer_bridge.php:3151
-#: inc/shortcodes/js_composer_bridge.php:3159
-#: inc/shortcodes/js_composer_bridge.php:3166
-#: inc/shortcodes/js_composer_bridge.php:3176
-#: inc/shortcodes/js_composer_bridge.php:3186
-#: inc/shortcodes/js_composer_bridge.php:3194
-#: inc/shortcodes/js_composer_bridge.php:3202
-#: inc/shortcodes/js_composer_bridge.php:3210
-#: inc/shortcodes/js_composer_bridge.php:3221
-#: inc/shortcodes/js_composer_bridge.php:3232
-#: inc/shortcodes/js_composer_bridge.php:3243
-#: inc/shortcodes/js_composer_bridge.php:3254
-#: inc/shortcodes/js_composer_bridge.php:3261
-#: inc/shortcodes/js_composer_bridge.php:3271
-#: inc/shortcodes/js_composer_bridge.php:3281
-#: inc/shortcodes/js_composer_bridge.php:3289
-#: inc/shortcodes/js_composer_bridge.php:3298
-#: inc/shortcodes/js_composer_bridge.php:3306
-#: inc/shortcodes/js_composer_bridge.php:3319
-#: inc/shortcodes/js_composer_bridge.php:3331
-#: inc/shortcodes/js_composer_bridge.php:3342
-#: inc/shortcodes/js_composer_bridge.php:3356
-#: inc/shortcodes/js_composer_bridge.php:3370
-#: inc/shortcodes/js_composer_bridge.php:3382
-#: inc/shortcodes/js_composer_bridge.php:3395
-#: inc/shortcodes/js_composer_bridge.php:3403
-#: inc/shortcodes/js_composer_bridge.php:3416
-#: inc/shortcodes/js_composer_bridge.php:3431
-#: inc/shortcodes/js_composer_bridge.php:3960
-#: inc/shortcodes/js_composer_bridge.php:3968
-#: inc/shortcodes/js_composer_bridge.php:3975
-#: inc/shortcodes/js_composer_bridge.php:3985
-#: inc/shortcodes/js_composer_bridge.php:3995
-#: inc/shortcodes/js_composer_bridge.php:4003
-#: inc/shortcodes/js_composer_bridge.php:4011
-#: inc/shortcodes/js_composer_bridge.php:4019
-#: inc/shortcodes/js_composer_bridge.php:4030
-#: inc/shortcodes/js_composer_bridge.php:4041
-#: inc/shortcodes/js_composer_bridge.php:4052
-#: inc/shortcodes/js_composer_bridge.php:4063
-#: inc/shortcodes/js_composer_bridge.php:4070
-#: inc/shortcodes/js_composer_bridge.php:4080
-#: inc/shortcodes/js_composer_bridge.php:4090
-#: inc/shortcodes/js_composer_bridge.php:4098
-#: inc/shortcodes/js_composer_bridge.php:4107
-#: inc/shortcodes/js_composer_bridge.php:4115
-#: inc/shortcodes/js_composer_bridge.php:4128
-#: inc/shortcodes/js_composer_bridge.php:4140
-#: inc/shortcodes/js_composer_bridge.php:4151
-#: inc/shortcodes/js_composer_bridge.php:4165
-#: inc/shortcodes/js_composer_bridge.php:4179
-#: inc/shortcodes/js_composer_bridge.php:4191
-#: inc/shortcodes/js_composer_bridge.php:4204
-#: inc/shortcodes/js_composer_bridge.php:4212
-#: inc/shortcodes/js_composer_bridge.php:4225
-#: inc/shortcodes/js_composer_bridge.php:4240
+#: inc/shortcodes/js_composer_bridge.php:2239
+#: inc/shortcodes/js_composer_bridge.php:2246
+#: inc/shortcodes/js_composer_bridge.php:2256
+#: inc/shortcodes/js_composer_bridge.php:2266
+#: inc/shortcodes/js_composer_bridge.php:2274
+#: inc/shortcodes/js_composer_bridge.php:2282
+#: inc/shortcodes/js_composer_bridge.php:2290
+#: inc/shortcodes/js_composer_bridge.php:2301
+#: inc/shortcodes/js_composer_bridge.php:2312
+#: inc/shortcodes/js_composer_bridge.php:2323
+#: inc/shortcodes/js_composer_bridge.php:2334
+#: inc/shortcodes/js_composer_bridge.php:2341
+#: inc/shortcodes/js_composer_bridge.php:2351
+#: inc/shortcodes/js_composer_bridge.php:2361
+#: inc/shortcodes/js_composer_bridge.php:2369
+#: inc/shortcodes/js_composer_bridge.php:2378
+#: inc/shortcodes/js_composer_bridge.php:2386
+#: inc/shortcodes/js_composer_bridge.php:2399
+#: inc/shortcodes/js_composer_bridge.php:2411
+#: inc/shortcodes/js_composer_bridge.php:2422
+#: inc/shortcodes/js_composer_bridge.php:2436
+#: inc/shortcodes/js_composer_bridge.php:2450
+#: inc/shortcodes/js_composer_bridge.php:2462
+#: inc/shortcodes/js_composer_bridge.php:2475
+#: inc/shortcodes/js_composer_bridge.php:2483
+#: inc/shortcodes/js_composer_bridge.php:2496
+#: inc/shortcodes/js_composer_bridge.php:2511
+#: inc/shortcodes/js_composer_bridge.php:3157
+#: inc/shortcodes/js_composer_bridge.php:3165
+#: inc/shortcodes/js_composer_bridge.php:3172
+#: inc/shortcodes/js_composer_bridge.php:3182
+#: inc/shortcodes/js_composer_bridge.php:3192
+#: inc/shortcodes/js_composer_bridge.php:3200
+#: inc/shortcodes/js_composer_bridge.php:3208
+#: inc/shortcodes/js_composer_bridge.php:3216
+#: inc/shortcodes/js_composer_bridge.php:3227
+#: inc/shortcodes/js_composer_bridge.php:3238
+#: inc/shortcodes/js_composer_bridge.php:3249
+#: inc/shortcodes/js_composer_bridge.php:3260
+#: inc/shortcodes/js_composer_bridge.php:3267
+#: inc/shortcodes/js_composer_bridge.php:3277
+#: inc/shortcodes/js_composer_bridge.php:3287
+#: inc/shortcodes/js_composer_bridge.php:3295
+#: inc/shortcodes/js_composer_bridge.php:3304
+#: inc/shortcodes/js_composer_bridge.php:3312
+#: inc/shortcodes/js_composer_bridge.php:3325
+#: inc/shortcodes/js_composer_bridge.php:3337
+#: inc/shortcodes/js_composer_bridge.php:3348
+#: inc/shortcodes/js_composer_bridge.php:3362
+#: inc/shortcodes/js_composer_bridge.php:3376
+#: inc/shortcodes/js_composer_bridge.php:3388
+#: inc/shortcodes/js_composer_bridge.php:3401
+#: inc/shortcodes/js_composer_bridge.php:3409
+#: inc/shortcodes/js_composer_bridge.php:3422
+#: inc/shortcodes/js_composer_bridge.php:3437
+#: inc/shortcodes/js_composer_bridge.php:3966
+#: inc/shortcodes/js_composer_bridge.php:3974
+#: inc/shortcodes/js_composer_bridge.php:3981
+#: inc/shortcodes/js_composer_bridge.php:3991
+#: inc/shortcodes/js_composer_bridge.php:4001
+#: inc/shortcodes/js_composer_bridge.php:4009
+#: inc/shortcodes/js_composer_bridge.php:4017
+#: inc/shortcodes/js_composer_bridge.php:4025
+#: inc/shortcodes/js_composer_bridge.php:4036
+#: inc/shortcodes/js_composer_bridge.php:4047
+#: inc/shortcodes/js_composer_bridge.php:4058
+#: inc/shortcodes/js_composer_bridge.php:4069
+#: inc/shortcodes/js_composer_bridge.php:4076
+#: inc/shortcodes/js_composer_bridge.php:4086
+#: inc/shortcodes/js_composer_bridge.php:4096
+#: inc/shortcodes/js_composer_bridge.php:4104
+#: inc/shortcodes/js_composer_bridge.php:4113
+#: inc/shortcodes/js_composer_bridge.php:4121
+#: inc/shortcodes/js_composer_bridge.php:4134
+#: inc/shortcodes/js_composer_bridge.php:4146
+#: inc/shortcodes/js_composer_bridge.php:4157
+#: inc/shortcodes/js_composer_bridge.php:4171
+#: inc/shortcodes/js_composer_bridge.php:4185
+#: inc/shortcodes/js_composer_bridge.php:4197
+#: inc/shortcodes/js_composer_bridge.php:4210
+#: inc/shortcodes/js_composer_bridge.php:4218
+#: inc/shortcodes/js_composer_bridge.php:4231
+#: inc/shortcodes/js_composer_bridge.php:4246
 msgid "Post"
 msgstr ""
 
@@ -1762,9 +1793,9 @@ msgid "Source"
 msgstr ""
 
 #: inc/mods/tgmpa/class-tgm-plugin-activation.php:2636
-#: inc/shortcodes/js_composer_bridge.php:1114
-#: inc/shortcodes/js_composer_bridge.php:1383
-#: inc/shortcodes/js_composer_bridge.php:5564
+#: inc/shortcodes/js_composer_bridge.php:1120
+#: inc/shortcodes/js_composer_bridge.php:1389
+#: inc/shortcodes/js_composer_bridge.php:5570
 msgid "Type"
 msgstr ""
 
@@ -2003,12 +2034,12 @@ msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:70
 #: inc/shortcodes/js_composer_bridge.php:390
-#: inc/shortcodes/js_composer_bridge.php:1011
-#: inc/shortcodes/js_composer_bridge.php:1090
-#: inc/shortcodes/js_composer_bridge.php:1360
-#: inc/shortcodes/js_composer_bridge.php:1515
-#: inc/shortcodes/js_composer_bridge.php:5865
-#: inc/shortcodes/js_composer_bridge.php:5964
+#: inc/shortcodes/js_composer_bridge.php:1017
+#: inc/shortcodes/js_composer_bridge.php:1096
+#: inc/shortcodes/js_composer_bridge.php:1366
+#: inc/shortcodes/js_composer_bridge.php:1521
+#: inc/shortcodes/js_composer_bridge.php:5871
+#: inc/shortcodes/js_composer_bridge.php:5970
 msgid "Animation"
 msgstr ""
 
@@ -2073,18 +2104,18 @@ msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:158
 #: inc/shortcodes/js_composer_bridge.php:172
-#: inc/shortcodes/js_composer_bridge.php:1486
-#: inc/shortcodes/js_composer_bridge.php:1494
-#: inc/shortcodes/js_composer_bridge.php:1502
-#: inc/shortcodes/js_composer_bridge.php:1510
-#: inc/shortcodes/js_composer_bridge.php:5377
-#: inc/shortcodes/js_composer_bridge.php:5544
-#: inc/shortcodes/js_composer_bridge.php:5711
-#: inc/shortcodes/js_composer_bridge.php:5742
-#: inc/shortcodes/js_composer_bridge.php:5758
-#: inc/shortcodes/js_composer_bridge.php:5767
-#: inc/shortcodes/js_composer_bridge.php:5776
-#: inc/shortcodes/js_composer_bridge.php:5785
+#: inc/shortcodes/js_composer_bridge.php:1492
+#: inc/shortcodes/js_composer_bridge.php:1500
+#: inc/shortcodes/js_composer_bridge.php:1508
+#: inc/shortcodes/js_composer_bridge.php:1516
+#: inc/shortcodes/js_composer_bridge.php:5383
+#: inc/shortcodes/js_composer_bridge.php:5550
+#: inc/shortcodes/js_composer_bridge.php:5717
+#: inc/shortcodes/js_composer_bridge.php:5748
+#: inc/shortcodes/js_composer_bridge.php:5764
+#: inc/shortcodes/js_composer_bridge.php:5773
+#: inc/shortcodes/js_composer_bridge.php:5782
+#: inc/shortcodes/js_composer_bridge.php:5791
 msgid "In pixels."
 msgstr ""
 
@@ -2093,25 +2124,25 @@ msgid "Bottom padding"
 msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:185
-#: inc/shortcodes/js_composer_bridge.php:1454
-#: inc/shortcodes/js_composer_bridge.php:2540
-#: inc/shortcodes/js_composer_bridge.php:2595
-#: inc/shortcodes/js_composer_bridge.php:3466
-#: inc/shortcodes/js_composer_bridge.php:3521
-#: inc/shortcodes/js_composer_bridge.php:4275
-#: inc/shortcodes/js_composer_bridge.php:4330
-#: inc/shortcodes/js_composer_bridge.php:6347
+#: inc/shortcodes/js_composer_bridge.php:1460
+#: inc/shortcodes/js_composer_bridge.php:2546
+#: inc/shortcodes/js_composer_bridge.php:2601
+#: inc/shortcodes/js_composer_bridge.php:3472
+#: inc/shortcodes/js_composer_bridge.php:3527
+#: inc/shortcodes/js_composer_bridge.php:4281
+#: inc/shortcodes/js_composer_bridge.php:4336
+#: inc/shortcodes/js_composer_bridge.php:6353
 msgid "Background color"
 msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:198
-#: inc/shortcodes/js_composer_bridge.php:1395
-#: inc/shortcodes/js_composer_bridge.php:1409
+#: inc/shortcodes/js_composer_bridge.php:1401
+#: inc/shortcodes/js_composer_bridge.php:1415
 msgid "Background image"
 msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:199
-#: inc/shortcodes/js_composer_bridge.php:1411
+#: inc/shortcodes/js_composer_bridge.php:1417
 msgid "Image URL."
 msgstr ""
 
@@ -2170,10 +2201,10 @@ msgid "Animated pie chart"
 msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:405
-#: inc/shortcodes/js_composer_bridge.php:962
-#: inc/shortcodes/js_composer_bridge.php:1035
-#: inc/shortcodes/js_composer_bridge.php:1295
-#: inc/shortcodes/js_composer_bridge.php:1423
+#: inc/shortcodes/js_composer_bridge.php:968
+#: inc/shortcodes/js_composer_bridge.php:1041
+#: inc/shortcodes/js_composer_bridge.php:1301
+#: inc/shortcodes/js_composer_bridge.php:1429
 #: inc/widgets/contact-info/contact-info.php:152
 msgid "Content"
 msgstr ""
@@ -2227,1861 +2258,1871 @@ msgid "Custom bar color"
 msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:459
-#: inc/shortcodes/js_composer_bridge.php:5872
-#: inc/shortcodes/js_composer_bridge.php:5903
+#: inc/shortcodes/js_composer_bridge.php:5878
+#: inc/shortcodes/js_composer_bridge.php:5909
 msgid "Extra class name"
 msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:460
-#: inc/shortcodes/js_composer_bridge.php:5906
+#: inc/shortcodes/js_composer_bridge.php:5912
 msgid ""
 "If you wish to style particular content element differently, then use this "
 "field to add a class name and then refer to it in your css file."
 msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:465
-#: inc/shortcodes/js_composer_bridge.php:1664
-#: inc/shortcodes/js_composer_bridge.php:1676
+#: inc/shortcodes/js_composer_bridge.php:1670
 #: inc/shortcodes/js_composer_bridge.php:1682
-#: inc/shortcodes/js_composer_bridge.php:1693
-#: inc/shortcodes/js_composer_bridge.php:1706
-#: inc/shortcodes/js_composer_bridge.php:1719
-#: inc/shortcodes/js_composer_bridge.php:1731
-#: inc/shortcodes/js_composer_bridge.php:5061
-#: inc/shortcodes/js_composer_bridge.php:5062
-#: inc/shortcodes/js_composer_bridge.php:5072
-#: inc/shortcodes/js_composer_bridge.php:5090
-#: inc/shortcodes/js_composer_bridge.php:5101
-#: inc/shortcodes/js_composer_bridge.php:5110
-#: inc/shortcodes/js_composer_bridge.php:5119
+#: inc/shortcodes/js_composer_bridge.php:1688
+#: inc/shortcodes/js_composer_bridge.php:1699
+#: inc/shortcodes/js_composer_bridge.php:1712
+#: inc/shortcodes/js_composer_bridge.php:1725
+#: inc/shortcodes/js_composer_bridge.php:1737
+#: inc/shortcodes/js_composer_bridge.php:5067
+#: inc/shortcodes/js_composer_bridge.php:5068
+#: inc/shortcodes/js_composer_bridge.php:5078
+#: inc/shortcodes/js_composer_bridge.php:5096
+#: inc/shortcodes/js_composer_bridge.php:5107
+#: inc/shortcodes/js_composer_bridge.php:5116
 #: inc/shortcodes/js_composer_bridge.php:5125
-#: inc/shortcodes/js_composer_bridge.php:5137
-#: inc/shortcodes/js_composer_bridge.php:5145
-#: inc/shortcodes/js_composer_bridge.php:5153
-#: inc/shortcodes/js_composer_bridge.php:5355
-#: inc/shortcodes/js_composer_bridge.php:5363
-#: inc/shortcodes/js_composer_bridge.php:5372
-#: inc/shortcodes/js_composer_bridge.php:5381
-#: inc/shortcodes/js_composer_bridge.php:5390
+#: inc/shortcodes/js_composer_bridge.php:5131
+#: inc/shortcodes/js_composer_bridge.php:5143
+#: inc/shortcodes/js_composer_bridge.php:5151
+#: inc/shortcodes/js_composer_bridge.php:5159
+#: inc/shortcodes/js_composer_bridge.php:5361
+#: inc/shortcodes/js_composer_bridge.php:5369
+#: inc/shortcodes/js_composer_bridge.php:5378
+#: inc/shortcodes/js_composer_bridge.php:5387
 #: inc/shortcodes/js_composer_bridge.php:5396
-#: inc/shortcodes/js_composer_bridge.php:5407
-#: inc/shortcodes/js_composer_bridge.php:5418
-#: inc/shortcodes/js_composer_bridge.php:5430
+#: inc/shortcodes/js_composer_bridge.php:5402
+#: inc/shortcodes/js_composer_bridge.php:5413
+#: inc/shortcodes/js_composer_bridge.php:5424
+#: inc/shortcodes/js_composer_bridge.php:5436
 msgid "Appearance"
 msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:476
-#: inc/shortcodes/js_composer_bridge.php:4957
-#: inc/shortcodes/js_composer_bridge.php:5880
-#: inc/shortcodes/js_composer_bridge.php:7156
-msgid "CSS box"
+msgid "Element ID"
 msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:478
-#: inc/shortcodes/js_composer_bridge.php:4959
-#: inc/shortcodes/js_composer_bridge.php:5882
-#: inc/shortcodes/js_composer_bridge.php:7158
+msgid ""
+"Enter element ID (Note: make sure it is unique and valid according to <a "
+"href=\"%s\" target=\"_blank\">w3c specification</a>)."
+msgstr ""
+
+#: inc/shortcodes/js_composer_bridge.php:482
+#: inc/shortcodes/js_composer_bridge.php:4963
+#: inc/shortcodes/js_composer_bridge.php:5886
+#: inc/shortcodes/js_composer_bridge.php:7162
+msgid "CSS box"
+msgstr ""
+
+#: inc/shortcodes/js_composer_bridge.php:484
+#: inc/shortcodes/js_composer_bridge.php:4965
+#: inc/shortcodes/js_composer_bridge.php:5888
+#: inc/shortcodes/js_composer_bridge.php:7164
 msgid "Design Options"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:490
-#: inc/shortcodes/js_composer_bridge.php:1945
-#: inc/shortcodes/js_composer_bridge.php:2797
-#: inc/shortcodes/js_composer_bridge.php:3747
+#: inc/shortcodes/js_composer_bridge.php:496
+#: inc/shortcodes/js_composer_bridge.php:1951
+#: inc/shortcodes/js_composer_bridge.php:2803
+#: inc/shortcodes/js_composer_bridge.php:3753
 msgid "Show background"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:506
-#: inc/shortcodes/js_composer_bridge.php:554
-#: inc/shortcodes/js_composer_bridge.php:690
-#: inc/shortcodes/js_composer_bridge.php:751
-#: inc/shortcodes/js_composer_bridge.php:881
-#: inc/shortcodes/js_composer_bridge.php:956
-#: inc/shortcodes/js_composer_bridge.php:1029
-#: inc/shortcodes/js_composer_bridge.php:1108
-#: inc/shortcodes/js_composer_bridge.php:1378
-#: inc/shortcodes/js_composer_bridge.php:1533
-#: inc/shortcodes/js_composer_bridge.php:1612
-#: inc/shortcodes/js_composer_bridge.php:1750
-#: inc/shortcodes/js_composer_bridge.php:2710
-#: inc/shortcodes/js_composer_bridge.php:3641
-#: inc/shortcodes/js_composer_bridge.php:4976
-#: inc/shortcodes/js_composer_bridge.php:5303
-#: inc/shortcodes/js_composer_bridge.php:5535
-#: inc/shortcodes/js_composer_bridge.php:5559
-#: inc/shortcodes/js_composer_bridge.php:5897
-#: inc/shortcodes/js_composer_bridge.php:6167
-#: inc/shortcodes/js_composer_bridge.php:6225
-#: inc/shortcodes/js_composer_bridge.php:6293
-#: inc/shortcodes/js_composer_bridge.php:6415
+#: inc/shortcodes/js_composer_bridge.php:512
+#: inc/shortcodes/js_composer_bridge.php:560
+#: inc/shortcodes/js_composer_bridge.php:696
+#: inc/shortcodes/js_composer_bridge.php:757
+#: inc/shortcodes/js_composer_bridge.php:887
+#: inc/shortcodes/js_composer_bridge.php:962
+#: inc/shortcodes/js_composer_bridge.php:1035
+#: inc/shortcodes/js_composer_bridge.php:1114
+#: inc/shortcodes/js_composer_bridge.php:1384
+#: inc/shortcodes/js_composer_bridge.php:1539
+#: inc/shortcodes/js_composer_bridge.php:1618
+#: inc/shortcodes/js_composer_bridge.php:1756
+#: inc/shortcodes/js_composer_bridge.php:2716
+#: inc/shortcodes/js_composer_bridge.php:3647
+#: inc/shortcodes/js_composer_bridge.php:4982
+#: inc/shortcodes/js_composer_bridge.php:5309
+#: inc/shortcodes/js_composer_bridge.php:5541
+#: inc/shortcodes/js_composer_bridge.php:5565
+#: inc/shortcodes/js_composer_bridge.php:5903
+#: inc/shortcodes/js_composer_bridge.php:6173
+#: inc/shortcodes/js_composer_bridge.php:6231
+#: inc/shortcodes/js_composer_bridge.php:6299
+#: inc/shortcodes/js_composer_bridge.php:6421
 msgid "by Dream-Theme"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:518
-#: inc/shortcodes/js_composer_bridge.php:562
-#: inc/shortcodes/js_composer_bridge.php:702
+#: inc/shortcodes/js_composer_bridge.php:524
+#: inc/shortcodes/js_composer_bridge.php:568
+#: inc/shortcodes/js_composer_bridge.php:708
 msgid "Title size"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:537
-#: inc/shortcodes/js_composer_bridge.php:580
-#: inc/shortcodes/js_composer_bridge.php:596
-#: inc/shortcodes/js_composer_bridge.php:720
-#: inc/shortcodes/js_composer_bridge.php:1056
-#: inc/shortcodes/js_composer_bridge.php:1346
-#: inc/shortcodes/js_composer_bridge.php:1769
-#: inc/shortcodes/js_composer_bridge.php:2739
-#: inc/shortcodes/js_composer_bridge.php:3690
-#: inc/shortcodes/js_composer_bridge.php:5697
-#: inc/shortcodes/js_composer_bridge.php:5971
-#: inc/shortcodes/js_composer_bridge.php:5985
-#: inc/shortcodes/js_composer_bridge.php:5988
-#: inc/shortcodes/js_composer_bridge.php:6002
-#: inc/shortcodes/js_composer_bridge.php:6024
-#: inc/shortcodes/js_composer_bridge.php:6038
-#: inc/shortcodes/js_composer_bridge.php:6061
-#: inc/shortcodes/js_composer_bridge.php:6075
-#: inc/shortcodes/js_composer_bridge.php:6090
-#: inc/shortcodes/js_composer_bridge.php:6104
-#: inc/shortcodes/js_composer_bridge.php:6119
+#: inc/shortcodes/js_composer_bridge.php:543
+#: inc/shortcodes/js_composer_bridge.php:586
+#: inc/shortcodes/js_composer_bridge.php:602
+#: inc/shortcodes/js_composer_bridge.php:726
+#: inc/shortcodes/js_composer_bridge.php:1062
+#: inc/shortcodes/js_composer_bridge.php:1352
+#: inc/shortcodes/js_composer_bridge.php:1775
+#: inc/shortcodes/js_composer_bridge.php:2745
+#: inc/shortcodes/js_composer_bridge.php:3696
+#: inc/shortcodes/js_composer_bridge.php:5703
+#: inc/shortcodes/js_composer_bridge.php:5977
+#: inc/shortcodes/js_composer_bridge.php:5991
+#: inc/shortcodes/js_composer_bridge.php:5994
+#: inc/shortcodes/js_composer_bridge.php:6008
+#: inc/shortcodes/js_composer_bridge.php:6030
+#: inc/shortcodes/js_composer_bridge.php:6044
+#: inc/shortcodes/js_composer_bridge.php:6067
+#: inc/shortcodes/js_composer_bridge.php:6081
+#: inc/shortcodes/js_composer_bridge.php:6096
+#: inc/shortcodes/js_composer_bridge.php:6110
+#: inc/shortcodes/js_composer_bridge.php:6125
 msgid "Style"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:607
-#: inc/shortcodes/js_composer_bridge.php:6334
+#: inc/shortcodes/js_composer_bridge.php:613
+#: inc/shortcodes/js_composer_bridge.php:6340
 msgid "Background"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:665
-#: inc/shortcodes/js_composer_bridge.php:1318
+#: inc/shortcodes/js_composer_bridge.php:671
+#: inc/shortcodes/js_composer_bridge.php:1324
 msgid "Image hovers"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:679
+#: inc/shortcodes/js_composer_bridge.php:685
 msgid "Lazy loading"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:736
-#: inc/shortcodes/js_composer_bridge.php:5943
+#: inc/shortcodes/js_composer_bridge.php:742
+#: inc/shortcodes/js_composer_bridge.php:5949
 msgid "Smooth scroll?"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:738
-#: inc/shortcodes/js_composer_bridge.php:5945
+#: inc/shortcodes/js_composer_bridge.php:744
+#: inc/shortcodes/js_composer_bridge.php:5951
 msgid "for #anchor navigation"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:952
+#: inc/shortcodes/js_composer_bridge.php:958
 msgid "Fancy Quote"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:964
+#: inc/shortcodes/js_composer_bridge.php:970
 msgid "<p>I am test text for QUOTE. Click edit button to change this text.</p>"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:970
+#: inc/shortcodes/js_composer_bridge.php:976
 msgid "Quote type"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:981
-#: inc/shortcodes/js_composer_bridge.php:1043
-#: inc/shortcodes/js_composer_bridge.php:1331
-#: inc/shortcodes/js_composer_bridge.php:1470
-#: inc/shortcodes/js_composer_bridge.php:2243
-#: inc/shortcodes/js_composer_bridge.php:2338
-#: inc/shortcodes/js_composer_bridge.php:2419
-#: inc/shortcodes/js_composer_bridge.php:3169
-#: inc/shortcodes/js_composer_bridge.php:3264
-#: inc/shortcodes/js_composer_bridge.php:3345
-#: inc/shortcodes/js_composer_bridge.php:3978
-#: inc/shortcodes/js_composer_bridge.php:4073
-#: inc/shortcodes/js_composer_bridge.php:4154
-#: inc/shortcodes/js_composer_bridge.php:6309
+#: inc/shortcodes/js_composer_bridge.php:987
+#: inc/shortcodes/js_composer_bridge.php:1049
+#: inc/shortcodes/js_composer_bridge.php:1337
+#: inc/shortcodes/js_composer_bridge.php:1476
+#: inc/shortcodes/js_composer_bridge.php:2249
+#: inc/shortcodes/js_composer_bridge.php:2344
+#: inc/shortcodes/js_composer_bridge.php:2425
+#: inc/shortcodes/js_composer_bridge.php:3175
+#: inc/shortcodes/js_composer_bridge.php:3270
+#: inc/shortcodes/js_composer_bridge.php:3351
+#: inc/shortcodes/js_composer_bridge.php:3984
+#: inc/shortcodes/js_composer_bridge.php:4079
+#: inc/shortcodes/js_composer_bridge.php:4160
+#: inc/shortcodes/js_composer_bridge.php:6315
 msgid "Font size"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1000
+#: inc/shortcodes/js_composer_bridge.php:1006
 msgid "Blockquote style"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1025
+#: inc/shortcodes/js_composer_bridge.php:1031
 msgid "Call to Action"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1037
+#: inc/shortcodes/js_composer_bridge.php:1043
 msgid ""
 "<p>I am test text for CALL TO ACTION. Click edit button to change this "
 "text.</p>"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1068
+#: inc/shortcodes/js_composer_bridge.php:1074
 msgid "Decorative line on the left"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1079
-#: inc/shortcodes/js_composer_bridge.php:5952
+#: inc/shortcodes/js_composer_bridge.php:1085
+#: inc/shortcodes/js_composer_bridge.php:5958
 msgid "Button alignment"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1085
+#: inc/shortcodes/js_composer_bridge.php:1091
 msgid ""
 "Use [dt_button] to insert a button. Default: button keeps alignment from "
 "content editor. On the right: button is aligned to the right."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1104
+#: inc/shortcodes/js_composer_bridge.php:1110
 msgid "Teaser"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1132
-#: inc/shortcodes/js_composer_bridge.php:5576
+#: inc/shortcodes/js_composer_bridge.php:1138
+#: inc/shortcodes/js_composer_bridge.php:5582
 msgid "Choose image"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1152
-#: inc/shortcodes/js_composer_bridge.php:5590
+#: inc/shortcodes/js_composer_bridge.php:1158
+#: inc/shortcodes/js_composer_bridge.php:5596
 msgid "Image URL"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1168
+#: inc/shortcodes/js_composer_bridge.php:1174
 msgid "Image WIDTH"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1171
+#: inc/shortcodes/js_composer_bridge.php:1177
 msgid "image width in px"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1184
+#: inc/shortcodes/js_composer_bridge.php:1190
 msgid "Image HEIGHT"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1187
+#: inc/shortcodes/js_composer_bridge.php:1193
 msgid "image height in px"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1200
-#: inc/shortcodes/js_composer_bridge.php:5619
+#: inc/shortcodes/js_composer_bridge.php:1206
+#: inc/shortcodes/js_composer_bridge.php:5625
 msgid "Image ALT"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1217
+#: inc/shortcodes/js_composer_bridge.php:1223
 msgid "Misc link"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1234
+#: inc/shortcodes/js_composer_bridge.php:1240
 msgid "Target link"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1254
+#: inc/shortcodes/js_composer_bridge.php:1260
 msgid "Open in lighbox"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1259
+#: inc/shortcodes/js_composer_bridge.php:1265
 msgid "If selected, larger image will be opened on click."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1277
-#: inc/shortcodes/js_composer_bridge.php:5632
+#: inc/shortcodes/js_composer_bridge.php:1283
+#: inc/shortcodes/js_composer_bridge.php:5638
 msgid "Video URL"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1297
+#: inc/shortcodes/js_composer_bridge.php:1303
 msgid "I am test text for TEASER. Click edit button to change this text."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1305
+#: inc/shortcodes/js_composer_bridge.php:1311
 msgid "Media style"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1374
+#: inc/shortcodes/js_composer_bridge.php:1380
 msgid "Banner"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1425
+#: inc/shortcodes/js_composer_bridge.php:1431
 msgid "<p>I am test text for BANNER. Click edit button to change this text.</p>"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1432
+#: inc/shortcodes/js_composer_bridge.php:1438
 msgid "Banner link"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1439
-#: inc/shortcodes/js_composer_bridge.php:5932
+#: inc/shortcodes/js_composer_bridge.php:1445
+#: inc/shortcodes/js_composer_bridge.php:5938
 msgid "Open link in"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1462
-#: inc/shortcodes/js_composer_bridge.php:6359
+#: inc/shortcodes/js_composer_bridge.php:1468
+#: inc/shortcodes/js_composer_bridge.php:6365
 msgid "Border color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1483
-#: inc/shortcodes/js_composer_bridge.php:6365
+#: inc/shortcodes/js_composer_bridge.php:1489
+#: inc/shortcodes/js_composer_bridge.php:6371
 msgid "Border width"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1491
+#: inc/shortcodes/js_composer_bridge.php:1497
 msgid "Outer padding"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1499
+#: inc/shortcodes/js_composer_bridge.php:1505
 msgid "Inner padding"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1507
+#: inc/shortcodes/js_composer_bridge.php:1513
 msgid "Banner minimal height"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1529
+#: inc/shortcodes/js_composer_bridge.php:1535
 msgid "Contact Form"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1538
+#: inc/shortcodes/js_composer_bridge.php:1544
 msgid "Form fields"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1551
-#: inc/shortcodes/js_composer_bridge.php:1577
+#: inc/shortcodes/js_composer_bridge.php:1557
+#: inc/shortcodes/js_composer_bridge.php:1583
 msgid "Attention! At least one must be selected."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1556
+#: inc/shortcodes/js_composer_bridge.php:1562
 msgid "Message textarea height"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1559
+#: inc/shortcodes/js_composer_bridge.php:1565
 msgid "Number of lines."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1564
+#: inc/shortcodes/js_composer_bridge.php:1570
 msgid "Required fields"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1582
+#: inc/shortcodes/js_composer_bridge.php:1588
 msgid "Submit button caption"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1590
+#: inc/shortcodes/js_composer_bridge.php:1596
 msgid "Submit button size"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1608
+#: inc/shortcodes/js_composer_bridge.php:1614
 msgid "Blog Mini"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1616
-#: inc/shortcodes/js_composer_bridge.php:1754
-#: inc/shortcodes/js_composer_bridge.php:2714
-#: inc/shortcodes/js_composer_bridge.php:3646
-#: inc/shortcodes/js_composer_bridge.php:4980
-#: inc/shortcodes/js_composer_bridge.php:5307
+#: inc/shortcodes/js_composer_bridge.php:1622
+#: inc/shortcodes/js_composer_bridge.php:1760
+#: inc/shortcodes/js_composer_bridge.php:2720
+#: inc/shortcodes/js_composer_bridge.php:3652
+#: inc/shortcodes/js_composer_bridge.php:4986
+#: inc/shortcodes/js_composer_bridge.php:5313
 msgid "Categories"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1621
-#: inc/shortcodes/js_composer_bridge.php:1759
-#: inc/shortcodes/js_composer_bridge.php:2719
-#: inc/shortcodes/js_composer_bridge.php:3651
-#: inc/shortcodes/js_composer_bridge.php:4985
-#: inc/shortcodes/js_composer_bridge.php:5312
+#: inc/shortcodes/js_composer_bridge.php:1627
+#: inc/shortcodes/js_composer_bridge.php:1765
+#: inc/shortcodes/js_composer_bridge.php:2725
+#: inc/shortcodes/js_composer_bridge.php:3657
+#: inc/shortcodes/js_composer_bridge.php:4991
+#: inc/shortcodes/js_composer_bridge.php:5318
 msgid ""
 "Note: By default, all your posts will be displayed. <br>If you want to "
 "narrow output, select category(s) above. Only selected categories will be "
 "displayed."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1624
-#: inc/shortcodes/js_composer_bridge.php:4988
-#: inc/shortcodes/js_composer_bridge.php:5315
+#: inc/shortcodes/js_composer_bridge.php:1630
+#: inc/shortcodes/js_composer_bridge.php:4994
+#: inc/shortcodes/js_composer_bridge.php:5321
 msgid "Posts Number & Order"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1629
-#: inc/shortcodes/js_composer_bridge.php:4993
-#: inc/shortcodes/js_composer_bridge.php:5320
+#: inc/shortcodes/js_composer_bridge.php:1635
+#: inc/shortcodes/js_composer_bridge.php:4999
+#: inc/shortcodes/js_composer_bridge.php:5326
 msgid "Number of posts to show"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1636
-#: inc/shortcodes/js_composer_bridge.php:2627
-#: inc/shortcodes/js_composer_bridge.php:3553
-#: inc/shortcodes/js_composer_bridge.php:3665
-#: inc/shortcodes/js_composer_bridge.php:5007
-#: inc/shortcodes/js_composer_bridge.php:5327
+#: inc/shortcodes/js_composer_bridge.php:1642
+#: inc/shortcodes/js_composer_bridge.php:2633
+#: inc/shortcodes/js_composer_bridge.php:3559
+#: inc/shortcodes/js_composer_bridge.php:3671
+#: inc/shortcodes/js_composer_bridge.php:5013
+#: inc/shortcodes/js_composer_bridge.php:5333
 msgid "Order by"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1648
-#: inc/shortcodes/js_composer_bridge.php:5019
-#: inc/shortcodes/js_composer_bridge.php:5339
+#: inc/shortcodes/js_composer_bridge.php:1654
+#: inc/shortcodes/js_composer_bridge.php:5025
+#: inc/shortcodes/js_composer_bridge.php:5345
 msgid "Select how to sort retrieved posts."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1652
-#: inc/shortcodes/js_composer_bridge.php:5023
-#: inc/shortcodes/js_composer_bridge.php:5343
+#: inc/shortcodes/js_composer_bridge.php:1658
+#: inc/shortcodes/js_composer_bridge.php:5029
+#: inc/shortcodes/js_composer_bridge.php:5349
 msgid "Order way"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1659
-#: inc/shortcodes/js_composer_bridge.php:5030
-#: inc/shortcodes/js_composer_bridge.php:5350
+#: inc/shortcodes/js_composer_bridge.php:1665
+#: inc/shortcodes/js_composer_bridge.php:5036
+#: inc/shortcodes/js_composer_bridge.php:5356
 msgid "Designates the ascending or descending order."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1665
+#: inc/shortcodes/js_composer_bridge.php:1671
 msgid "Layout"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1677
-#: inc/shortcodes/js_composer_bridge.php:5120
-#: inc/shortcodes/js_composer_bridge.php:5391
+#: inc/shortcodes/js_composer_bridge.php:1683
+#: inc/shortcodes/js_composer_bridge.php:5126
+#: inc/shortcodes/js_composer_bridge.php:5397
 msgid "Post Design & Elements"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1683
+#: inc/shortcodes/js_composer_bridge.php:1689
 msgid "Featured images"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1694
+#: inc/shortcodes/js_composer_bridge.php:1700
 msgid "Images width"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1707
+#: inc/shortcodes/js_composer_bridge.php:1713
 msgid "Images height"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1746
+#: inc/shortcodes/js_composer_bridge.php:1752
 msgid "Blog list"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1763
-#: inc/shortcodes/js_composer_bridge.php:2723
-#: inc/shortcodes/js_composer_bridge.php:3684
+#: inc/shortcodes/js_composer_bridge.php:1769
+#: inc/shortcodes/js_composer_bridge.php:2729
+#: inc/shortcodes/js_composer_bridge.php:3690
 msgid "Layout Settings"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1782
-#: inc/shortcodes/js_composer_bridge.php:1902
+#: inc/shortcodes/js_composer_bridge.php:1788
+#: inc/shortcodes/js_composer_bridge.php:1908
 msgid "Image width"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1796
-#: inc/shortcodes/js_composer_bridge.php:1835
+#: inc/shortcodes/js_composer_bridge.php:1802
+#: inc/shortcodes/js_composer_bridge.php:1841
 msgid "Show dividers"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1811
-#: inc/shortcodes/js_composer_bridge.php:1850
+#: inc/shortcodes/js_composer_bridge.php:1817
+#: inc/shortcodes/js_composer_bridge.php:1856
 msgid "Dividers color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1819
-#: inc/shortcodes/js_composer_bridge.php:1858
+#: inc/shortcodes/js_composer_bridge.php:1825
+#: inc/shortcodes/js_composer_bridge.php:1864
 msgid "Leave empty to use default divider color."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1823
-#: inc/shortcodes/js_composer_bridge.php:1862
-#: inc/shortcodes/js_composer_bridge.php:2753
-#: inc/shortcodes/js_composer_bridge.php:3704
+#: inc/shortcodes/js_composer_bridge.php:1829
+#: inc/shortcodes/js_composer_bridge.php:1868
+#: inc/shortcodes/js_composer_bridge.php:2759
+#: inc/shortcodes/js_composer_bridge.php:3710
 msgid "Content area width"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1874
-#: inc/shortcodes/js_composer_bridge.php:3716
+#: inc/shortcodes/js_composer_bridge.php:1880
+#: inc/shortcodes/js_composer_bridge.php:3722
 msgid "Content area top overlap"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1887
-#: inc/shortcodes/js_composer_bridge.php:3142
-#: inc/shortcodes/js_composer_bridge.php:3951
-#: inc/shortcodes/js_composer_bridge.php:5397
+#: inc/shortcodes/js_composer_bridge.php:1893
+#: inc/shortcodes/js_composer_bridge.php:3148
+#: inc/shortcodes/js_composer_bridge.php:3957
+#: inc/shortcodes/js_composer_bridge.php:5403
 msgid "Content alignment"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1914
+#: inc/shortcodes/js_composer_bridge.php:1920
 msgid "Content area side overlap"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1926
+#: inc/shortcodes/js_composer_bridge.php:1932
 msgid "Content area top margin"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1939
-#: inc/shortcodes/js_composer_bridge.php:2791
-#: inc/shortcodes/js_composer_bridge.php:3741
+#: inc/shortcodes/js_composer_bridge.php:1945
+#: inc/shortcodes/js_composer_bridge.php:2797
+#: inc/shortcodes/js_composer_bridge.php:3747
 msgid "Content Area"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1955
-#: inc/shortcodes/js_composer_bridge.php:2807
-#: inc/shortcodes/js_composer_bridge.php:3757
+#: inc/shortcodes/js_composer_bridge.php:1961
+#: inc/shortcodes/js_composer_bridge.php:2813
+#: inc/shortcodes/js_composer_bridge.php:3763
 msgid "Color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1963
-#: inc/shortcodes/js_composer_bridge.php:3765
+#: inc/shortcodes/js_composer_bridge.php:1969
+#: inc/shortcodes/js_composer_bridge.php:3771
 msgid "Leave empty to use default content boxes color & decoration."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1966
-#: inc/shortcodes/js_composer_bridge.php:2818
-#: inc/shortcodes/js_composer_bridge.php:3768
+#: inc/shortcodes/js_composer_bridge.php:1972
+#: inc/shortcodes/js_composer_bridge.php:2824
+#: inc/shortcodes/js_composer_bridge.php:3774
 msgid "Content area paddings"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1973
+#: inc/shortcodes/js_composer_bridge.php:1979
 msgid "Gap below post"
-msgstr ""
-
-#: inc/shortcodes/js_composer_bridge.php:1982
-#: inc/shortcodes/js_composer_bridge.php:2826
-#: inc/shortcodes/js_composer_bridge.php:3776
-msgid "Image Settings"
 msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:1988
 #: inc/shortcodes/js_composer_bridge.php:2832
 #: inc/shortcodes/js_composer_bridge.php:3782
+msgid "Image Settings"
+msgstr ""
+
+#: inc/shortcodes/js_composer_bridge.php:1994
+#: inc/shortcodes/js_composer_bridge.php:2838
+#: inc/shortcodes/js_composer_bridge.php:3788
 msgid "Image sizing"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1999
-#: inc/shortcodes/js_composer_bridge.php:2843
-#: inc/shortcodes/js_composer_bridge.php:3793
-#: inc/shortcodes/js_composer_bridge.php:4412
-#: inc/shortcodes/js_composer_bridge.php:5708
-#: inc/shortcodes/js_composer_bridge.php:6610
+#: inc/shortcodes/js_composer_bridge.php:2005
+#: inc/shortcodes/js_composer_bridge.php:2849
+#: inc/shortcodes/js_composer_bridge.php:3799
+#: inc/shortcodes/js_composer_bridge.php:4418
+#: inc/shortcodes/js_composer_bridge.php:5714
+#: inc/shortcodes/js_composer_bridge.php:6616
 msgid "Width"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:1999
-#: inc/shortcodes/js_composer_bridge.php:2843
-#: inc/shortcodes/js_composer_bridge.php:3793
-#: inc/shortcodes/js_composer_bridge.php:4425
-#: inc/shortcodes/js_composer_bridge.php:5716
-#: inc/shortcodes/js_composer_bridge.php:6623
+#: inc/shortcodes/js_composer_bridge.php:2005
+#: inc/shortcodes/js_composer_bridge.php:2849
+#: inc/shortcodes/js_composer_bridge.php:3799
+#: inc/shortcodes/js_composer_bridge.php:4431
+#: inc/shortcodes/js_composer_bridge.php:5722
+#: inc/shortcodes/js_composer_bridge.php:6629
 msgid "Height"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2007
-#: inc/shortcodes/js_composer_bridge.php:2851
-#: inc/shortcodes/js_composer_bridge.php:3801
+#: inc/shortcodes/js_composer_bridge.php:2013
+#: inc/shortcodes/js_composer_bridge.php:2857
+#: inc/shortcodes/js_composer_bridge.php:3807
 msgid "Set image proportions, for example: 4x3, 3x2."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2010
-#: inc/shortcodes/js_composer_bridge.php:2854
-#: inc/shortcodes/js_composer_bridge.php:3804
+#: inc/shortcodes/js_composer_bridge.php:2016
+#: inc/shortcodes/js_composer_bridge.php:2860
+#: inc/shortcodes/js_composer_bridge.php:3810
 msgid "Image paddings"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2017
-#: inc/shortcodes/js_composer_bridge.php:2861
-#: inc/shortcodes/js_composer_bridge.php:3811
+#: inc/shortcodes/js_composer_bridge.php:2023
+#: inc/shortcodes/js_composer_bridge.php:2867
+#: inc/shortcodes/js_composer_bridge.php:3817
 msgid "Enable scale animation on hover"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2028
-#: inc/shortcodes/js_composer_bridge.php:5195
-#: inc/shortcodes/js_composer_bridge.php:5196
-#: inc/shortcodes/js_composer_bridge.php:5206
-#: inc/shortcodes/js_composer_bridge.php:5220
-#: inc/shortcodes/js_composer_bridge.php:5234
-#: inc/shortcodes/js_composer_bridge.php:5248
-#: inc/shortcodes/js_composer_bridge.php:5262
-#: inc/shortcodes/js_composer_bridge.php:5276
+#: inc/shortcodes/js_composer_bridge.php:2034
+#: inc/shortcodes/js_composer_bridge.php:5201
+#: inc/shortcodes/js_composer_bridge.php:5202
+#: inc/shortcodes/js_composer_bridge.php:5212
+#: inc/shortcodes/js_composer_bridge.php:5226
+#: inc/shortcodes/js_composer_bridge.php:5240
+#: inc/shortcodes/js_composer_bridge.php:5254
+#: inc/shortcodes/js_composer_bridge.php:5268
+#: inc/shortcodes/js_composer_bridge.php:5282
 msgid "Responsiveness"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2034
+#: inc/shortcodes/js_composer_bridge.php:2040
 msgid "Switch to mobile layout if browser width is less then"
-msgstr ""
-
-#: inc/shortcodes/js_composer_bridge.php:2042
-#: inc/shortcodes/js_composer_bridge.php:2956
-msgid "Pagination"
 msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:2048
 #: inc/shortcodes/js_composer_bridge.php:2962
+msgid "Pagination"
+msgstr ""
+
+#: inc/shortcodes/js_composer_bridge.php:2054
+#: inc/shortcodes/js_composer_bridge.php:2968
 msgid "Pagination mode"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2063
-#: inc/shortcodes/js_composer_bridge.php:2115
-#: inc/shortcodes/js_composer_bridge.php:2166
-#: inc/shortcodes/js_composer_bridge.php:2203
-#: inc/shortcodes/js_composer_bridge.php:2977
-#: inc/shortcodes/js_composer_bridge.php:3029
-#: inc/shortcodes/js_composer_bridge.php:3080
-#: inc/shortcodes/js_composer_bridge.php:3117
-#: inc/shortcodes/js_composer_bridge.php:3675
+#: inc/shortcodes/js_composer_bridge.php:2069
+#: inc/shortcodes/js_composer_bridge.php:2121
+#: inc/shortcodes/js_composer_bridge.php:2172
+#: inc/shortcodes/js_composer_bridge.php:2209
+#: inc/shortcodes/js_composer_bridge.php:2983
+#: inc/shortcodes/js_composer_bridge.php:3035
+#: inc/shortcodes/js_composer_bridge.php:3086
+#: inc/shortcodes/js_composer_bridge.php:3123
+#: inc/shortcodes/js_composer_bridge.php:3681
 msgid "Total number of posts"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2072
-#: inc/shortcodes/js_composer_bridge.php:2124
-#: inc/shortcodes/js_composer_bridge.php:2175
-#: inc/shortcodes/js_composer_bridge.php:2212
-#: inc/shortcodes/js_composer_bridge.php:2986
-#: inc/shortcodes/js_composer_bridge.php:3038
-#: inc/shortcodes/js_composer_bridge.php:3089
-#: inc/shortcodes/js_composer_bridge.php:3126
-#: inc/shortcodes/js_composer_bridge.php:3680
+#: inc/shortcodes/js_composer_bridge.php:2078
+#: inc/shortcodes/js_composer_bridge.php:2130
+#: inc/shortcodes/js_composer_bridge.php:2181
+#: inc/shortcodes/js_composer_bridge.php:2218
+#: inc/shortcodes/js_composer_bridge.php:2992
+#: inc/shortcodes/js_composer_bridge.php:3044
+#: inc/shortcodes/js_composer_bridge.php:3095
+#: inc/shortcodes/js_composer_bridge.php:3132
+#: inc/shortcodes/js_composer_bridge.php:3686
 msgid "Leave empty to display all posts."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2076
-#: inc/shortcodes/js_composer_bridge.php:2127
-#: inc/shortcodes/js_composer_bridge.php:2178
-#: inc/shortcodes/js_composer_bridge.php:2215
-#: inc/shortcodes/js_composer_bridge.php:2990
-#: inc/shortcodes/js_composer_bridge.php:3041
-#: inc/shortcodes/js_composer_bridge.php:3092
-#: inc/shortcodes/js_composer_bridge.php:3129
+#: inc/shortcodes/js_composer_bridge.php:2082
+#: inc/shortcodes/js_composer_bridge.php:2133
+#: inc/shortcodes/js_composer_bridge.php:2184
+#: inc/shortcodes/js_composer_bridge.php:2221
+#: inc/shortcodes/js_composer_bridge.php:2996
+#: inc/shortcodes/js_composer_bridge.php:3047
+#: inc/shortcodes/js_composer_bridge.php:3098
+#: inc/shortcodes/js_composer_bridge.php:3135
 msgid "Number of posts to display on one page"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2085
-#: inc/shortcodes/js_composer_bridge.php:2136
-#: inc/shortcodes/js_composer_bridge.php:2187
-#: inc/shortcodes/js_composer_bridge.php:2224
-#: inc/shortcodes/js_composer_bridge.php:2999
-#: inc/shortcodes/js_composer_bridge.php:3050
-#: inc/shortcodes/js_composer_bridge.php:3101
-#: inc/shortcodes/js_composer_bridge.php:3138
+#: inc/shortcodes/js_composer_bridge.php:2091
+#: inc/shortcodes/js_composer_bridge.php:2142
+#: inc/shortcodes/js_composer_bridge.php:2193
+#: inc/shortcodes/js_composer_bridge.php:2230
+#: inc/shortcodes/js_composer_bridge.php:3005
+#: inc/shortcodes/js_composer_bridge.php:3056
+#: inc/shortcodes/js_composer_bridge.php:3107
+#: inc/shortcodes/js_composer_bridge.php:3144
 msgid "Leave empty to use number from wp settings."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2088
-#: inc/shortcodes/js_composer_bridge.php:2139
-#: inc/shortcodes/js_composer_bridge.php:3002
-#: inc/shortcodes/js_composer_bridge.php:3053
+#: inc/shortcodes/js_composer_bridge.php:2094
+#: inc/shortcodes/js_composer_bridge.php:2145
+#: inc/shortcodes/js_composer_bridge.php:3008
+#: inc/shortcodes/js_composer_bridge.php:3059
 msgid "Show all pages in paginator"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2102
-#: inc/shortcodes/js_composer_bridge.php:2153
-#: inc/shortcodes/js_composer_bridge.php:2190
-#: inc/shortcodes/js_composer_bridge.php:3016
-#: inc/shortcodes/js_composer_bridge.php:3067
-#: inc/shortcodes/js_composer_bridge.php:3104
+#: inc/shortcodes/js_composer_bridge.php:2108
+#: inc/shortcodes/js_composer_bridge.php:2159
+#: inc/shortcodes/js_composer_bridge.php:2196
+#: inc/shortcodes/js_composer_bridge.php:3022
+#: inc/shortcodes/js_composer_bridge.php:3073
+#: inc/shortcodes/js_composer_bridge.php:3110
 msgid "Gap before pagination"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2111
-#: inc/shortcodes/js_composer_bridge.php:2162
-#: inc/shortcodes/js_composer_bridge.php:2199
-#: inc/shortcodes/js_composer_bridge.php:2676
-#: inc/shortcodes/js_composer_bridge.php:3025
-#: inc/shortcodes/js_composer_bridge.php:3076
-#: inc/shortcodes/js_composer_bridge.php:3113
-#: inc/shortcodes/js_composer_bridge.php:3602
+#: inc/shortcodes/js_composer_bridge.php:2117
+#: inc/shortcodes/js_composer_bridge.php:2168
+#: inc/shortcodes/js_composer_bridge.php:2205
+#: inc/shortcodes/js_composer_bridge.php:2682
+#: inc/shortcodes/js_composer_bridge.php:3031
+#: inc/shortcodes/js_composer_bridge.php:3082
+#: inc/shortcodes/js_composer_bridge.php:3119
+#: inc/shortcodes/js_composer_bridge.php:3608
 msgid "Leave empty to use default gap"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2229
-#: inc/shortcodes/js_composer_bridge.php:3155
-#: inc/shortcodes/js_composer_bridge.php:3964
+#: inc/shortcodes/js_composer_bridge.php:2235
+#: inc/shortcodes/js_composer_bridge.php:3161
+#: inc/shortcodes/js_composer_bridge.php:3970
 msgid "Post Title"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2236
-#: inc/shortcodes/js_composer_bridge.php:2331
-#: inc/shortcodes/js_composer_bridge.php:2408
-#: inc/shortcodes/js_composer_bridge.php:3162
-#: inc/shortcodes/js_composer_bridge.php:3257
-#: inc/shortcodes/js_composer_bridge.php:3334
-#: inc/shortcodes/js_composer_bridge.php:3971
-#: inc/shortcodes/js_composer_bridge.php:4066
-#: inc/shortcodes/js_composer_bridge.php:4143
-#: inc/shortcodes/js_composer_bridge.php:6303
+#: inc/shortcodes/js_composer_bridge.php:2242
+#: inc/shortcodes/js_composer_bridge.php:2337
+#: inc/shortcodes/js_composer_bridge.php:2414
+#: inc/shortcodes/js_composer_bridge.php:3168
+#: inc/shortcodes/js_composer_bridge.php:3263
+#: inc/shortcodes/js_composer_bridge.php:3340
+#: inc/shortcodes/js_composer_bridge.php:3977
+#: inc/shortcodes/js_composer_bridge.php:4072
+#: inc/shortcodes/js_composer_bridge.php:4149
+#: inc/shortcodes/js_composer_bridge.php:6309
 msgid "Font style"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2249
-#: inc/shortcodes/js_composer_bridge.php:6315
+#: inc/shortcodes/js_composer_bridge.php:2255
+#: inc/shortcodes/js_composer_bridge.php:6321
 msgid "Leave empty to use H3 font size."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2253
-#: inc/shortcodes/js_composer_bridge.php:2348
-#: inc/shortcodes/js_composer_bridge.php:2433
-#: inc/shortcodes/js_composer_bridge.php:3179
-#: inc/shortcodes/js_composer_bridge.php:3274
-#: inc/shortcodes/js_composer_bridge.php:3359
-#: inc/shortcodes/js_composer_bridge.php:3988
-#: inc/shortcodes/js_composer_bridge.php:4083
-#: inc/shortcodes/js_composer_bridge.php:4168
-#: inc/shortcodes/js_composer_bridge.php:6318
+#: inc/shortcodes/js_composer_bridge.php:2259
+#: inc/shortcodes/js_composer_bridge.php:2354
+#: inc/shortcodes/js_composer_bridge.php:2439
+#: inc/shortcodes/js_composer_bridge.php:3185
+#: inc/shortcodes/js_composer_bridge.php:3280
+#: inc/shortcodes/js_composer_bridge.php:3365
+#: inc/shortcodes/js_composer_bridge.php:3994
+#: inc/shortcodes/js_composer_bridge.php:4089
+#: inc/shortcodes/js_composer_bridge.php:4174
+#: inc/shortcodes/js_composer_bridge.php:6324
 msgid "Line height"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2259
-#: inc/shortcodes/js_composer_bridge.php:6324
+#: inc/shortcodes/js_composer_bridge.php:2265
+#: inc/shortcodes/js_composer_bridge.php:6330
 msgid "Leave empty to use H3 line height."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2263
-#: inc/shortcodes/js_composer_bridge.php:2358
-#: inc/shortcodes/js_composer_bridge.php:2447
-#: inc/shortcodes/js_composer_bridge.php:2528
-#: inc/shortcodes/js_composer_bridge.php:2583
-#: inc/shortcodes/js_composer_bridge.php:2686
-#: inc/shortcodes/js_composer_bridge.php:3189
-#: inc/shortcodes/js_composer_bridge.php:3284
-#: inc/shortcodes/js_composer_bridge.php:3373
-#: inc/shortcodes/js_composer_bridge.php:3454
-#: inc/shortcodes/js_composer_bridge.php:3509
-#: inc/shortcodes/js_composer_bridge.php:3612
-#: inc/shortcodes/js_composer_bridge.php:3998
-#: inc/shortcodes/js_composer_bridge.php:4093
-#: inc/shortcodes/js_composer_bridge.php:4182
-#: inc/shortcodes/js_composer_bridge.php:4263
-#: inc/shortcodes/js_composer_bridge.php:4318
-#: inc/shortcodes/js_composer_bridge.php:6327
+#: inc/shortcodes/js_composer_bridge.php:2269
+#: inc/shortcodes/js_composer_bridge.php:2364
+#: inc/shortcodes/js_composer_bridge.php:2453
+#: inc/shortcodes/js_composer_bridge.php:2534
+#: inc/shortcodes/js_composer_bridge.php:2589
+#: inc/shortcodes/js_composer_bridge.php:2692
+#: inc/shortcodes/js_composer_bridge.php:3195
+#: inc/shortcodes/js_composer_bridge.php:3290
+#: inc/shortcodes/js_composer_bridge.php:3379
+#: inc/shortcodes/js_composer_bridge.php:3460
+#: inc/shortcodes/js_composer_bridge.php:3515
+#: inc/shortcodes/js_composer_bridge.php:3618
+#: inc/shortcodes/js_composer_bridge.php:4004
+#: inc/shortcodes/js_composer_bridge.php:4099
+#: inc/shortcodes/js_composer_bridge.php:4188
+#: inc/shortcodes/js_composer_bridge.php:4269
+#: inc/shortcodes/js_composer_bridge.php:4324
+#: inc/shortcodes/js_composer_bridge.php:6333
 msgid "Font color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2267
-#: inc/shortcodes/js_composer_bridge.php:2690
-#: inc/shortcodes/js_composer_bridge.php:3193
-#: inc/shortcodes/js_composer_bridge.php:3616
-#: inc/shortcodes/js_composer_bridge.php:4002
-#: inc/shortcodes/js_composer_bridge.php:6331
+#: inc/shortcodes/js_composer_bridge.php:2273
+#: inc/shortcodes/js_composer_bridge.php:2696
+#: inc/shortcodes/js_composer_bridge.php:3199
+#: inc/shortcodes/js_composer_bridge.php:3622
+#: inc/shortcodes/js_composer_bridge.php:4008
+#: inc/shortcodes/js_composer_bridge.php:6337
 msgid "Leave empty to use headers color."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2271
-#: inc/shortcodes/js_composer_bridge.php:3197
-#: inc/shortcodes/js_composer_bridge.php:4006
+#: inc/shortcodes/js_composer_bridge.php:2277
+#: inc/shortcodes/js_composer_bridge.php:3203
+#: inc/shortcodes/js_composer_bridge.php:4012
 msgid "Gap below title"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2280
-#: inc/shortcodes/js_composer_bridge.php:3206
-#: inc/shortcodes/js_composer_bridge.php:4015
+#: inc/shortcodes/js_composer_bridge.php:2286
+#: inc/shortcodes/js_composer_bridge.php:3212
+#: inc/shortcodes/js_composer_bridge.php:4021
 msgid "Meta Information"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2287
-#: inc/shortcodes/js_composer_bridge.php:3213
-#: inc/shortcodes/js_composer_bridge.php:4022
+#: inc/shortcodes/js_composer_bridge.php:2293
+#: inc/shortcodes/js_composer_bridge.php:3219
+#: inc/shortcodes/js_composer_bridge.php:4028
 msgid "Show post date"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2298
-#: inc/shortcodes/js_composer_bridge.php:3224
-#: inc/shortcodes/js_composer_bridge.php:4033
+#: inc/shortcodes/js_composer_bridge.php:2304
+#: inc/shortcodes/js_composer_bridge.php:3230
+#: inc/shortcodes/js_composer_bridge.php:4039
 msgid "Show post categories"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2309
-#: inc/shortcodes/js_composer_bridge.php:3235
-#: inc/shortcodes/js_composer_bridge.php:4044
+#: inc/shortcodes/js_composer_bridge.php:2315
+#: inc/shortcodes/js_composer_bridge.php:3241
+#: inc/shortcodes/js_composer_bridge.php:4050
 msgid "Show post author"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2320
-#: inc/shortcodes/js_composer_bridge.php:3246
-#: inc/shortcodes/js_composer_bridge.php:4055
+#: inc/shortcodes/js_composer_bridge.php:2326
+#: inc/shortcodes/js_composer_bridge.php:3252
+#: inc/shortcodes/js_composer_bridge.php:4061
 msgid "Show post comments"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2344
-#: inc/shortcodes/js_composer_bridge.php:3270
-#: inc/shortcodes/js_composer_bridge.php:4079
+#: inc/shortcodes/js_composer_bridge.php:2350
+#: inc/shortcodes/js_composer_bridge.php:3276
+#: inc/shortcodes/js_composer_bridge.php:4085
 msgid "Leave empty to use small font size."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2354
-#: inc/shortcodes/js_composer_bridge.php:3280
-#: inc/shortcodes/js_composer_bridge.php:4089
+#: inc/shortcodes/js_composer_bridge.php:2360
+#: inc/shortcodes/js_composer_bridge.php:3286
+#: inc/shortcodes/js_composer_bridge.php:4095
 msgid "Leave empty to use small line height."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2362
-#: inc/shortcodes/js_composer_bridge.php:3288
-#: inc/shortcodes/js_composer_bridge.php:4097
+#: inc/shortcodes/js_composer_bridge.php:2368
+#: inc/shortcodes/js_composer_bridge.php:3294
+#: inc/shortcodes/js_composer_bridge.php:4103
 msgid "Leave empty to use secondary text color."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2366
-#: inc/shortcodes/js_composer_bridge.php:3292
-#: inc/shortcodes/js_composer_bridge.php:4101
+#: inc/shortcodes/js_composer_bridge.php:2372
+#: inc/shortcodes/js_composer_bridge.php:3298
+#: inc/shortcodes/js_composer_bridge.php:4107
 msgid "Gap below meta info"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2376
-#: inc/shortcodes/js_composer_bridge.php:3302
-#: inc/shortcodes/js_composer_bridge.php:4111
+#: inc/shortcodes/js_composer_bridge.php:2382
+#: inc/shortcodes/js_composer_bridge.php:3308
+#: inc/shortcodes/js_composer_bridge.php:4117
 msgid "Text"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2383
-#: inc/shortcodes/js_composer_bridge.php:3309
-#: inc/shortcodes/js_composer_bridge.php:4118
+#: inc/shortcodes/js_composer_bridge.php:2389
+#: inc/shortcodes/js_composer_bridge.php:3315
+#: inc/shortcodes/js_composer_bridge.php:4124
 msgid "Post content or excerpt"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2396
-#: inc/shortcodes/js_composer_bridge.php:3322
-#: inc/shortcodes/js_composer_bridge.php:4131
+#: inc/shortcodes/js_composer_bridge.php:2402
+#: inc/shortcodes/js_composer_bridge.php:3328
+#: inc/shortcodes/js_composer_bridge.php:4137
 msgid "Excerpt maximum number of words"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2429
+#: inc/shortcodes/js_composer_bridge.php:2435
 msgid "Leave empty to use large font size."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2443
+#: inc/shortcodes/js_composer_bridge.php:2449
 msgid "Leave empty to use large line height."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2455
-#: inc/shortcodes/js_composer_bridge.php:3381
-#: inc/shortcodes/js_composer_bridge.php:4190
+#: inc/shortcodes/js_composer_bridge.php:2461
+#: inc/shortcodes/js_composer_bridge.php:3387
+#: inc/shortcodes/js_composer_bridge.php:4196
 msgid "Leave empty to use primary text color."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2459
-#: inc/shortcodes/js_composer_bridge.php:3385
-#: inc/shortcodes/js_composer_bridge.php:4194
+#: inc/shortcodes/js_composer_bridge.php:2465
+#: inc/shortcodes/js_composer_bridge.php:3391
+#: inc/shortcodes/js_composer_bridge.php:4200
 msgid "Gap below text"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2473
-#: inc/shortcodes/js_composer_bridge.php:3399
-#: inc/shortcodes/js_composer_bridge.php:4208
+#: inc/shortcodes/js_composer_bridge.php:2479
+#: inc/shortcodes/js_composer_bridge.php:3405
+#: inc/shortcodes/js_composer_bridge.php:4214
 msgid "\"Read More\" Button"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2480
-#: inc/shortcodes/js_composer_bridge.php:3406
-#: inc/shortcodes/js_composer_bridge.php:4215
+#: inc/shortcodes/js_composer_bridge.php:2486
+#: inc/shortcodes/js_composer_bridge.php:3412
+#: inc/shortcodes/js_composer_bridge.php:4221
 msgid "\"Read more\" button"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2493
-#: inc/shortcodes/js_composer_bridge.php:3419
-#: inc/shortcodes/js_composer_bridge.php:4228
+#: inc/shortcodes/js_composer_bridge.php:2499
+#: inc/shortcodes/js_composer_bridge.php:3425
+#: inc/shortcodes/js_composer_bridge.php:4234
 msgid "Button text"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2510
-#: inc/shortcodes/js_composer_bridge.php:3436
-#: inc/shortcodes/js_composer_bridge.php:4245
+#: inc/shortcodes/js_composer_bridge.php:2516
+#: inc/shortcodes/js_composer_bridge.php:3442
+#: inc/shortcodes/js_composer_bridge.php:4251
 msgid "Fancy Date"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2514
-#: inc/shortcodes/js_composer_bridge.php:2525
-#: inc/shortcodes/js_composer_bridge.php:2537
-#: inc/shortcodes/js_composer_bridge.php:2549
-#: inc/shortcodes/js_composer_bridge.php:2561
-#: inc/shortcodes/js_composer_bridge.php:2569
-#: inc/shortcodes/js_composer_bridge.php:2580
-#: inc/shortcodes/js_composer_bridge.php:2592
-#: inc/shortcodes/js_composer_bridge.php:2604
-#: inc/shortcodes/js_composer_bridge.php:3440
-#: inc/shortcodes/js_composer_bridge.php:3451
-#: inc/shortcodes/js_composer_bridge.php:3463
-#: inc/shortcodes/js_composer_bridge.php:3475
-#: inc/shortcodes/js_composer_bridge.php:3487
-#: inc/shortcodes/js_composer_bridge.php:3495
-#: inc/shortcodes/js_composer_bridge.php:3506
-#: inc/shortcodes/js_composer_bridge.php:3518
-#: inc/shortcodes/js_composer_bridge.php:3530
-#: inc/shortcodes/js_composer_bridge.php:4249
-#: inc/shortcodes/js_composer_bridge.php:4260
-#: inc/shortcodes/js_composer_bridge.php:4272
-#: inc/shortcodes/js_composer_bridge.php:4284
-#: inc/shortcodes/js_composer_bridge.php:4296
-#: inc/shortcodes/js_composer_bridge.php:4304
-#: inc/shortcodes/js_composer_bridge.php:4315
-#: inc/shortcodes/js_composer_bridge.php:4327
-#: inc/shortcodes/js_composer_bridge.php:4339
+#: inc/shortcodes/js_composer_bridge.php:2520
+#: inc/shortcodes/js_composer_bridge.php:2531
+#: inc/shortcodes/js_composer_bridge.php:2543
+#: inc/shortcodes/js_composer_bridge.php:2555
+#: inc/shortcodes/js_composer_bridge.php:2567
+#: inc/shortcodes/js_composer_bridge.php:2575
+#: inc/shortcodes/js_composer_bridge.php:2586
+#: inc/shortcodes/js_composer_bridge.php:2598
+#: inc/shortcodes/js_composer_bridge.php:2610
+#: inc/shortcodes/js_composer_bridge.php:3446
+#: inc/shortcodes/js_composer_bridge.php:3457
+#: inc/shortcodes/js_composer_bridge.php:3469
+#: inc/shortcodes/js_composer_bridge.php:3481
+#: inc/shortcodes/js_composer_bridge.php:3493
+#: inc/shortcodes/js_composer_bridge.php:3501
+#: inc/shortcodes/js_composer_bridge.php:3512
+#: inc/shortcodes/js_composer_bridge.php:3524
+#: inc/shortcodes/js_composer_bridge.php:3536
+#: inc/shortcodes/js_composer_bridge.php:4255
+#: inc/shortcodes/js_composer_bridge.php:4266
+#: inc/shortcodes/js_composer_bridge.php:4278
+#: inc/shortcodes/js_composer_bridge.php:4290
+#: inc/shortcodes/js_composer_bridge.php:4302
+#: inc/shortcodes/js_composer_bridge.php:4310
+#: inc/shortcodes/js_composer_bridge.php:4321
+#: inc/shortcodes/js_composer_bridge.php:4333
+#: inc/shortcodes/js_composer_bridge.php:4345
 msgid "Fancy Elements"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2517
-#: inc/shortcodes/js_composer_bridge.php:3443
-#: inc/shortcodes/js_composer_bridge.php:4252
+#: inc/shortcodes/js_composer_bridge.php:2523
+#: inc/shortcodes/js_composer_bridge.php:3449
+#: inc/shortcodes/js_composer_bridge.php:4258
 msgid "Show Fancy date"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2536
-#: inc/shortcodes/js_composer_bridge.php:2548
-#: inc/shortcodes/js_composer_bridge.php:3462
-#: inc/shortcodes/js_composer_bridge.php:3474
-#: inc/shortcodes/js_composer_bridge.php:4271
-#: inc/shortcodes/js_composer_bridge.php:4283
+#: inc/shortcodes/js_composer_bridge.php:2542
+#: inc/shortcodes/js_composer_bridge.php:2554
+#: inc/shortcodes/js_composer_bridge.php:3468
+#: inc/shortcodes/js_composer_bridge.php:3480
+#: inc/shortcodes/js_composer_bridge.php:4277
+#: inc/shortcodes/js_composer_bridge.php:4289
 msgid "Leave empty to use predefined color."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2552
-#: inc/shortcodes/js_composer_bridge.php:3478
-#: inc/shortcodes/js_composer_bridge.php:4287
+#: inc/shortcodes/js_composer_bridge.php:2558
+#: inc/shortcodes/js_composer_bridge.php:3484
+#: inc/shortcodes/js_composer_bridge.php:4293
 msgid "Line color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2560
-#: inc/shortcodes/js_composer_bridge.php:2698
-#: inc/shortcodes/js_composer_bridge.php:3486
-#: inc/shortcodes/js_composer_bridge.php:3624
-#: inc/shortcodes/js_composer_bridge.php:4295
+#: inc/shortcodes/js_composer_bridge.php:2566
+#: inc/shortcodes/js_composer_bridge.php:2704
+#: inc/shortcodes/js_composer_bridge.php:3492
+#: inc/shortcodes/js_composer_bridge.php:3630
+#: inc/shortcodes/js_composer_bridge.php:4301
 msgid "Leave empty to use accent color."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2565
-#: inc/shortcodes/js_composer_bridge.php:3491
-#: inc/shortcodes/js_composer_bridge.php:4300
+#: inc/shortcodes/js_composer_bridge.php:2571
+#: inc/shortcodes/js_composer_bridge.php:3497
+#: inc/shortcodes/js_composer_bridge.php:4306
 msgid "Fancy Categories"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2572
-#: inc/shortcodes/js_composer_bridge.php:3498
-#: inc/shortcodes/js_composer_bridge.php:4307
+#: inc/shortcodes/js_composer_bridge.php:2578
+#: inc/shortcodes/js_composer_bridge.php:3504
+#: inc/shortcodes/js_composer_bridge.php:4313
 msgid "Show fancy categories"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2591
-#: inc/shortcodes/js_composer_bridge.php:2603
-#: inc/shortcodes/js_composer_bridge.php:3517
-#: inc/shortcodes/js_composer_bridge.php:3529
-#: inc/shortcodes/js_composer_bridge.php:4326
-#: inc/shortcodes/js_composer_bridge.php:4338
+#: inc/shortcodes/js_composer_bridge.php:2597
+#: inc/shortcodes/js_composer_bridge.php:2609
+#: inc/shortcodes/js_composer_bridge.php:3523
+#: inc/shortcodes/js_composer_bridge.php:3535
+#: inc/shortcodes/js_composer_bridge.php:4332
+#: inc/shortcodes/js_composer_bridge.php:4344
 msgid "Leave empty to use predefined color or category color indication."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2608
-#: inc/shortcodes/js_composer_bridge.php:3534
+#: inc/shortcodes/js_composer_bridge.php:2614
+#: inc/shortcodes/js_composer_bridge.php:3540
 msgid "Caterogiazation & Ordering settings"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2612
-#: inc/shortcodes/js_composer_bridge.php:2624
-#: inc/shortcodes/js_composer_bridge.php:2635
-#: inc/shortcodes/js_composer_bridge.php:2646
-#: inc/shortcodes/js_composer_bridge.php:2657
-#: inc/shortcodes/js_composer_bridge.php:2668
-#: inc/shortcodes/js_composer_bridge.php:2677
+#: inc/shortcodes/js_composer_bridge.php:2618
+#: inc/shortcodes/js_composer_bridge.php:2630
+#: inc/shortcodes/js_composer_bridge.php:2641
+#: inc/shortcodes/js_composer_bridge.php:2652
+#: inc/shortcodes/js_composer_bridge.php:2663
+#: inc/shortcodes/js_composer_bridge.php:2674
 #: inc/shortcodes/js_composer_bridge.php:2683
-#: inc/shortcodes/js_composer_bridge.php:2691
-#: inc/shortcodes/js_composer_bridge.php:2699
-#: inc/shortcodes/js_composer_bridge.php:3538
-#: inc/shortcodes/js_composer_bridge.php:3550
-#: inc/shortcodes/js_composer_bridge.php:3561
-#: inc/shortcodes/js_composer_bridge.php:3572
-#: inc/shortcodes/js_composer_bridge.php:3583
-#: inc/shortcodes/js_composer_bridge.php:3594
-#: inc/shortcodes/js_composer_bridge.php:3603
+#: inc/shortcodes/js_composer_bridge.php:2689
+#: inc/shortcodes/js_composer_bridge.php:2697
+#: inc/shortcodes/js_composer_bridge.php:2705
+#: inc/shortcodes/js_composer_bridge.php:3544
+#: inc/shortcodes/js_composer_bridge.php:3556
+#: inc/shortcodes/js_composer_bridge.php:3567
+#: inc/shortcodes/js_composer_bridge.php:3578
+#: inc/shortcodes/js_composer_bridge.php:3589
+#: inc/shortcodes/js_composer_bridge.php:3600
 #: inc/shortcodes/js_composer_bridge.php:3609
-#: inc/shortcodes/js_composer_bridge.php:3617
-#: inc/shortcodes/js_composer_bridge.php:3625
+#: inc/shortcodes/js_composer_bridge.php:3615
+#: inc/shortcodes/js_composer_bridge.php:3623
+#: inc/shortcodes/js_composer_bridge.php:3631
 msgid "List"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2615
-#: inc/shortcodes/js_composer_bridge.php:3541
-#: inc/shortcodes/js_composer_bridge.php:3654
+#: inc/shortcodes/js_composer_bridge.php:2621
+#: inc/shortcodes/js_composer_bridge.php:3547
+#: inc/shortcodes/js_composer_bridge.php:3660
 msgid "Order"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2638
-#: inc/shortcodes/js_composer_bridge.php:3564
+#: inc/shortcodes/js_composer_bridge.php:2644
+#: inc/shortcodes/js_composer_bridge.php:3570
 msgid "Show categories filter"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2649
-#: inc/shortcodes/js_composer_bridge.php:3575
+#: inc/shortcodes/js_composer_bridge.php:2655
+#: inc/shortcodes/js_composer_bridge.php:3581
 msgid "Show name / date ordering"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2660
-#: inc/shortcodes/js_composer_bridge.php:3586
+#: inc/shortcodes/js_composer_bridge.php:2666
+#: inc/shortcodes/js_composer_bridge.php:3592
 msgid "Show asc. / desc. ordering"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2671
-#: inc/shortcodes/js_composer_bridge.php:3597
+#: inc/shortcodes/js_composer_bridge.php:2677
+#: inc/shortcodes/js_composer_bridge.php:3603
 msgid "Gap below categorization & ordering"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2680
-#: inc/shortcodes/js_composer_bridge.php:3606
+#: inc/shortcodes/js_composer_bridge.php:2686
+#: inc/shortcodes/js_composer_bridge.php:3612
 msgid "Categorization, ordering & pagination colors"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2694
-#: inc/shortcodes/js_composer_bridge.php:3620
+#: inc/shortcodes/js_composer_bridge.php:2700
+#: inc/shortcodes/js_composer_bridge.php:3626
 msgid "Accent color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2706
+#: inc/shortcodes/js_composer_bridge.php:2712
 msgid "Blog Masonry & Grid"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2729
+#: inc/shortcodes/js_composer_bridge.php:2735
 msgid "Mode"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2766
+#: inc/shortcodes/js_composer_bridge.php:2772
 msgid "Content area overlap"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2778
-#: inc/shortcodes/js_composer_bridge.php:3728
+#: inc/shortcodes/js_composer_bridge.php:2784
+#: inc/shortcodes/js_composer_bridge.php:3734
 msgid "Overlay background margins"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2815
+#: inc/shortcodes/js_composer_bridge.php:2821
 msgid ""
 "Leave empty to use default content boxes color & decoration. Note that "
 "decoration doesn't apply to gradient backgrounds."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2871
-#: inc/shortcodes/js_composer_bridge.php:3821
+#: inc/shortcodes/js_composer_bridge.php:2877
+#: inc/shortcodes/js_composer_bridge.php:3827
 msgid "Enable hover background color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2882
-#: inc/shortcodes/js_composer_bridge.php:3831
-#: inc/shortcodes/js_composer_bridge.php:6421
+#: inc/shortcodes/js_composer_bridge.php:2888
+#: inc/shortcodes/js_composer_bridge.php:3837
+#: inc/shortcodes/js_composer_bridge.php:6427
 msgid "Columns & Responsiveness"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2888
+#: inc/shortcodes/js_composer_bridge.php:2894
 msgid "Responsiveness mode"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2899
+#: inc/shortcodes/js_composer_bridge.php:2905
 msgid "Number of columns"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2910
+#: inc/shortcodes/js_composer_bridge.php:2916
 msgid "Column minimum width"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2922
-#: inc/shortcodes/js_composer_bridge.php:5221
+#: inc/shortcodes/js_composer_bridge.php:2928
+#: inc/shortcodes/js_composer_bridge.php:5227
 msgid "Desired columns number"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2935
+#: inc/shortcodes/js_composer_bridge.php:2941
 msgid "Gap between columns"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2940
+#: inc/shortcodes/js_composer_bridge.php:2946
 msgid ""
 "Please note that this setting affects post paddings. So, for example: a "
 "value 10px will give you 20px gaps between posts)"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2944
+#: inc/shortcodes/js_composer_bridge.php:2950
 msgid "Make all posts the same width"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:2951
+#: inc/shortcodes/js_composer_bridge.php:2957
 msgid "Post wide/normal width can be chosen in single post options."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3175
-#: inc/shortcodes/js_composer_bridge.php:3984
+#: inc/shortcodes/js_composer_bridge.php:3181
+#: inc/shortcodes/js_composer_bridge.php:3990
 msgid "Leave empty to use H4 font size."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3185
-#: inc/shortcodes/js_composer_bridge.php:3994
+#: inc/shortcodes/js_composer_bridge.php:3191
+#: inc/shortcodes/js_composer_bridge.php:4000
 msgid "Leave empty to use H4 line height."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3355
-#: inc/shortcodes/js_composer_bridge.php:4164
+#: inc/shortcodes/js_composer_bridge.php:3361
+#: inc/shortcodes/js_composer_bridge.php:4170
 msgid "Leave empty to use medium font size."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3369
-#: inc/shortcodes/js_composer_bridge.php:4178
+#: inc/shortcodes/js_composer_bridge.php:3375
+#: inc/shortcodes/js_composer_bridge.php:4184
 msgid "Leave empty to use medium line height."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3637
+#: inc/shortcodes/js_composer_bridge.php:3643
 msgid "Blog Carousel"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3836
-#: inc/shortcodes/js_composer_bridge.php:6426
+#: inc/shortcodes/js_composer_bridge.php:3842
+#: inc/shortcodes/js_composer_bridge.php:6432
 #: inc/shortcodes/vc-extensions.php:214
 msgid "Desktop"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3843
-#: inc/shortcodes/js_composer_bridge.php:6433
+#: inc/shortcodes/js_composer_bridge.php:3849
+#: inc/shortcodes/js_composer_bridge.php:6439
 msgid "Laptop"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3850
-#: inc/shortcodes/js_composer_bridge.php:6440
+#: inc/shortcodes/js_composer_bridge.php:3856
+#: inc/shortcodes/js_composer_bridge.php:6446
 msgid "Hor. tablet "
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3857
-#: inc/shortcodes/js_composer_bridge.php:6447
+#: inc/shortcodes/js_composer_bridge.php:3863
+#: inc/shortcodes/js_composer_bridge.php:6453
 msgid "Vert. tablet"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3864
-#: inc/shortcodes/js_composer_bridge.php:6454
+#: inc/shortcodes/js_composer_bridge.php:3870
+#: inc/shortcodes/js_composer_bridge.php:6460
 msgid "Phone"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3871
-#: inc/shortcodes/js_composer_bridge.php:6461
+#: inc/shortcodes/js_composer_bridge.php:3877
+#: inc/shortcodes/js_composer_bridge.php:6467
 msgid "Gap between columns "
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3878
-#: inc/shortcodes/js_composer_bridge.php:6468
+#: inc/shortcodes/js_composer_bridge.php:3884
+#: inc/shortcodes/js_composer_bridge.php:6474
 msgid "Enable adaptive height"
-msgstr ""
-
-#: inc/shortcodes/js_composer_bridge.php:3888
-#: inc/shortcodes/js_composer_bridge.php:6478
-msgid "Scrolling"
 msgstr ""
 
 #: inc/shortcodes/js_composer_bridge.php:3894
 #: inc/shortcodes/js_composer_bridge.php:6484
+msgid "Scrolling"
+msgstr ""
+
+#: inc/shortcodes/js_composer_bridge.php:3900
+#: inc/shortcodes/js_composer_bridge.php:6490
 msgid "Scroll mode"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3905
-#: inc/shortcodes/js_composer_bridge.php:6495
+#: inc/shortcodes/js_composer_bridge.php:3911
+#: inc/shortcodes/js_composer_bridge.php:6501
 msgid "Transition speed"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3915
-#: inc/shortcodes/js_composer_bridge.php:6505
+#: inc/shortcodes/js_composer_bridge.php:3921
+#: inc/shortcodes/js_composer_bridge.php:6511
 msgid "Autoplay slides‏"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3925
-#: inc/shortcodes/js_composer_bridge.php:6515
+#: inc/shortcodes/js_composer_bridge.php:3931
+#: inc/shortcodes/js_composer_bridge.php:6521
 msgid "Autoplay speed"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3936
-#: inc/shortcodes/js_composer_bridge.php:6526
+#: inc/shortcodes/js_composer_bridge.php:3942
+#: inc/shortcodes/js_composer_bridge.php:6532
 msgid "Extra Class"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3943
-#: inc/shortcodes/js_composer_bridge.php:6533
+#: inc/shortcodes/js_composer_bridge.php:3949
+#: inc/shortcodes/js_composer_bridge.php:6539
 msgid "Extra class name (optional)"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:3946
-#: inc/shortcodes/js_composer_bridge.php:6536
+#: inc/shortcodes/js_composer_bridge.php:3952
+#: inc/shortcodes/js_composer_bridge.php:6542
 msgid ""
 "Style particular elements differently - add a class name and refer to it in "
 "custom CSS."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4343
-#: inc/shortcodes/js_composer_bridge.php:4354
-#: inc/shortcodes/js_composer_bridge.php:4365
-#: inc/shortcodes/js_composer_bridge.php:4376
-#: inc/shortcodes/js_composer_bridge.php:4387
-#: inc/shortcodes/js_composer_bridge.php:4400
-#: inc/shortcodes/js_composer_bridge.php:4411
-#: inc/shortcodes/js_composer_bridge.php:4424
-#: inc/shortcodes/js_composer_bridge.php:4437
-#: inc/shortcodes/js_composer_bridge.php:4449
-#: inc/shortcodes/js_composer_bridge.php:4461
-#: inc/shortcodes/js_composer_bridge.php:4472
-#: inc/shortcodes/js_composer_bridge.php:4484
-#: inc/shortcodes/js_composer_bridge.php:4496
-#: inc/shortcodes/js_composer_bridge.php:4511
-#: inc/shortcodes/js_composer_bridge.php:4523
-#: inc/shortcodes/js_composer_bridge.php:4534
-#: inc/shortcodes/js_composer_bridge.php:4546
-#: inc/shortcodes/js_composer_bridge.php:4558
-#: inc/shortcodes/js_composer_bridge.php:4573
-#: inc/shortcodes/js_composer_bridge.php:4586
-#: inc/shortcodes/js_composer_bridge.php:4597
-#: inc/shortcodes/js_composer_bridge.php:4609
-#: inc/shortcodes/js_composer_bridge.php:4625
-#: inc/shortcodes/js_composer_bridge.php:4641
-#: inc/shortcodes/js_composer_bridge.php:4653
-#: inc/shortcodes/js_composer_bridge.php:4666
-#: inc/shortcodes/js_composer_bridge.php:4677
-#: inc/shortcodes/js_composer_bridge.php:4689
-#: inc/shortcodes/js_composer_bridge.php:4705
-#: inc/shortcodes/js_composer_bridge.php:4721
-#: inc/shortcodes/js_composer_bridge.php:4733
-#: inc/shortcodes/js_composer_bridge.php:5473
-#: inc/shortcodes/js_composer_bridge.php:6541
-#: inc/shortcodes/js_composer_bridge.php:6552
-#: inc/shortcodes/js_composer_bridge.php:6563
-#: inc/shortcodes/js_composer_bridge.php:6574
-#: inc/shortcodes/js_composer_bridge.php:6585
-#: inc/shortcodes/js_composer_bridge.php:6598
-#: inc/shortcodes/js_composer_bridge.php:6609
-#: inc/shortcodes/js_composer_bridge.php:6622
-#: inc/shortcodes/js_composer_bridge.php:6635
-#: inc/shortcodes/js_composer_bridge.php:6647
-#: inc/shortcodes/js_composer_bridge.php:6659
-#: inc/shortcodes/js_composer_bridge.php:6670
-#: inc/shortcodes/js_composer_bridge.php:6682
-#: inc/shortcodes/js_composer_bridge.php:6694
-#: inc/shortcodes/js_composer_bridge.php:6709
-#: inc/shortcodes/js_composer_bridge.php:6721
-#: inc/shortcodes/js_composer_bridge.php:6732
-#: inc/shortcodes/js_composer_bridge.php:6744
-#: inc/shortcodes/js_composer_bridge.php:6756
-#: inc/shortcodes/js_composer_bridge.php:6771
-#: inc/shortcodes/js_composer_bridge.php:6784
-#: inc/shortcodes/js_composer_bridge.php:6795
-#: inc/shortcodes/js_composer_bridge.php:6807
-#: inc/shortcodes/js_composer_bridge.php:6823
-#: inc/shortcodes/js_composer_bridge.php:6839
-#: inc/shortcodes/js_composer_bridge.php:6851
-#: inc/shortcodes/js_composer_bridge.php:6864
-#: inc/shortcodes/js_composer_bridge.php:6875
-#: inc/shortcodes/js_composer_bridge.php:6887
-#: inc/shortcodes/js_composer_bridge.php:6903
-#: inc/shortcodes/js_composer_bridge.php:6919
-#: inc/shortcodes/js_composer_bridge.php:6931
+#: inc/shortcodes/js_composer_bridge.php:4349
+#: inc/shortcodes/js_composer_bridge.php:4360
+#: inc/shortcodes/js_composer_bridge.php:4371
+#: inc/shortcodes/js_composer_bridge.php:4382
+#: inc/shortcodes/js_composer_bridge.php:4393
+#: inc/shortcodes/js_composer_bridge.php:4406
+#: inc/shortcodes/js_composer_bridge.php:4417
+#: inc/shortcodes/js_composer_bridge.php:4430
+#: inc/shortcodes/js_composer_bridge.php:4443
+#: inc/shortcodes/js_composer_bridge.php:4455
+#: inc/shortcodes/js_composer_bridge.php:4467
+#: inc/shortcodes/js_composer_bridge.php:4478
+#: inc/shortcodes/js_composer_bridge.php:4490
+#: inc/shortcodes/js_composer_bridge.php:4502
+#: inc/shortcodes/js_composer_bridge.php:4517
+#: inc/shortcodes/js_composer_bridge.php:4529
+#: inc/shortcodes/js_composer_bridge.php:4540
+#: inc/shortcodes/js_composer_bridge.php:4552
+#: inc/shortcodes/js_composer_bridge.php:4564
+#: inc/shortcodes/js_composer_bridge.php:4579
+#: inc/shortcodes/js_composer_bridge.php:4592
+#: inc/shortcodes/js_composer_bridge.php:4603
+#: inc/shortcodes/js_composer_bridge.php:4615
+#: inc/shortcodes/js_composer_bridge.php:4631
+#: inc/shortcodes/js_composer_bridge.php:4647
+#: inc/shortcodes/js_composer_bridge.php:4659
+#: inc/shortcodes/js_composer_bridge.php:4672
+#: inc/shortcodes/js_composer_bridge.php:4683
+#: inc/shortcodes/js_composer_bridge.php:4695
+#: inc/shortcodes/js_composer_bridge.php:4711
+#: inc/shortcodes/js_composer_bridge.php:4727
+#: inc/shortcodes/js_composer_bridge.php:4739
+#: inc/shortcodes/js_composer_bridge.php:5479
+#: inc/shortcodes/js_composer_bridge.php:6547
+#: inc/shortcodes/js_composer_bridge.php:6558
+#: inc/shortcodes/js_composer_bridge.php:6569
+#: inc/shortcodes/js_composer_bridge.php:6580
+#: inc/shortcodes/js_composer_bridge.php:6591
+#: inc/shortcodes/js_composer_bridge.php:6604
+#: inc/shortcodes/js_composer_bridge.php:6615
+#: inc/shortcodes/js_composer_bridge.php:6628
+#: inc/shortcodes/js_composer_bridge.php:6641
+#: inc/shortcodes/js_composer_bridge.php:6653
+#: inc/shortcodes/js_composer_bridge.php:6665
+#: inc/shortcodes/js_composer_bridge.php:6676
+#: inc/shortcodes/js_composer_bridge.php:6688
+#: inc/shortcodes/js_composer_bridge.php:6700
+#: inc/shortcodes/js_composer_bridge.php:6715
+#: inc/shortcodes/js_composer_bridge.php:6727
+#: inc/shortcodes/js_composer_bridge.php:6738
+#: inc/shortcodes/js_composer_bridge.php:6750
+#: inc/shortcodes/js_composer_bridge.php:6762
+#: inc/shortcodes/js_composer_bridge.php:6777
+#: inc/shortcodes/js_composer_bridge.php:6790
+#: inc/shortcodes/js_composer_bridge.php:6801
+#: inc/shortcodes/js_composer_bridge.php:6813
+#: inc/shortcodes/js_composer_bridge.php:6829
+#: inc/shortcodes/js_composer_bridge.php:6845
+#: inc/shortcodes/js_composer_bridge.php:6857
+#: inc/shortcodes/js_composer_bridge.php:6870
+#: inc/shortcodes/js_composer_bridge.php:6881
+#: inc/shortcodes/js_composer_bridge.php:6893
+#: inc/shortcodes/js_composer_bridge.php:6909
+#: inc/shortcodes/js_composer_bridge.php:6925
+#: inc/shortcodes/js_composer_bridge.php:6937
 msgid "Arrows"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4344
-#: inc/shortcodes/js_composer_bridge.php:6542
+#: inc/shortcodes/js_composer_bridge.php:4350
+#: inc/shortcodes/js_composer_bridge.php:6548
 msgid "Show arrows"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4355
-#: inc/shortcodes/js_composer_bridge.php:6553
+#: inc/shortcodes/js_composer_bridge.php:4361
+#: inc/shortcodes/js_composer_bridge.php:6559
 msgid "Arrow Icon"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4366
-#: inc/shortcodes/js_composer_bridge.php:6564
+#: inc/shortcodes/js_composer_bridge.php:4372
+#: inc/shortcodes/js_composer_bridge.php:6570
 msgid "Choose icon for 'Next Arrow'"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4377
-#: inc/shortcodes/js_composer_bridge.php:6575
+#: inc/shortcodes/js_composer_bridge.php:4383
+#: inc/shortcodes/js_composer_bridge.php:6581
 msgid "Choose icon  for 'Prev Arrow'"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4388
-#: inc/shortcodes/js_composer_bridge.php:6586
+#: inc/shortcodes/js_composer_bridge.php:4394
+#: inc/shortcodes/js_composer_bridge.php:6592
 msgid "Arrow icon size"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4401
-#: inc/shortcodes/js_composer_bridge.php:6599
+#: inc/shortcodes/js_composer_bridge.php:4407
+#: inc/shortcodes/js_composer_bridge.php:6605
 msgid "Arrow Background"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4438
-#: inc/shortcodes/js_composer_bridge.php:6636
+#: inc/shortcodes/js_composer_bridge.php:4444
+#: inc/shortcodes/js_composer_bridge.php:6642
 msgid "Arrow border radius"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4450
-#: inc/shortcodes/js_composer_bridge.php:6648
+#: inc/shortcodes/js_composer_bridge.php:4456
+#: inc/shortcodes/js_composer_bridge.php:6654
 msgid "Arrow border width"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4462
-#: inc/shortcodes/js_composer_bridge.php:6660
+#: inc/shortcodes/js_composer_bridge.php:4468
+#: inc/shortcodes/js_composer_bridge.php:6666
 msgid "Color Setting"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4473
-#: inc/shortcodes/js_composer_bridge.php:6671
+#: inc/shortcodes/js_composer_bridge.php:4479
+#: inc/shortcodes/js_composer_bridge.php:6677
 msgid "Arrow icon color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4474
-#: inc/shortcodes/js_composer_bridge.php:4486
-#: inc/shortcodes/js_composer_bridge.php:4513
-#: inc/shortcodes/js_composer_bridge.php:4536
-#: inc/shortcodes/js_composer_bridge.php:4548
-#: inc/shortcodes/js_composer_bridge.php:4575
-#: inc/shortcodes/js_composer_bridge.php:4867
-#: inc/shortcodes/js_composer_bridge.php:4879
-#: inc/shortcodes/js_composer_bridge.php:6672
-#: inc/shortcodes/js_composer_bridge.php:6684
-#: inc/shortcodes/js_composer_bridge.php:6711
-#: inc/shortcodes/js_composer_bridge.php:6734
-#: inc/shortcodes/js_composer_bridge.php:6746
-#: inc/shortcodes/js_composer_bridge.php:6773
-#: inc/shortcodes/js_composer_bridge.php:7065
-#: inc/shortcodes/js_composer_bridge.php:7077
+#: inc/shortcodes/js_composer_bridge.php:4480
+#: inc/shortcodes/js_composer_bridge.php:4492
+#: inc/shortcodes/js_composer_bridge.php:4519
+#: inc/shortcodes/js_composer_bridge.php:4542
+#: inc/shortcodes/js_composer_bridge.php:4554
+#: inc/shortcodes/js_composer_bridge.php:4581
+#: inc/shortcodes/js_composer_bridge.php:4873
+#: inc/shortcodes/js_composer_bridge.php:4885
+#: inc/shortcodes/js_composer_bridge.php:6678
+#: inc/shortcodes/js_composer_bridge.php:6690
+#: inc/shortcodes/js_composer_bridge.php:6717
+#: inc/shortcodes/js_composer_bridge.php:6740
+#: inc/shortcodes/js_composer_bridge.php:6752
+#: inc/shortcodes/js_composer_bridge.php:6779
+#: inc/shortcodes/js_composer_bridge.php:7071
+#: inc/shortcodes/js_composer_bridge.php:7083
 msgid "Live empty to use accent color."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4485
-#: inc/shortcodes/js_composer_bridge.php:6683
+#: inc/shortcodes/js_composer_bridge.php:4491
+#: inc/shortcodes/js_composer_bridge.php:6689
 msgid "Arrow border color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4497
-#: inc/shortcodes/js_composer_bridge.php:6695
+#: inc/shortcodes/js_composer_bridge.php:4503
+#: inc/shortcodes/js_composer_bridge.php:6701
 msgid "Show arrow background"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4512
-#: inc/shortcodes/js_composer_bridge.php:6710
+#: inc/shortcodes/js_composer_bridge.php:4518
+#: inc/shortcodes/js_composer_bridge.php:6716
 msgid "Arrow background color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4524
-#: inc/shortcodes/js_composer_bridge.php:6722
+#: inc/shortcodes/js_composer_bridge.php:4530
+#: inc/shortcodes/js_composer_bridge.php:6728
 msgid "Hover Color Setting"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4535
-#: inc/shortcodes/js_composer_bridge.php:6733
+#: inc/shortcodes/js_composer_bridge.php:4541
+#: inc/shortcodes/js_composer_bridge.php:6739
 msgid "Arrow icon color hover"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4547
-#: inc/shortcodes/js_composer_bridge.php:6745
+#: inc/shortcodes/js_composer_bridge.php:4553
+#: inc/shortcodes/js_composer_bridge.php:6751
 msgid "Arrow border color hover "
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4559
-#: inc/shortcodes/js_composer_bridge.php:6757
+#: inc/shortcodes/js_composer_bridge.php:4565
+#: inc/shortcodes/js_composer_bridge.php:6763
 msgid "Show arrow background hover"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4574
-#: inc/shortcodes/js_composer_bridge.php:6772
+#: inc/shortcodes/js_composer_bridge.php:4580
+#: inc/shortcodes/js_composer_bridge.php:6778
 msgid "Arrow background hover color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4587
-#: inc/shortcodes/js_composer_bridge.php:6785
+#: inc/shortcodes/js_composer_bridge.php:4593
+#: inc/shortcodes/js_composer_bridge.php:6791
 msgid "Right Arrow Position"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4598
-#: inc/shortcodes/js_composer_bridge.php:4678
-#: inc/shortcodes/js_composer_bridge.php:6796
-#: inc/shortcodes/js_composer_bridge.php:6876
+#: inc/shortcodes/js_composer_bridge.php:4604
+#: inc/shortcodes/js_composer_bridge.php:4684
+#: inc/shortcodes/js_composer_bridge.php:6802
+#: inc/shortcodes/js_composer_bridge.php:6882
 msgid "Icon paddings"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4610
-#: inc/shortcodes/js_composer_bridge.php:4690
-#: inc/shortcodes/js_composer_bridge.php:4901
-#: inc/shortcodes/js_composer_bridge.php:6808
-#: inc/shortcodes/js_composer_bridge.php:6888
-#: inc/shortcodes/js_composer_bridge.php:7099
+#: inc/shortcodes/js_composer_bridge.php:4616
+#: inc/shortcodes/js_composer_bridge.php:4696
+#: inc/shortcodes/js_composer_bridge.php:4907
+#: inc/shortcodes/js_composer_bridge.php:6814
+#: inc/shortcodes/js_composer_bridge.php:6894
+#: inc/shortcodes/js_composer_bridge.php:7105
 msgid "Vertical position"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4626
-#: inc/shortcodes/js_composer_bridge.php:4706
-#: inc/shortcodes/js_composer_bridge.php:4917
-#: inc/shortcodes/js_composer_bridge.php:6824
-#: inc/shortcodes/js_composer_bridge.php:6904
-#: inc/shortcodes/js_composer_bridge.php:7115
+#: inc/shortcodes/js_composer_bridge.php:4632
+#: inc/shortcodes/js_composer_bridge.php:4712
+#: inc/shortcodes/js_composer_bridge.php:4923
+#: inc/shortcodes/js_composer_bridge.php:6830
+#: inc/shortcodes/js_composer_bridge.php:6910
+#: inc/shortcodes/js_composer_bridge.php:7121
 msgid "Horizontal position"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4642
-#: inc/shortcodes/js_composer_bridge.php:4722
-#: inc/shortcodes/js_composer_bridge.php:4933
-#: inc/shortcodes/js_composer_bridge.php:6840
-#: inc/shortcodes/js_composer_bridge.php:6920
-#: inc/shortcodes/js_composer_bridge.php:7131
+#: inc/shortcodes/js_composer_bridge.php:4648
+#: inc/shortcodes/js_composer_bridge.php:4728
+#: inc/shortcodes/js_composer_bridge.php:4939
+#: inc/shortcodes/js_composer_bridge.php:6846
+#: inc/shortcodes/js_composer_bridge.php:6926
+#: inc/shortcodes/js_composer_bridge.php:7137
 msgid "Vertical offset"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4654
-#: inc/shortcodes/js_composer_bridge.php:4734
-#: inc/shortcodes/js_composer_bridge.php:4945
-#: inc/shortcodes/js_composer_bridge.php:6852
-#: inc/shortcodes/js_composer_bridge.php:6932
-#: inc/shortcodes/js_composer_bridge.php:7143
+#: inc/shortcodes/js_composer_bridge.php:4660
+#: inc/shortcodes/js_composer_bridge.php:4740
+#: inc/shortcodes/js_composer_bridge.php:4951
+#: inc/shortcodes/js_composer_bridge.php:6858
+#: inc/shortcodes/js_composer_bridge.php:6938
+#: inc/shortcodes/js_composer_bridge.php:7149
 msgid "Horizontal offset"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4667
-#: inc/shortcodes/js_composer_bridge.php:6865
+#: inc/shortcodes/js_composer_bridge.php:4673
+#: inc/shortcodes/js_composer_bridge.php:6871
 msgid "Left Arrow Position"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4746
-#: inc/shortcodes/js_composer_bridge.php:4762
-#: inc/shortcodes/js_composer_bridge.php:4771
-#: inc/shortcodes/js_composer_bridge.php:4780
-#: inc/shortcodes/js_composer_bridge.php:4789
-#: inc/shortcodes/js_composer_bridge.php:6944
-#: inc/shortcodes/js_composer_bridge.php:6960
-#: inc/shortcodes/js_composer_bridge.php:6969
-#: inc/shortcodes/js_composer_bridge.php:6978
-#: inc/shortcodes/js_composer_bridge.php:6987
+#: inc/shortcodes/js_composer_bridge.php:4752
+#: inc/shortcodes/js_composer_bridge.php:4768
+#: inc/shortcodes/js_composer_bridge.php:4777
+#: inc/shortcodes/js_composer_bridge.php:4786
+#: inc/shortcodes/js_composer_bridge.php:4795
+#: inc/shortcodes/js_composer_bridge.php:6950
+#: inc/shortcodes/js_composer_bridge.php:6966
+#: inc/shortcodes/js_composer_bridge.php:6975
+#: inc/shortcodes/js_composer_bridge.php:6984
+#: inc/shortcodes/js_composer_bridge.php:6993
 msgid "Arrows Responsiveness"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4747
-#: inc/shortcodes/js_composer_bridge.php:6945
+#: inc/shortcodes/js_composer_bridge.php:4753
+#: inc/shortcodes/js_composer_bridge.php:6951
 msgid "Arrows responsiveness"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4763
-#: inc/shortcodes/js_composer_bridge.php:4772
-#: inc/shortcodes/js_composer_bridge.php:6961
-#: inc/shortcodes/js_composer_bridge.php:6970
+#: inc/shortcodes/js_composer_bridge.php:4769
+#: inc/shortcodes/js_composer_bridge.php:4778
+#: inc/shortcodes/js_composer_bridge.php:6967
+#: inc/shortcodes/js_composer_bridge.php:6976
 msgid "Enable if browser width is less then "
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4781
-#: inc/shortcodes/js_composer_bridge.php:6979
+#: inc/shortcodes/js_composer_bridge.php:4787
+#: inc/shortcodes/js_composer_bridge.php:6985
 msgid "Left arrow horizontal offset"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4790
-#: inc/shortcodes/js_composer_bridge.php:6988
+#: inc/shortcodes/js_composer_bridge.php:4796
+#: inc/shortcodes/js_composer_bridge.php:6994
 msgid "Right arrow horizontal offset"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4799
-#: inc/shortcodes/js_composer_bridge.php:4810
-#: inc/shortcodes/js_composer_bridge.php:4822
-#: inc/shortcodes/js_composer_bridge.php:4841
-#: inc/shortcodes/js_composer_bridge.php:4853
-#: inc/shortcodes/js_composer_bridge.php:4865
-#: inc/shortcodes/js_composer_bridge.php:4877
-#: inc/shortcodes/js_composer_bridge.php:4889
-#: inc/shortcodes/js_composer_bridge.php:4900
-#: inc/shortcodes/js_composer_bridge.php:4916
-#: inc/shortcodes/js_composer_bridge.php:4932
-#: inc/shortcodes/js_composer_bridge.php:4944
-#: inc/shortcodes/js_composer_bridge.php:6997
-#: inc/shortcodes/js_composer_bridge.php:7008
-#: inc/shortcodes/js_composer_bridge.php:7020
-#: inc/shortcodes/js_composer_bridge.php:7039
-#: inc/shortcodes/js_composer_bridge.php:7051
-#: inc/shortcodes/js_composer_bridge.php:7063
-#: inc/shortcodes/js_composer_bridge.php:7075
-#: inc/shortcodes/js_composer_bridge.php:7087
-#: inc/shortcodes/js_composer_bridge.php:7098
-#: inc/shortcodes/js_composer_bridge.php:7114
-#: inc/shortcodes/js_composer_bridge.php:7130
-#: inc/shortcodes/js_composer_bridge.php:7142
+#: inc/shortcodes/js_composer_bridge.php:4805
+#: inc/shortcodes/js_composer_bridge.php:4816
+#: inc/shortcodes/js_composer_bridge.php:4828
+#: inc/shortcodes/js_composer_bridge.php:4847
+#: inc/shortcodes/js_composer_bridge.php:4859
+#: inc/shortcodes/js_composer_bridge.php:4871
+#: inc/shortcodes/js_composer_bridge.php:4883
+#: inc/shortcodes/js_composer_bridge.php:4895
+#: inc/shortcodes/js_composer_bridge.php:4906
+#: inc/shortcodes/js_composer_bridge.php:4922
+#: inc/shortcodes/js_composer_bridge.php:4938
+#: inc/shortcodes/js_composer_bridge.php:4950
+#: inc/shortcodes/js_composer_bridge.php:7003
+#: inc/shortcodes/js_composer_bridge.php:7014
+#: inc/shortcodes/js_composer_bridge.php:7026
+#: inc/shortcodes/js_composer_bridge.php:7045
+#: inc/shortcodes/js_composer_bridge.php:7057
+#: inc/shortcodes/js_composer_bridge.php:7069
+#: inc/shortcodes/js_composer_bridge.php:7081
+#: inc/shortcodes/js_composer_bridge.php:7093
+#: inc/shortcodes/js_composer_bridge.php:7104
+#: inc/shortcodes/js_composer_bridge.php:7120
+#: inc/shortcodes/js_composer_bridge.php:7136
+#: inc/shortcodes/js_composer_bridge.php:7148
 msgid "Bullets"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4800
-#: inc/shortcodes/js_composer_bridge.php:6998
+#: inc/shortcodes/js_composer_bridge.php:4806
+#: inc/shortcodes/js_composer_bridge.php:7004
 msgid "Show bullets"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4811
-#: inc/shortcodes/js_composer_bridge.php:7009
+#: inc/shortcodes/js_composer_bridge.php:4817
+#: inc/shortcodes/js_composer_bridge.php:7015
 msgid "Bullets Style, Size & Color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4823
-#: inc/shortcodes/js_composer_bridge.php:7021
+#: inc/shortcodes/js_composer_bridge.php:4829
+#: inc/shortcodes/js_composer_bridge.php:7027
 msgid "Choose bullets style"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4842
-#: inc/shortcodes/js_composer_bridge.php:7040
+#: inc/shortcodes/js_composer_bridge.php:4848
+#: inc/shortcodes/js_composer_bridge.php:7046
 msgid "Bullets size"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4854
-#: inc/shortcodes/js_composer_bridge.php:7052
+#: inc/shortcodes/js_composer_bridge.php:4860
+#: inc/shortcodes/js_composer_bridge.php:7058
 msgid "Gap between bullets"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4866
-#: inc/shortcodes/js_composer_bridge.php:7064
+#: inc/shortcodes/js_composer_bridge.php:4872
+#: inc/shortcodes/js_composer_bridge.php:7070
 msgid "Bullets color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4878
-#: inc/shortcodes/js_composer_bridge.php:7076
+#: inc/shortcodes/js_composer_bridge.php:4884
+#: inc/shortcodes/js_composer_bridge.php:7082
 msgid "Bullets hover color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4890
-#: inc/shortcodes/js_composer_bridge.php:7088
+#: inc/shortcodes/js_composer_bridge.php:4896
+#: inc/shortcodes/js_composer_bridge.php:7094
 msgid "Bullets Position"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:4971
+#: inc/shortcodes/js_composer_bridge.php:4977
 msgid "Blog Masonry & Grid (old)"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5000
+#: inc/shortcodes/js_composer_bridge.php:5006
 msgid "Posts per page"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5034
+#: inc/shortcodes/js_composer_bridge.php:5040
 msgid "Posts Filter"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5073
+#: inc/shortcodes/js_composer_bridge.php:5079
 msgid "Loading effect"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5091
+#: inc/shortcodes/js_composer_bridge.php:5097
 msgid "Posts width"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5102
+#: inc/shortcodes/js_composer_bridge.php:5108
 msgid "Gap between posts (px)"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5106
+#: inc/shortcodes/js_composer_bridge.php:5112
 msgid ""
 "Post paddings (e.g. 5 pixel padding will give you 10 pixel gaps between "
 "posts)"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5111
+#: inc/shortcodes/js_composer_bridge.php:5117
 msgid "Image proportions"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5115
+#: inc/shortcodes/js_composer_bridge.php:5121
 msgid ""
 "Width:height (e.g. 16:9). Leave this field empty to preserve original image "
 "proportions."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5126
+#: inc/shortcodes/js_composer_bridge.php:5132
 msgid "Image & background style"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5162
-#: inc/shortcodes/js_composer_bridge.php:5170
-#: inc/shortcodes/js_composer_bridge.php:5178
-#: inc/shortcodes/js_composer_bridge.php:5186
-#: inc/shortcodes/js_composer_bridge.php:5439
-#: inc/shortcodes/js_composer_bridge.php:5447
-#: inc/shortcodes/js_composer_bridge.php:5455
-#: inc/shortcodes/js_composer_bridge.php:5463
+#: inc/shortcodes/js_composer_bridge.php:5168
+#: inc/shortcodes/js_composer_bridge.php:5176
+#: inc/shortcodes/js_composer_bridge.php:5184
+#: inc/shortcodes/js_composer_bridge.php:5192
+#: inc/shortcodes/js_composer_bridge.php:5445
+#: inc/shortcodes/js_composer_bridge.php:5453
+#: inc/shortcodes/js_composer_bridge.php:5461
+#: inc/shortcodes/js_composer_bridge.php:5469
 msgid "Post Meta"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5207
+#: inc/shortcodes/js_composer_bridge.php:5213
 msgid "Column minimum width (px)"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5235
+#: inc/shortcodes/js_composer_bridge.php:5241
 msgid "Columns on Desktop"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5249
+#: inc/shortcodes/js_composer_bridge.php:5255
 msgid "Columns on Horizontal Tablet"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5263
+#: inc/shortcodes/js_composer_bridge.php:5269
 msgid "Columns on Vertical Tablet"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5277
+#: inc/shortcodes/js_composer_bridge.php:5283
 msgid "Columns on Mobile Phone"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5298
+#: inc/shortcodes/js_composer_bridge.php:5304
 msgid "Blog Scroller (old)"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5356
+#: inc/shortcodes/js_composer_bridge.php:5362
 msgid "Gap between images (px)"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5364
+#: inc/shortcodes/js_composer_bridge.php:5370
 msgid "Thumbnails width"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5368
+#: inc/shortcodes/js_composer_bridge.php:5374
 msgid ""
 "In pixels. Leave this field empty if you want to preserve original "
 "thumbnails proportions."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5373
+#: inc/shortcodes/js_composer_bridge.php:5379
 msgid "Thumbnails height"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5382
+#: inc/shortcodes/js_composer_bridge.php:5388
 msgid "Thumbnails max width"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5386
+#: inc/shortcodes/js_composer_bridge.php:5392
 msgid "In percents."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5408
+#: inc/shortcodes/js_composer_bridge.php:5414
 msgid "Image hover background color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5419
+#: inc/shortcodes/js_composer_bridge.php:5425
 msgid "Background under projects"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5472
-#: inc/shortcodes/js_composer_bridge.php:5485
-#: inc/shortcodes/js_composer_bridge.php:5504
-#: inc/shortcodes/js_composer_bridge.php:5512
+#: inc/shortcodes/js_composer_bridge.php:5478
+#: inc/shortcodes/js_composer_bridge.php:5491
+#: inc/shortcodes/js_composer_bridge.php:5510
+#: inc/shortcodes/js_composer_bridge.php:5518
 msgid "Slideshow"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5486
+#: inc/shortcodes/js_composer_bridge.php:5492
 msgid "Show arrows on mobile device"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5505
+#: inc/shortcodes/js_composer_bridge.php:5511
 msgid "Autoslide interval (in milliseconds)"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5530
+#: inc/shortcodes/js_composer_bridge.php:5536
 msgid "Gap"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5540
+#: inc/shortcodes/js_composer_bridge.php:5546
 msgid "Gap height"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5555
+#: inc/shortcodes/js_composer_bridge.php:5561
 msgid "Fancy Media"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5604
+#: inc/shortcodes/js_composer_bridge.php:5610
 msgid "Image size"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5605
+#: inc/shortcodes/js_composer_bridge.php:5611
 msgid "Enter image size in pixels. Example: 200x100 (Width x Height)."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5646
+#: inc/shortcodes/js_composer_bridge.php:5652
 msgid "On click action"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5657
+#: inc/shortcodes/js_composer_bridge.php:5663
 msgid "Image link"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5668
+#: inc/shortcodes/js_composer_bridge.php:5674
 msgid "Link Target"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5682
+#: inc/shortcodes/js_composer_bridge.php:5688
 msgid "Enable image hovers"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5719
+#: inc/shortcodes/js_composer_bridge.php:5725
 msgid "In pixels. Will be calculated automatically if empty."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5729
-#: inc/shortcodes/js_composer_bridge.php:6373
+#: inc/shortcodes/js_composer_bridge.php:5735
+#: inc/shortcodes/js_composer_bridge.php:6379
 msgid "Border radius"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5739
+#: inc/shortcodes/js_composer_bridge.php:5745
 msgid "Padding"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5755
+#: inc/shortcodes/js_composer_bridge.php:5761
 msgid "Margin-top"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5764
+#: inc/shortcodes/js_composer_bridge.php:5770
 msgid "Margin-bottom"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5773
+#: inc/shortcodes/js_composer_bridge.php:5779
 msgid "Margin-left"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5782
+#: inc/shortcodes/js_composer_bridge.php:5788
 msgid "Margin-right"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5790
+#: inc/shortcodes/js_composer_bridge.php:5796
 msgid "Align"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5801
+#: inc/shortcodes/js_composer_bridge.php:5807
 msgid "Image decoration"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5810
+#: inc/shortcodes/js_composer_bridge.php:5816
 msgid "Horizontal length"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5821
+#: inc/shortcodes/js_composer_bridge.php:5827
 msgid "Vertical length"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5832
+#: inc/shortcodes/js_composer_bridge.php:5838
 msgid "Blur radius"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5843
+#: inc/shortcodes/js_composer_bridge.php:5849
 msgid "Spread"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5854
+#: inc/shortcodes/js_composer_bridge.php:5860
 msgid "Shadow color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5875
+#: inc/shortcodes/js_composer_bridge.php:5881
 msgid ""
 "Style particular content element differently - add a class name and refer "
 "to it in custom CSS."
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5893
+#: inc/shortcodes/js_composer_bridge.php:5899
 msgid "Button"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5913
-#: inc/shortcodes/js_composer_bridge.php:6173
+#: inc/shortcodes/js_composer_bridge.php:5919
+#: inc/shortcodes/js_composer_bridge.php:6179
 msgid "Caption"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5923
+#: inc/shortcodes/js_composer_bridge.php:5929
 msgid "Link URL"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:5974
+#: inc/shortcodes/js_composer_bridge.php:5980
 msgid "Size"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6005
+#: inc/shortcodes/js_composer_bridge.php:6011
 msgid "Background (border) color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6027
+#: inc/shortcodes/js_composer_bridge.php:6033
 msgid "Custom background color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6041
+#: inc/shortcodes/js_composer_bridge.php:6047
 msgid "Background (border) hover color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6064
+#: inc/shortcodes/js_composer_bridge.php:6070
 msgid "Custom background hover color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6078
+#: inc/shortcodes/js_composer_bridge.php:6084
 msgid "Text color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6093
+#: inc/shortcodes/js_composer_bridge.php:6099
 msgid "Custom text color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6107
+#: inc/shortcodes/js_composer_bridge.php:6113
 msgid "Text hover color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6122
+#: inc/shortcodes/js_composer_bridge.php:6128
 msgid "Custom text hover color"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6133
-#: inc/shortcodes/js_composer_bridge.php:6136
-#: inc/shortcodes/js_composer_bridge.php:6144
+#: inc/shortcodes/js_composer_bridge.php:6139
+#: inc/shortcodes/js_composer_bridge.php:6142
+#: inc/shortcodes/js_composer_bridge.php:6150
 msgid "Icon"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6139
+#: inc/shortcodes/js_composer_bridge.php:6145
 msgid "f.e. <code>&lt;i class=\"fa fa-coffee\"&gt;&lt;/i&gt;</code>"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6147
+#: inc/shortcodes/js_composer_bridge.php:6153
 msgid "Icon align"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6163
+#: inc/shortcodes/js_composer_bridge.php:6169
 msgid "Fancy List"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6175
+#: inc/shortcodes/js_composer_bridge.php:6181
 msgid "<ul><li>Your list</li><li>goes</li><li>here!</li></ul>"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6181
+#: inc/shortcodes/js_composer_bridge.php:6187
 msgid "List style"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6193
+#: inc/shortcodes/js_composer_bridge.php:6199
 msgid "Bullet position"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6204
+#: inc/shortcodes/js_composer_bridge.php:6210
 msgid "Dividers"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6221
+#: inc/shortcodes/js_composer_bridge.php:6227
 msgid "Before / After"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6233
+#: inc/shortcodes/js_composer_bridge.php:6239
 msgid "Choose first image"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6243
+#: inc/shortcodes/js_composer_bridge.php:6249
 msgid "Choose second image"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6253
+#: inc/shortcodes/js_composer_bridge.php:6259
 msgid "Orientation"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6266
+#: inc/shortcodes/js_composer_bridge.php:6272
 msgid "Navigation"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6278
+#: inc/shortcodes/js_composer_bridge.php:6284
 msgid "Visible part of the \"Before\" image (in %)"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6289
+#: inc/shortcodes/js_composer_bridge.php:6295
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6297
+#: inc/shortcodes/js_composer_bridge.php:6303
 msgid "Font"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6340
+#: inc/shortcodes/js_composer_bridge.php:6346
 msgid "Paddings"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6353
+#: inc/shortcodes/js_composer_bridge.php:6359
 msgid "Border"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6381
+#: inc/shortcodes/js_composer_bridge.php:6387
 msgid "Position"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6387
+#: inc/shortcodes/js_composer_bridge.php:6393
 msgid "Alignment"
 msgstr ""
 
-#: inc/shortcodes/js_composer_bridge.php:6407
+#: inc/shortcodes/js_composer_bridge.php:6413
 msgid "Carousel"
 msgstr ""
 
@@ -10353,7 +10394,7 @@ msgctxt "theme-options"
 msgid "Purchase Code"
 msgstr ""
 
-#: inc/admin/screens/the7-status.php:259
+#: inc/admin/screens/the7-status.php:285
 msgctxt "by author"
 msgid "by %s"
 msgstr ""

@@ -90,7 +90,7 @@ $divider_style = $divider_text = $divider_text_color = $divider_bg_color = $divi
 				'icon_hover_color' =>'#333333',
 				'icon_style' => 'none',
 				'icon_color_bg' => '#ffffff',
-				'icon_border_style' => '',
+				'icon_border_style' => 'solid',
 				'icon_color_border' => '#333333',
 				'icon_border_size' => '1',
 				'icon_border_radius' => '0',
@@ -183,12 +183,12 @@ $divider_style = $divider_text = $divider_text_color = $divider_bg_color = $divi
 			 $dual_design_style_css = esc_attr( $dual_design_style_css );
 
 			if( $icon_link !== '' ){
-				$href = vc_build_link($icon_link);
+				$href2 = vc_build_link($icon_link);
 
-				$url1 		= ( isset( $href['url'] ) && $href['url'] !== '' ) ? $href['url']  : '';
-				$target1 	= ( isset( $href['target'] ) && $href['target'] !== '' ) ? "target='" . trim( $href['target'] ) . "'" : '';
-				$link_title1 	= ( isset( $href['title'] ) && $href['title'] !== '' ) ? "title='".$href['title']."'" : '';
-				$rel1 		= ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? "rel='".$href['rel']."'" : '';
+				$url1 		= ( isset( $href2['url'] ) && $href2['url'] !== '' ) ? $href2['url']  : '';
+				$target1 	= ( isset( $href2['target'] ) && $href2['target'] !== '' ) ? "target='" . trim( $href2['target'] ) . "'" : '';
+				$link_title1 	= ( isset( $href2['title'] ) && $href2['title'] !== '' ) ? "title='".$href2['title']."'" : '';
+				$rel1 		= ( isset( $href2['rel'] ) && $href2['rel'] !== '' ) ? "rel='".$href2['rel']."'" : '';
 
 				if( $url1 == '' ){
 					$url1="javascript:void(0);";
@@ -285,10 +285,10 @@ $style2=$href1 =$target2=$img2=$alt1 =$iconoutput2=$url2='';
 if($btn_icon_link !== ''){
 	$href1 = vc_build_link($btn_icon_link);
 
-	$url2 		= ( isset( $href['url'] ) && $href['url'] !== '' ) ? $href['url']  : '';
-	$target2 	= ( isset( $href['target'] ) && $href['target'] !== '' ) ? "target='" . trim( $href['target'] ) . "'" : '';
-	$link_title2 	= ( isset( $href['title'] ) && $href['title'] !== '' ) ? "title='".$href['title']."'" : '';
-	$rel2 		= ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? "rel='".$href['rel']."'" : '';
+	$url2 		= ( isset( $href1['url'] ) && $href1['url'] !== '' ) ? $href1['url']  : '';
+	$target2 	= ( isset( $href1['target'] ) && $href1['target'] !== '' ) ? "target='" . trim( $href1['target'] ) . "'" : '';
+	$link_title2 	= ( isset( $href1['title'] ) && $href1['title'] !== '' ) ? "title='".$href1['title']."'" : '';
+	$rel2 		= ( isset( $href1['rel'] ) && $href1['rel'] !== '' ) ? "rel='".$href1['rel']."'" : '';
 
 	if($url2==''){
 		$url2="javascript:void(0);";
@@ -1083,7 +1083,7 @@ if($iconoutput2==''){
 								"param_name" => "icon_border_style",
 								"value" => array(
 									"Solid"=> "solid",
-									/*"None"=> "",*/
+									"None"=> "",
 									"Dashed" => "dashed",
 									"Dotted" => "dotted",
 									"Double" => "double",

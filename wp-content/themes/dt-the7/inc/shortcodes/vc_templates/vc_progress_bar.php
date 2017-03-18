@@ -14,13 +14,15 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var $customtxtcolor
  * @var $options
  * @var $el_class
+ * @var $el_id
  * @var $css
  * @var $caption_pos
  * @var $bgstyle
+ * @var $css_animation
  * Shortcode class
  * @var $this WPBakeryShortCode_VC_Progress_Bar
  */
-$title = $values = $units = $bgcolor = $css = $custombgcolor = $customtxtcolor = $options = $el_class = $caption_pos = $bgstyle = '';
+$title = $values = $units = $bgcolor = $css = $custombgcolor = $customtxtcolor = $options = $el_class = $el_id = $css_animation = $caption_pos = $bgstyle = '';
 $output = '';
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
 $atts = $this->convertAttributesToNewProgressBar( $atts );
@@ -28,7 +30,7 @@ $atts = $this->convertAttributesToNewProgressBar( $atts );
 extract( $atts );
 wp_enqueue_script( 'waypoints' );
 
-$el_class = $this->getExtraClass( $el_class );
+$el_class = $this->getExtraClass( $el_class ) . $this->getCSSAnimation( $css_animation );
 
 $bar_options = array();
 $options = explode( ',', $options );
@@ -81,8 +83,11 @@ switch( $bgstyle ) {
 }
 
 $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
-
-$output = '<div class="' . esc_attr( $css_class ) . '">';
+$wrapper_attributes = array();
+if ( ! empty( $el_id ) ) {
+	$wrapper_attributes[] = 'id="' . esc_attr( $el_id ) . '"';
+}
+$output = '<div class="' . esc_attr( $css_class ) . '" ' . implode( ' ', $wrapper_attributes ) . '>';
 
 $output .= wpb_widget_title( array( 'title' => $title, 'extraclass' => 'wpb_progress_bar_heading' ) );
 

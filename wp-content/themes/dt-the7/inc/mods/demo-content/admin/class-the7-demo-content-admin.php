@@ -183,6 +183,9 @@ class The7_Demo_Content_Admin {
 				break;
 			case 'import_theme_options':
 				$import_manager->import_theme_option();
+				$import_manager->import_ultimate_addons_settings();
+				$import_manager->import_ultimate_addons_icon_fonts();
+				$import_manager->import_vc_settings();
 				break;
 			case 'import_rev_sliders':
 				$import_manager->import_rev_sliders();

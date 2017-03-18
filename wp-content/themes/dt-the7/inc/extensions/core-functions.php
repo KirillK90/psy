@@ -1490,3 +1490,13 @@ function presscore_deactivate_theme() {
 function presscore_get_purchase_code() {
     return get_site_option( 'the7_purchase_code' );
 }
+
+function presscore_get_censored_purchase_code() {
+	$code = presscore_get_purchase_code();
+	$starred_part = substr( $code, 4, -4 );
+	if ( $starred_part ) {
+		$code = str_replace( $starred_part, str_repeat( '*', strlen( $starred_part ) ), $code );
+	}
+
+	return $code;
+}

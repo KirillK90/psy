@@ -4,6 +4,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+global $wp_filesystem;
 ?>
 <div id="the7-dashboard" class="wrap the7-status">
     <h1><?php esc_html_e( 'Service Information', 'the7mk2' ); ?></h1>
@@ -38,6 +40,16 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <td data-export-label="WP Memory Limit"><?php _e( 'WP Memory Limit:', 'the7mk2' ); ?></td>
                 <td>
                     <?php echo size_format( presscore_get_wp_memory_limit() ); ?>
+                </td>
+            </tr>
+            <tr>
+                <td data-export-label="FS Accessible"><?php _e( 'FS Accessible:', 'the7mk2' ); ?></td>
+                <td>
+                    <?php if ( $wp_filesystem || WP_Filesystem() ) : ?>
+                        <span class="yes">&#10004;</span>
+                    <?php else : ?>
+                        <span class="error">No.</span>
+                    <?php endif; ?>
                 </td>
             </tr>
             <tr>
@@ -213,13 +225,27 @@ if ( ! defined( 'ABSPATH' ) ) {
         <table class="widefat" cellspacing="0">
             <thead>
             <tr>
-                <th colspan="3" data-export-label="The7 Versions"><?php _e( 'The7 Versions', 'the7mk2' ); ?></th>
+                <th colspan="3" data-export-label="The7 Information"><?php _e( 'The7 Information', 'the7mk2' ); ?></th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td data-export-label="Current Version"><?php _e( 'Current Version:', 'the7mk2' ); ?></td>
                 <td><?php echo wp_get_theme()->get( 'Version' ); ?></td>
+            </tr>
+            <tr>
+                <td><?php _e( 'The7 Server Available:', 'the7mk2' ); ?></td>
+                <td>
+		            <?php
+		            $the7_server_code = wp_remote_retrieve_response_code( wp_safe_remote_get( 'http://repo.the7.io/theme/info.json', array( 'decompress' => false ) ) );
+		            if ( $the7_server_code >= 200 && $the7_server_code < 300 ) {
+			            echo '<span class="yes">&#10004;</span>';
+		            } else {
+			            printf( __( '<span class="error">No</span> Service is temporary unavailable. Please check back later.
+If the issue persists, contact your hosting provider and make sure that %1$s is not blocked.', 'the7mk2' ), 'http://repo.the7.io/' );
+		            }
+		            ?>
+                </td>
             </tr>
             </tbody>
         </table>

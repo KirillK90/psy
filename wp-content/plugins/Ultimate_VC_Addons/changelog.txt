@@ -1,3 +1,12 @@
+3.16.9 - 07-Mar-2017
+- Fix: Token invalid error appearing for some users when activating the license. We apologize for the inconvenience.
+- Fix: Dual button icon images not aligned to center.
+- Fix: Dual button second button linking to the first buttons link.
+- Fix: Dual button first button background size option not working when "Design your own" option is selected.
+- Fix: Advanced Tabs causing Javascript errors on pages with anchors with # links.
+- Fix: Advanced button "rel" option not working.
+- Fix: Some users having issues with appear animations not triggering correctly when the row/element is in the viewport.
+
 3.16.8 - 20-Feb-2017
 - New: Added WPML Compatibility.
 - New: Option to pause on hover and center mode in Advanced carousel

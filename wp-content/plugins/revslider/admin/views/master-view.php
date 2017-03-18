@@ -26,6 +26,7 @@ $operations = new RevSliderOperations();
 $glob_vals = $operations->getGeneralSettingsValues();
 $pack_page_creation = RevSliderFunctions::getVal($glob_vals, "pack_page_creation", "on");
 $single_page_creation = RevSliderFunctions::getVal($glob_vals, "single_page_creation", "off");
+$tp_color_picker_presets = TPColorpicker::get_color_presets();
 ?>
 
 <div id="waitaminute" style="<?php echo $waitstyle; ?>">
@@ -43,6 +44,7 @@ $single_page_creation = RevSliderFunctions::getVal($glob_vals, "single_page_crea
 	var g_settingsObj = {};
 	var rs_pack_page_creation = <?php echo ($pack_page_creation == 'on') ? 'true' : 'false'; ?>;
 	var rs_single_page_creation = <?php echo ($single_page_creation == 'on') ? 'true' : 'false'; ?>;
+	var tp_color_picker_presets = jQuery.parseJSON(<?php echo RevSliderFunctions::jsonEncodeForClientSide($tp_color_picker_presets); ?>);
 	
 	var global_grid_sizes = {
 		'desktop': '<?php echo RevSliderBase::getVar($glval, 'width', 1230); ?>',
@@ -67,7 +69,6 @@ $single_page_creation = RevSliderFunctions::getVal($glob_vals, "single_page_crea
 <div id="divColorPicker" style="display:none;"></div>
 
 <?php self::requireView("system/dialog-video"); ?>
-<?php self::requireView("system/dialog-global-settings"); ?>
 
 <div class="tp-plugin-version">
 	<span style="margin-right:15px">&copy; All rights reserved, <a href="http://www.themepunch.com" target="_blank">ThemePunch</a>  ver. <?php echo $revSliderVersion; ?></span>

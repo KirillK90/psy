@@ -798,8 +798,14 @@ class RevSliderSlider extends RevSliderElementsBase{
 					}
 				}
 			}
+			
+			$d = array('usedSVG' => $usedSVG, 'usedImages' => $usedImages, 'usedVideos' => $usedVideos);
+			$d = apply_filters('revslider_exportSlider_usedMedia', $d, $cfw, $sliderParams, $useDummy); //  $arrSlides, $arrStaticSlide, 
+			
+			$usedSVG = $d['usedSVG'];
+			$usedImages = $d['usedImages'];
+			$usedVideos = $d['usedVideos'];
 		}
-		
 		
 		$arrSliderExport = array("params"=>$sliderParams,"slides"=>$arrSlides);
 		if(!empty($arrStaticSlide))
@@ -1021,7 +1027,6 @@ class RevSliderSlider extends RevSliderElementsBase{
 	public function importSliderFromPost($updateAnim = true, $updateStatic = true, $exactfilepath = false, $is_template = false, $single_slide = false, $updateNavigation = true){
 		
 		$real_slider_id = '';
-		
 		try{
 			$upload_dir = wp_upload_dir();
 			$rem_path = $upload_dir['basedir'].'/rstemp/';
@@ -1273,7 +1278,6 @@ class RevSliderSlider extends RevSliderElementsBase{
 			if(isset($sliderParams["background_image"]))
 				$sliderParams["background_image"] = RevSliderFunctionsWP::getImageUrlFromPath($sliderParams["background_image"]);
 			
-			
 			$import_statics = true;
 			if(isset($sliderParams['enable_static_layers'])){
 				if($sliderParams['enable_static_layers'] == 'off') $import_statics = false;
@@ -1383,7 +1387,6 @@ class RevSliderSlider extends RevSliderElementsBase{
 					}
 				}
 				
-				
 				//convert layers images:
 				foreach($layers as $key=>$layer){					
 					//import if exists in zip folder
@@ -1453,6 +1456,15 @@ class RevSliderSlider extends RevSliderElementsBase{
 				$arrCreate["slider_id"] = $sliderID;
 				$arrCreate["slide_order"] = $slide["slide_order"];
 				
+				$d = array('params' => $params, 'sliderParams' => $sliderParams, 'layers' => $layers, 'settings' => $settings, 'alreadyImported' => $alreadyImported);
+				$d = apply_filters('revslider_importSliderFromPost_modify_data', $d, 'normal', $d_path);
+				
+				$params = $d['params'];
+				$sliderParams = $d['sliderParams'];
+				$layers = $d['layers'];
+				$settings = $d['settings'];
+				$alreadyImported = $d['alreadyImported'];
+				
 				$my_layers = json_encode($layers);
 				if(empty($my_layers))
 					$my_layers = stripslashes(json_encode($layers));
@@ -1462,7 +1474,6 @@ class RevSliderSlider extends RevSliderElementsBase{
 				$my_settings = json_encode($settings);
 				if(empty($my_settings))
 					$my_settings = stripslashes(json_encode($settings));
-				
 				
 				$arrCreate["layers"] = $my_layers;
 				$arrCreate["params"] = $my_params;
@@ -1764,6 +1775,14 @@ class RevSliderSlider extends RevSliderElementsBase{
 						
 						$layers[$key] = $layer;
 					}
+					
+					$d = array('params' => $params, 'layers' => $layers, 'settings' => $settings);
+					$d = apply_filters('revslider_importSliderFromPost_modify_data', $d, 'static', $d_path);
+					
+					$params = $d['params'];
+					$layers = $d['layers'];
+					$settings = $d['settings'];
+					
 					
 					//create new slide
 					$arrCreate = array();
@@ -2809,7 +2828,7 @@ class RevSliderSlider extends RevSliderElementsBase{
 			$arrSlidesExport[] = $slideNew;
 		}
 		
-		return($arrSlidesExport);
+		return apply_filters('revslider_getSlidesForExport', $arrSlidesExport);
 	}
 
 	
@@ -2833,7 +2852,7 @@ class RevSliderSlider extends RevSliderElementsBase{
 			$arrSlidesExport[] = $slideNew;
 		}
 		
-		return($arrSlidesExport);
+		return apply_filters('revslider_getStaticSlideForExport', $arrSlidesExport);
 	}
 	
 	

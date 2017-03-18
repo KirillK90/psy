@@ -14,6 +14,13 @@ if ( ! class_exists( 'DT_Shortcode', false ) ):
 		protected $post_backup = null;
 		protected $config_backup = null;
 
+		/**
+		 * @TODO Replace it with Presscore_Query
+		 *
+		 * @param array $instance
+		 *
+		 * @return bool|WP_Query
+		 */
 		public function get_posts_by_terms( $instance = array() ) {
 			if ( empty($this->post_type) || empty($this->taxonomy) ) {
 				return false;
@@ -40,7 +47,10 @@ if ( ! class_exists( 'DT_Shortcode', false ) ):
 				default: unset( $args['tax_query'] );
 			}
 
-			// @TODO: Add some $args filter here. Need capability to exclude child terms from a query. See include_children query arg.
+			/**
+			 * For compatibility with Presscore_Query.
+			 */
+			$args = apply_filters( 'presscore_query-get_posts_by_terms', $args, $instance );
 
 			return new WP_Query( $args );
 		}

@@ -101,6 +101,7 @@
 		run: function() {
 			if ($.fn.bsf_appear.timeout) {
 				clearTimeout($.fn.bsf_appear.timeout);
+				$.fn.bsf_appear.timeout = setTimeout($.fn.bsf_appear.checkAll, 20);
 			} else {
 				$.fn.bsf_appear.timeout = setTimeout($.fn.bsf_appear.checkAll, 20);
 			}

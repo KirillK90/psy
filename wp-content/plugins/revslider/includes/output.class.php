@@ -601,7 +601,7 @@ class RevSliderOutput {
 				}
 				
 			}else{
-				$urlSlideImage = $slide->getParam('slide_bg_external', '');
+				$urlSlideImage = esc_url($slide->getParam('slide_bg_external', ''));
 				$alt = esc_attr($slide->getParam('alt_attr', ''));
 				$img_title = esc_attr($slide->getParam('title_attr', ''));
 				
@@ -736,7 +736,7 @@ class RevSliderOutput {
 			$htmlDelay = '';
 			$delay = $slide->getParam('delay', '');
 			if(!empty($delay) && is_numeric($delay))
-				$htmlDelay = ' data-delay="'.$delay.'" ';
+				$htmlDelay = ' data-delay="'. intval($delay).'" ';
 
 			//set Stop Slide on Purpose
 			$htmlStopPurpose= '';
@@ -825,8 +825,9 @@ class RevSliderOutput {
 				break;
 				case 'solid':
 					$urlSlideImage = $urlImageTransparent;
-					$slideBGColor = $slide->getParam('slide_bg_color', '#d0d0d0');
-					$styleImage = "style='background-color:".$slideBGColor."'";
+					$slideBGColor = TPColorpicker::get($slide->getParam('slide_bg_color', '#d0d0d0'));										
+					$styleImage = "data-bgcolor='".$slideBGColor."'' style='background:".$slideBGColor."'";
+									
 				break;
 				case 'streamvimeo':
 				case 'streamyoutube':
@@ -898,6 +899,10 @@ class RevSliderOutput {
 			$kb_start_rotate = $slide->getParam('kb_start_rotate', $this->slider->getParam('def-kb_start_rotate', '0'));
 			$kb_end_rotate = $slide->getParam('kb_end_rotate', $this->slider->getParam('def-kb_end_rotate', '0'));
 
+			$kb_blur_start = $slide->getParam('kb_blur_start', $this->slider->getParam('def-kb_blur_start', '0'));
+			$kb_blur_end = $slide->getParam('kb_blur_end', $this->slider->getParam('def-kb_blur_end', '0'));
+
+
 
 			$kb_pz = '';
 
@@ -911,6 +916,8 @@ class RevSliderOutput {
 				$kb_pz .= ' data-scaleend="'.$kb_end_fit.'"';
 				$kb_pz .= ' data-rotatestart="'.$kb_start_rotate.'"';
 				$kb_pz .= ' data-rotateend="'.$kb_end_rotate.'"';
+				$kb_pz .= ' data-blurstart="'.$kb_blur_start.'"';
+				$kb_pz .= ' data-blurend="'.$kb_blur_end.'"';
 				$kb_pz .= ' data-offsetstart="'.$kb_start_offset_x.' '.$kb_start_offset_y.'"';
 				$kb_pz .= ' data-offsetend="'.$kb_end_offset_x.' '.$kb_end_offset_y.'"';
 				
@@ -1357,9 +1364,11 @@ class RevSliderOutput {
 		if(empty($this->layers))
 			return(false);
 		
+		$layers = apply_filters('revslider_putCreativeLayer', $this->layers, $this, $static_slide);
+		
 		$this->container_mode = '';
 		
-		foreach($this->layers as $layer){
+		foreach($layers as $layer){
 			$this->putLayer($layer, false, $static_slide);
 		}
 	}
@@ -1370,6 +1379,8 @@ class RevSliderOutput {
 	 * @since: 5.3.0
 	 */
 	public function putLayer($layer, $row_group_uid = false, $static_slide = false, $special_type = false){
+		$layer = apply_filters('revslider_putLayer_pre', $layer, $this, $row_group_uid, $static_slide, $special_type);
+		
 		$unique_id = RevSliderFunctions::getVal($layer, 'unique_id');
 		
 		$frame_data = array();
@@ -1430,7 +1441,7 @@ class RevSliderOutput {
 			$frame_end['frame'] = '999';
 		}
 		
-		
+				
 		//add new filters options
 		//$frame_start['to']
 		$blurfilter = RevSliderFunctions::getVal($layer['deformation'], 'blurfilter', 0);
@@ -1530,33 +1541,41 @@ class RevSliderOutput {
 		$dfos = false;
 		$dlh = false;
 		$dfw = false;
+		$dls = false;
 		
 		$dco = false;
-		$dcot = 1;
+		$dcot = false;
 		$dbc = 'transparent';
-		$dbt = 1;
+		$dbt = false;
 		$dboc = 'transparent';
-		$dbot = 1;
+		$dbot = false;
 		
 		/**
 		* remove this following to get back to 5.0.4.1 in terms of output styling
 		**/
 		$do_remove_inline = apply_filters('revslider_remove_inline', true);
 		
-		if($do_remove_inline){
-			if(isset($this->in_class_usage[trim($class)]) && isset($this->in_class_usage[trim($class)]['params'])){//defaults get set here
 
+		if($do_remove_inline){
+
+			if(isset($this->in_class_usage[trim($class)]) && isset($this->in_class_usage[trim($class)]['params'])){//defaults get set here				
 				$dfos = (isset($this->in_class_usage[trim($class)]['params']->{'font-size'})) ? $this->in_class_usage[trim($class)]['params']->{'font-size'} : $dfos;
 				$dlh = (isset($this->in_class_usage[trim($class)]['params']->{'line-height'})) ? $this->in_class_usage[trim($class)]['params']->{'line-height'} : $dlh;
 				$dfw = (isset($this->in_class_usage[trim($class)]['params']->{'font-weight'})) ? $this->in_class_usage[trim($class)]['params']->{'font-weight'} : $dfw;
+				$dls = (isset($this->in_class_usage[trim($class)]['params']->{'letter-spacing'})) ? $this->in_class_usage[trim($class)]['params']->{'letter-spacing'} : $dls;
 				
 				$dco = (isset($this->in_class_usage[trim($class)]['params']->{'color'})) ? $this->in_class_usage[trim($class)]['params']->{'color'} : $dco;
 				$dcot = (isset($this->in_class_usage[trim($class)]['params']->{'color-transparency'})) ? $this->in_class_usage[trim($class)]['params']->{'color-transparency'} : $dcot;
+				$dco = $dco!==false ? $dcot!==false ? $dco = TPColorpicker::convert($dco,$dcot) : $dco = TPColorpicker::get($dco) : $dco;
+				
 				$dbc = (isset($this->in_class_usage[trim($class)]['params']->{'background-color'})) ? $this->in_class_usage[trim($class)]['params']->{'background-color'} : $dbc;
 				$dbt = (isset($this->in_class_usage[trim($class)]['params']->{'background-transparency'})) ? $this->in_class_usage[trim($class)]['params']->{'background-transparency'} : $dbt;
+				$dbc = $dbc!==false ? $dbt!==false ? $dbc = TPColorpicker::convert($dbc,$dbt) : $dbc = TPColorpicker::get($dbc) : $dbc;
+
 				$dboc = (isset($this->in_class_usage[trim($class)]['params']->{'border-color'})) ? $this->in_class_usage[trim($class)]['params']->{'border-color'} : $dboc;
-				$dbot = (isset($this->in_class_usage[trim($class)]['params']->{'border-transparency'})) ? $this->in_class_usage[trim($class)]['params']->{'border-transparency'} : $dbot;
 				
+				$dbot = (isset($this->in_class_usage[trim($class)]['params']->{'border-transparency'})) ? $this->in_class_usage[trim($class)]['params']->{'border-transparency'} : $dbot;
+				$dboc = $dboc!==false ? $dbot!==false ? $dboc = TPColorpicker::convert($dboc,$dbot) : $dboc = TPColorpicker::get($dboc) : $dboc;
 				
 				$dff = (isset($this->in_class_usage[trim($class)]['params']->{'font-family'})) ? $this->in_class_usage[trim($class)]['params']->{'font-family'} : $dff;
 				//$dta =  (isset($this->in_class_usage[trim($class)]['params']->{'text-align'})) ?     $this->in_class_usage[trim($class)]['params']->{'text-align'} : $dta;
@@ -1634,20 +1653,30 @@ class RevSliderOutput {
 		
 		$frame_start['speed'] = RevSliderFunctions::getVal($frame_start, 'speed', RevSliderFunctions::getVal($layer, 'speed', '300')); //fallback
 		$frame_start['easing'] = RevSliderFunctions::getVal($frame_start, 'easing', RevSliderFunctions::getVal($layer, 'easing', 'easeOutExpo')); //fallback
+
+		$frame_start['sfx_effect'] = RevSliderFunctions::getVal($frame_start, 'sfx_effect', RevSliderFunctions::getVal($layer, 'sfx_effect', '')); //fallback
+		$frame_start['sfxcolor'] = TPColorpicker::get(RevSliderFunctions::getVal($frame_start, 'sfxcolor', RevSliderFunctions::getVal($layer, 'sfxcolor', '#ffffff'))); //fallback
 		
 		$randomRotate = RevSliderFunctions::getVal($layer, 'random_rotation', 'false');
 		$randomRotate = RevSliderFunctions::boolToStr($randomRotate);
 
 		$splitin = RevSliderFunctions::getVal($frame_start, 'split', RevSliderFunctions::getVal($layer, 'split', 'none'));
 		$splitout = RevSliderFunctions::getVal($frame_end, 'split', RevSliderFunctions::getVal($layer, 'endsplit', 'none'));
+		$splitindir = RevSliderFunctions::getVal($frame_start, 'split_direction', RevSliderFunctions::getVal($layer, 'split_direction', 'forward'));
+		$splitoutdir = RevSliderFunctions::getVal($frame_end, 'split_direction', RevSliderFunctions::getVal($layer, 'endsplit_direction', 'forward'));
 		
-		$elementdelay = intval(RevSliderFunctions::getVal($frame_start, 'splitdelay', RevSliderFunctions::getVal($layer, 'splitdelay', 0)));
+		$elementdelay = intval(RevSliderFunctions::getVal($frame_start, 'splitdelay', RevSliderFunctions::getVal($layer, 'splitdelay', 0)));		
 		$endelementdelay = intval(RevSliderFunctions::getVal($frame_end, 'splitdelay', RevSliderFunctions::getVal($layer, 'endsplitdelay', 0)));
 		
+
 		$basealign = RevSliderFunctions::getVal($layer, 'basealign', 'grid');
 		
 		if($elementdelay > 0) $elementdelay /= 100;
 		if($endelementdelay > 0) $endelementdelay /= 100;
+
+		$elementdelay = round($elementdelay,4);
+		$endelementdelay = round($endelementdelay,4);
+
 
 
 		$text = RevSliderFunctions::getVal($layer, 'text');
@@ -1725,6 +1754,7 @@ class RevSliderOutput {
 					
 					$def_val = (array) RevSliderFunctions::getVal($layer, 'deformation', array());
 					$bg_trans = RevSliderFunctions::getVal($def_val, 'background-transparency', '1');
+
 					
 					$bg_info = " background: url('".$urlImage."') ".$layer_bg_repeat." ".$layer_bg_position."; background-size: ".$layer_bg_size.";"; // opacity: ".$bg_trans.";
 					switch($type){
@@ -1777,17 +1807,13 @@ class RevSliderOutput {
 							$use_color = $static_styles['color'];
 						}
 						
-						$def_val = (array) RevSliderFunctions::getVal($layer, 'deformation', array());
-						
-						$color_trans = RevSliderFunctions::getVal($def_val, 'color-transparency', 1);
-						
-						if($color_trans != $dcot || $use_color != $dco){							
-							if($color_trans > 0) $color_trans *= 100;
-							$color_trans = intval($color_trans);
-							$use_color = RevSliderFunctions::hex2rgba($use_color, $color_trans);
-							
+						$def_val = (array) RevSliderFunctions::getVal($layer, 'deformation', array());						
+						$color_trans = RevSliderFunctions::getVal($def_val, 'color-transparency', false);
+						$use_color = $use_color!==false ? $color_trans!==false ? $use_color = TPColorpicker::convert($use_color,$color_trans) : $use_color = TPColorpicker::get($use_color) : $use_color;
+
+						if($use_color != $dco)							
 							$inline_styles .= ' color: '.$use_color.';';
-						}
+						
 						
 					}
 				}
@@ -1872,20 +1898,23 @@ class RevSliderOutput {
 							$use_color = RevSliderFunctions::get_biggest_device_setting($static_styles['color'], $this->enabled_sizes);
 						}else{
 							$use_color = $static_styles['color'];
-						}
-						
-						$def_val = (array) RevSliderFunctions::getVal($layer, 'deformation', array());
-						
-						$color_trans = RevSliderFunctions::getVal($def_val, 'color-transparency', 1);
-						
-						if($color_trans != $dcot || $use_color != $dco){							
-							if($color_trans > 0) $color_trans *= 100;
-							$color_trans = intval($color_trans);
-							$use_color = RevSliderFunctions::hex2rgba($use_color, $color_trans);
-							
+						}						
+						$def_val = (array) RevSliderFunctions::getVal($layer, 'deformation', array());						
+						$color_trans = RevSliderFunctions::getVal($def_val, 'color-transparency', false);			
+						$use_color = $use_color!==false ? $color_trans!==false ?  TPColorpicker::convert($use_color,$color_trans) :  TPColorpicker::get($use_color) : $use_color;																
+
+						if($use_color != $dco)							
 							$inline_styles .= ' color: '.$use_color.';';
-						}
 						
+					}
+					if(!empty($static_styles['letter-spacing'])){
+						$static_styles['letter-spacing'] = RevSliderFunctions::add_missing_val($static_styles['letter-spacing'], 'px');
+						if(is_object($static_styles['letter-spacing'])){
+							$mcls = RevSliderFunctions::get_biggest_device_setting($static_styles['letter-spacing'], $this->enabled_sizes);
+						}else{
+							$mcls = $static_styles['letter-spacing'];
+						}
+						if($mcls !== $dls) $inline_styles .= ' letter-spacing: '.$mcls.';';
 					}
 				}
 				
@@ -2015,7 +2044,6 @@ class RevSliderOutput {
 				
 				$img_w = '';
 				$img_h = '';
-
 				if($cur_img_id !== false && !empty($cur_img_id)){
 					$img_data = wp_get_attachment_metadata( $cur_img_id );
 					if($img_data !== false && !empty($img_data)){
@@ -2478,7 +2506,7 @@ class RevSliderOutput {
 			break;
 			case 'column':
 				$size_raw = explode('/', RevSliderFunctions::getVal($layer, 'column_size'));
-				$size = (count($size_raw) !== 2) ? '100' : round(100 * ($size_raw[0] / $size_raw[1]), 2);
+				$size = (count($size_raw) !== 2) ? '100' : round(100 * ((int)$size_raw[0] / (int)$size_raw[1]), 2);
 				$inline_styles .= ' width: 100%;';
 				$add_data .= ' data-columnwidth="'.esc_attr($size).'%"'."\n";
 			break;
@@ -2710,6 +2738,10 @@ class RevSliderOutput {
 		
 		$es = RevSliderFunctions::getVal($frame_end, 'speed', RevSliderFunctions::getVal($layer, 'endspeed'));
 		$ee = trim(RevSliderFunctions::getVal($frame_end, 'easing', RevSliderFunctions::getVal($layer, 'endeasing')));
+		
+		$frame_end['sfx_effect'] = RevSliderFunctions::getVal($frame_end, 'sfx_effect', RevSliderFunctions::getVal($layer, 'sfx_effect', '')); 
+		$frame_end['sfxcolor'] = TPColorpicker::get(RevSliderFunctions::getVal($frame_end, 'sfxcolor', RevSliderFunctions::getVal($layer, 'sfxcolor', '#ffffff'))); //fallback
+
 		$frame_end['speed'] = $es;
 		$frame_end['easing'] = $ee;
 		
@@ -2838,15 +2870,9 @@ class RevSliderOutput {
 					if(is_object($static_styles['color'])){
 						$def_val = (array) RevSliderFunctions::getVal($layer, 'deformation', array());
 						
-						foreach($static_styles['color'] as $sk => $sv){
-							if(strpos($sv, 'rgb') !== false)
-								$static_styles['color']->$sk = RevSliderFunctions::rgba2hex($sv);
-							
-							$color_trans = RevSliderFunctions::getVal($def_val, 'color-transparency', 1);
-							if($color_trans > 0) $color_trans *= 100;
-							$color_trans = intval($color_trans);
-							
-							$static_styles['color']->$sk = RevSliderFunctions::hex2rgba($static_styles['color']->$sk, $color_trans);
+						foreach($static_styles['color'] as $sk => $sv){							
+							$color_trans = RevSliderFunctions::getVal($def_val, 'color-transparency', false);														
+							$static_styles['color']->$sk = TPColorpicker::convert($sv, $color_trans);
 						}
 						
 						
@@ -2856,6 +2882,12 @@ class RevSliderOutput {
 						if(strpos($ss_c, '[') !== false){
 							$static_data .= '			data-color="'.$ss_c.'"'."\n";
 						}
+					}
+				}
+				if(!empty($static_styles['letter-spacing'])){
+					if(is_object($static_styles['letter-spacing'])){
+						$ss_ls = RevSliderFunctions::normalize_device_settings($static_styles['letter-spacing'], $this->enabled_sizes, 'html-array');
+						if(strpos($ss_ls, '[') !== false) $static_data .= str_replace('px', '', '			data-letterspacing="'.$ss_ls.'"')."\n";
 					}
 				}
 			}
@@ -3143,16 +3175,23 @@ class RevSliderOutput {
 		$st_idle['font-style'] = array($font_style, $dfs);
 		$st_idle['text-decoration'] = array(RevSliderFunctions::getVal($def_val, 'text-decoration', 'none'), $dtd);
 		
-		$bg_color = RevSliderFunctions::getVal($def_val, 'background-color', $dbc);
-		if($bg_color !== 'transparent'){
-			$bg_trans = RevSliderFunctions::getVal($def_val, 'background-transparency', $dbt);
-			if($bg_trans > 0) $bg_trans *= 100;
-			if($dbt > 0) $dbt *= 100;
-			$bg_trans = intval($bg_trans);
-			$dbt = intval($dbt);
-			$st_idle['background-color'] = array(RevSliderFunctions::hex2rgba($bg_color, $bg_trans), RevSliderFunctions::hex2rgba($dbc, $dbt)); //'ALWAYS'
-		}
 		
+		
+		$bg_color = RevSliderFunctions::getVal($def_val, 'background-color', $dbc);						
+		$bg_trans = RevSliderFunctions::getVal($def_val, 'background-transparency', $dbt);		
+
+		
+		$calc_bg_color = TPColorpicker::convert($bg_color, $bg_trans);			
+		$calc_dbc_color = TPColorpicker::convert($dbc, $dbt);
+				
+		if (strpos($calc_bg_color,"gradient")!==false || strpos($calc_dbc_color,"gradient")!==false) 
+			$st_idle['background'] = array(TPColorpicker::convert($bg_color, $bg_trans), TPColorpicker::convert($dbc, $dbt)); //'ALWAYS'			
+		
+		else			
+			$st_idle['background-color'] = array(TPColorpicker::convert($bg_color, $bg_trans), TPColorpicker::convert($dbc, $dbt)); //'ALWAYS'
+		
+		
+
 		/*$my_padding = RevSliderFunctions::getVal($def_val, 'padding', array('0px','0px','0px','0px'));
 		if(!empty($my_padding)){
 			if(is_array($my_padding))
@@ -3161,16 +3200,13 @@ class RevSliderOutput {
 			if(trim($my_padding) != '')
 				$st_idle['padding'] = array($my_padding, $dpa);
 		}*/
-		
-		$border_color = RevSliderFunctions::getVal($def_val, 'border-color', $dboc);
-		if($border_color !== 'transparent'){
-			$border_trans = RevSliderFunctions::getVal($def_val, 'border-transparency', $dbot);
-			if($border_trans > 0) $border_trans *= 100;
-			if($dbot > 0) $dbot *= 100;
-			$border_trans = intval($border_trans);
+						
+		$border_color = RevSliderFunctions::getVal($def_val, 'border-color', $dboc);		
+		//if($border_color !== 'transparent'){
+			$border_trans = RevSliderFunctions::getVal($def_val, 'border-transparency', $dbot);			
 			$dbot = intval($dbot);
-			$st_idle['border-color'] = array(RevSliderFunctions::hex2rgba($border_color, $border_trans), RevSliderFunctions::hex2rgba($dboc, $dbot)); //'ALWAYS'
-		}
+			$st_idle['border-color'] = array(TPColorpicker::convert($border_color, $border_trans), TPColorpicker::convert($dboc, $dbot)); //'ALWAYS'
+		//}
 		
 		$st_idle['border-style'] = array(RevSliderFunctions::getVal($def_val, 'border-style', 'none'), $dbs);
 		
@@ -3278,10 +3314,8 @@ class RevSliderOutput {
 			//style
 			$font_color = RevSliderFunctions::getVal($def_val_h, 'color', '#000');
 			if($font_color !== 'transparent'){
-				$font_trans = RevSliderFunctions::getVal($def_val_h, 'color-transparency', 1);
-				if($font_trans > 0) $font_trans *= 100;
-				$font_trans = intval($font_trans);
-				$st_hover['c'] = array(RevSliderFunctions::hex2rgba($font_color, $font_trans), 'ALWAYS');
+				$font_trans = RevSliderFunctions::getVal($def_val_h, 'color-transparency', false);				
+				$st_hover['c'] = array(TPColorpicker::convert($font_color, $font_trans), 'ALWAYS');
 			}else{
 				$st_hover['c'] = array($font_color, 'ALWAYS');
 			}
@@ -3290,22 +3324,18 @@ class RevSliderOutput {
 			$st_hover['fs'] = array($font_style, 'normal');
 			$st_hover['td'] = array(RevSliderFunctions::getVal($def_val_h, 'text-decoration', 'none'), 'none');
 			$bg_color = RevSliderFunctions::getVal($def_val_h, 'background-color', 'transparent');
-			if($bg_color !== 'transparent'){
-				$bg_trans = RevSliderFunctions::getVal($def_val_h, 'background-transparency', 1);
-				if($bg_trans > 0) $bg_trans *= 100;
-				$bg_trans = intval($bg_trans);
-				$st_hover['bg'] = array(RevSliderFunctions::hex2rgba($bg_color, $bg_trans), 'ALWAYS');
-			}
+			//if($bg_color !== 'transparent'){
+				$bg_trans = RevSliderFunctions::getVal($def_val_h, 'background-transparency', false);				
+				$st_hover['bg'] = array(TPColorpicker::convert($bg_color, $bg_trans), 'ALWAYS');
+			//}
 			
 			$st_hover['zi'] = array(RevSliderFunctions::getVal($def_val_h, 'zindex', 'auto'), 'auto'); 
 			
 			$border_color = RevSliderFunctions::getVal($def_val_h, 'border-color', 'transparent');
-			if($border_color !== 'transparent'){
-				$border_trans = RevSliderFunctions::getVal($def_val_h, 'border-transparency', 1);
-				if($border_trans > 0) $border_trans *= 100;
-				$border_trans = intval($border_trans);
-				$st_hover['bc'] = array(RevSliderFunctions::hex2rgba($border_color, $border_trans), 'ALWAYS');
-			}
+			//if($border_color !== 'transparent'){
+				$border_trans = RevSliderFunctions::getVal($def_val_h, 'border-transparency', false);				
+				$st_hover['bc'] = array(TPColorpicker::convert($border_color, $border_trans), 'ALWAYS');
+			//}
 			
 			$st_hover['bs'] = array(RevSliderFunctions::getVal($def_val_h, 'border-style', 'none'), 'none');
 			$my_border_width = RevSliderFunctions::getVal($def_val_h, 'border-width', array('0px','0px','0px','0px'));
@@ -3540,10 +3570,14 @@ class RevSliderOutput {
 		$a_actioncallback = RevSliderFunctions::cleanStdClassToArray(RevSliderFunctions::getVal($all_actions, 'actioncallback', array()));
 		$a_target = RevSliderFunctions::cleanStdClassToArray(RevSliderFunctions::getVal($all_actions, 'layer_target', array()));
 		$a_action_delay = RevSliderFunctions::cleanStdClassToArray(RevSliderFunctions::getVal($all_actions, 'action_delay', array()));
+		$a_action_speed = RevSliderFunctions::cleanStdClassToArray(RevSliderFunctions::getVal($all_actions, 'action_speed', array()));
+		$a_action_easing = RevSliderFunctions::cleanStdClassToArray(RevSliderFunctions::getVal($all_actions, 'action_easing', array()));
 		$a_link_type = RevSliderFunctions::cleanStdClassToArray(RevSliderFunctions::getVal($all_actions, 'link_type', array()));
+		$a_link_follow = RevSliderFunctions::cleanStdClassToArray(RevSliderFunctions::getVal($all_actions, 'link_follow', array()));
 		$a_toggle_layer_type = RevSliderFunctions::cleanStdClassToArray(RevSliderFunctions::getVal($all_actions, 'toggle_layer_type', array()));
 		$a_toggle_class = RevSliderFunctions::cleanStdClassToArray(RevSliderFunctions::getVal($all_actions, 'toggle_class', array()));
-		
+
+
 		$a_html = '';
 		$a_events = array();
 		if(!empty($a_action)){
@@ -3614,6 +3648,10 @@ class RevSliderOutput {
 								
 								$html_simple_link = ' href="'.$a_image_link[$num].'"';
 								$html_simple_link .=' target="'.$a_link_open_in[$num].'"';
+
+								if(isset($a_link_follow[$num]) && $a_link_follow[$num] == "nofollow" ){
+									$html_simple_link .=' rel="nofollow"';
+								}
 								
 								//write textdecoration always, even if none
 								$def_val = (array) RevSliderFunctions::getVal($layer, 'deformation', array());
@@ -3744,11 +3782,15 @@ class RevSliderOutput {
 						$a_tooltip_event[$num] = (isset($a_tooltip_event[$num])) ? $a_tooltip_event[$num] : '';
 						$a_scrolloffset[$num] = (isset($a_scrolloffset[$num])) ? $a_scrolloffset[$num] : '';
 						$a_action_delay[$num] = (isset($a_action_delay[$num])) ? $a_action_delay[$num] : '';
+						$a_action_speed[$num] = (isset($a_action_speed[$num])) ? $a_action_speed[$num] : '300';
+						$a_action_easing[$num] = (isset($a_action_easing[$num])) ? $a_action_easing[$num] : 'Linear.easeNone';
 						$a_events[] = array(
 							'event' => $a_tooltip_event[$num],
 							'action' => 'scrollbelow',
 							'offset' => RevSliderFunctions::add_missing_val($a_scrolloffset[$num], 'px'),
-							'delay' => $a_action_delay[$num]
+							'delay' => $a_action_delay[$num],
+							'speed' => $a_action_speed[$num],
+							'ease' => $a_action_easing[$num]
 						);
 					break;
 					case 'start_in':
@@ -3977,7 +4019,7 @@ class RevSliderOutput {
 		
 		if($type == 'text' || $type == 'button'){ //only output if we are a text layer
 			$frame_start['split'] = $splitin;
-			$frame_end['split'] = $splitout;
+			$frame_end['split'] = $splitout;			
 		}
 		
 		do_action('revslider_add_layer_attributes', $layer, $this->slide, $this->slider);
@@ -4031,11 +4073,12 @@ class RevSliderOutput {
 			echo '			data-endslide="'.$end_on_slide.'"'." \n";
 		}
 		if($splitin !== 'none'){
-			$frame_start['splitdelay'] = $elementdelay;
+			$frame_start['splitdelay'] = round($elementdelay,4);
 		}
 		if($splitout !== 'none'){
-			$frame_end['splitdelay'] = $endelementdelay;
+			$frame_end['splitdelay'] = round($endelementdelay,4);
 		}
+				
 		
 		if(!empty($frame_start)){
 			//remove unneeded things in output
@@ -4060,10 +4103,22 @@ class RevSliderOutput {
 			if(empty($frame_start['split']) || $frame_start['split'] == 'none'){
 				unset($frame_start['split']);
 				unset($frame_start['splitdelay']);
+				unset($frame_start['split_direction']);
 			}
 			if(empty($frame_end['split']) || $frame_end['split'] == 'none'){
 				unset($frame_end['split']);
 				unset($frame_end['splitdelay']);
+				unset($frame_end['split_direction']);
+			}
+
+			if(empty($frame_start['sfx_effect']) || $frame_start['sfx_effect'] == 'none'){
+				unset($frame_start['sfx_effect']);
+				unset($frame_start['sfxcolor']);
+			}
+
+			if(empty($frame_end['sfx_effect']) || $frame_end['sfx_effect'] == 'none'){
+				unset($frame_end['sfx_effect']);
+				unset($frame_end['sfxcolor']);
 			}
 			
 			echo "			data-frames='[";
@@ -4085,6 +4140,9 @@ class RevSliderOutput {
 		echo '			style="z-index: '.$zi.';'.$inline_styles. $idle_style.'"';
 		
 		echo '>';
+
+		// Replace Placeholders
+		$html = $this->set_placeholders($html);
 		
 		if($background_image !== ''){
 			echo "\n".'<div class="tp-element-background" style="'.$background_image.'"></div>';
@@ -4121,7 +4179,18 @@ class RevSliderOutput {
 		$this->zIndex++;
 		
 	}
-	
+
+	/**
+	 * General Placeholders for all slider types
+	 * @since: 5.3.0
+	 */
+	public function set_placeholders($text){
+		global $post;
+		if(isset($post->ID)) $text = str_replace(array('%current_page_link%', '{{current_page_link}}'), get_permalink($post->ID), $text);
+		$text = str_replace(array('%home_url%', '{{home_url}}'), esc_url( home_url( '/' ) ), $text);
+		if(isset($post->ID)) $text = apply_filters( 'revslider_gallery_set_placeholders', $text , $post->ID );
+		return $text;
+	}
 	
 	/**
 	 * Add Groups with columns and the layers of it
@@ -4565,6 +4634,7 @@ class RevSliderOutput {
 			$rs_nav = new RevSliderNavigation();
 			$all_navs = $rs_nav->get_all_navigations();
 			$touch_enabled = $this->slider->getParam('touchenabled', 'on');
+			$touch_enabled_desktop = $this->slider->getParam('touchenabled_desktop', 'off');
 			$keyboard_enabled = $this->slider->getParam('keyboard_navigation', 'off');
 			$keyboard_direction = $this->slider->getParam('keyboard_direction', 'horizontal');
 			$mousescroll_enabled = $this->slider->getParam('mousescroll_navigation', 'off');
@@ -4586,6 +4656,7 @@ class RevSliderOutput {
 					$add_comma = true;
 					echo '							touch:{'."\n";
 					echo '								touchenabled:"'. esc_attr($touch_enabled).'",'."\n";
+					echo '								touchOnDesktop:"'. esc_attr($touch_enabled_desktop).'",'."\n";
 					echo '								swipe_threshold: '. esc_attr($swipe_velocity) .','."\n";
 					echo '								swipe_min_touches: '. esc_attr($swipe_min_touches) .','."\n";
 					echo '								swipe_direction: "'. esc_attr($swipe_direction) .'",'."\n";
@@ -4741,8 +4812,7 @@ class RevSliderOutput {
 					echo '								height:'. esc_attr($this->slider->getParam('thumb_height','50',RevSlider::FORCE_NUMERIC)).','."\n";
 					echo '								min_width:'. esc_attr($this->slider->getParam('thumb_width_min','100',RevSlider::FORCE_NUMERIC)).','."\n";
 					echo '								wrapper_padding:'. esc_attr($this->slider->getParam('thumbnails_padding','5',RevSlider::FORCE_NUMERIC)).','."\n";
-					echo '								wrapper_color:"'. esc_attr($this->slider->getParam('thumbnails_wrapper_color','transparent')).'",'."\n";
-					echo '								wrapper_opacity:"'. esc_attr(round($this->slider->getParam('thumbnails_wrapper_opacity','100') / 100, 2)).'",'."\n";
+					echo '								wrapper_color:"'.TPColorpicker::convert(esc_attr($this->slider->getParam('thumbnails_wrapper_color','transparent')),$this->slider->getParam('thumbnails_wrapper_opacity',false)).'",'."\n";					
 					echo '								tmp:\'';
 					echo preg_replace( "/\r|\n/", "", $thumbs_tmp);
 					echo '\','."\n";
@@ -4805,8 +4875,7 @@ class RevSliderOutput {
 					echo '								height:'. esc_attr($this->slider->getParam('tabs_height','50',RevSlider::FORCE_NUMERIC)).','."\n";
 					echo '								min_width:'. esc_attr($this->slider->getParam('tabs_width_min','100',RevSlider::FORCE_NUMERIC)).','."\n";
 					echo '								wrapper_padding:'. esc_attr($this->slider->getParam('tabs_padding','5',RevSlider::FORCE_NUMERIC)).','."\n";
-					echo '								wrapper_color:"'. esc_attr($this->slider->getParam('tabs_wrapper_color','transparent')).'",'."\n";
-					echo '								wrapper_opacity:"'. esc_attr(round($this->slider->getParam('tabs_wrapper_opacity','100') / 100, 2)).'",'."\n";
+					echo '								wrapper_color:"'.TPColorpicker::convert(esc_attr($this->slider->getParam('tabs_wrapper_color','transparent')),$this->slider->getParam('tabs_wrapper_opacity',false)).'",'."\n";					
 					echo '								tmp:\'';
 					echo preg_replace( "/\r|\n/", "", $tabs_tmp);
 					echo '\','."\n";
@@ -5069,6 +5138,9 @@ class RevSliderOutput {
 			}
 			echo '						fallbacks: {'."\n";
 			
+			if($this->slider->getParam('allow_android_html5_autoplay', 'on') !== 'on'){
+				echo '							allowHTML5AutoPlayOnAndroid: false,'."\n";
+			}
 			if($this->slider->getParam('ignore_height_changes', 'off') !== 'off'){
 				echo '							ignoreHeightChanges:"'. esc_attr($this->slider->getParam('ignore_height_changes', 'off')).'",'."\n";
 				echo '							ignoreHeightChangesSize:'. intval(esc_attr($this->slider->getParam('ignore_height_changes_px', '0'))).','."\n";
@@ -5519,8 +5591,9 @@ class RevSliderOutput {
 
 			//add background color
 			$backgroundColor = esc_attr(trim($this->slider->getParam('background_color')));
-			if(!empty($backgroundColor))
-				$containerStyle .= 'background-color:'.$backgroundColor.';';
+			if(!empty($backgroundColor)) {				
+				$containerStyle .= 'background:'.TPColorpicker::get($backgroundColor).';';
+			}
 
 			//set padding
 			$containerStyle .= 'padding:'.esc_attr($this->slider->getParam('padding','0')).'px;';
@@ -5588,13 +5661,13 @@ class RevSliderOutput {
 			$enable_progressbar =  $this->slider->getParam('enable_progressbar','on');
 			$timerBar =  $this->slider->getParam('show_timerbar','top');
 			$progress_height =  $this->slider->getParam('progress_height','5');
-			$progress_opa =  $this->slider->getParam('progress_opa','15');
+			$progress_opa =  $this->slider->getParam('progress_opa',false);
 			$progressbar_color =  $this->slider->getParam('progressbar_color','#000000');
 			
 			if($enable_progressbar !== 'on' || $slider_type == 'hero')
 				$timerBar = 'hide';
 			
-			$progress_style = ' style="height: '.esc_attr($progress_height).'px; background-color: '.RevSliderFunctions::hex2rgba($progressbar_color, $progress_opa).';"';
+			$progress_style = ' style="height: '.esc_attr($progress_height).'px; background: '.TPColorpicker::convert($progressbar_color, $progress_opa).';"';
 			
 			switch($timerBar){
 				case "top":
@@ -5691,7 +5764,6 @@ class RevSliderOutput {
 					if(!empty($all_navs)){
 						foreach($all_navs as $cur_nav){
 							//get modifications out, wrap the class with slide class to be specific
-							
 							if($enable_arrows == 'on' && $cur_nav['handle'] == $navigation_arrow_style){
 								$this->rev_custom_navigation_css .= $rs_nav->add_placeholder_sub_modifications($cur_nav['css']['arrows'], $cur_nav['handle'], 'arrows', $cur_nav['settings'], $slide, $this)."\n";
 							}

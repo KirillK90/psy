@@ -353,31 +353,35 @@ jQuery(document).ready(function(a) {
   //open accordion on click of menu or same page link
   jQuery(this).find("a").click(function(b) {
     var href= jQuery(this).attr("href");
-    var class_name = jQuery(this).hasClass('ult-tabto-actitle');   
-    var type = escape(href.substring(href.indexOf('#')+1));
-    var maintab=jQuery("a.ult-tabto-actitle[href$='"+type+"']");
-    var tabid = maintab.attr('href');
-    var titlecolor= maintab.parents(".ult-tabto-accordion").data("titlecolor");
-    var titlebg= maintab.parents(".ult-tabto-accordion").data("titlebg");   
+    if( typeof href !== 'undefined' && href.length > 0 ){
+      
+      var class_name = jQuery(this).hasClass('ult-tabto-actitle');   
+      var type = escape(href.substring(href.indexOf('#')+1));
+      var maintab=jQuery("a.ult-tabto-actitle[href$='"+type+"']");
+      var tabid = maintab.attr('href');
+      var titlecolor= maintab.parents(".ult-tabto-accordion").data("titlecolor");
+      var titlebg= maintab.parents(".ult-tabto-accordion").data("titlebg");   
 
-    if( typeof tabid!='undefined' && tabid !== '' ){ 
-      tabid = tabid.replace("#", "");   
+      if( typeof tabid!='undefined' && tabid !== '' ){ 
+        tabid = tabid.replace("#", "");   
+      }
+      if( maintab.parents(".ult-tabto-accordion").length > 0 && type == tabid && !class_name )
+          {          
+            maintab.parents(".ult-tabto-accordion").find(".ult-tabto-actitle").each(function(index, el) {
+              var id = jQuery(this).attr("id");
+              if(tabid!== id){
+                jQuery(this).parent().removeClass('current');
+                jQuery(this).removeClass('ult-tabto-actitleActive');
+                jQuery(this).css({"background":titlebg,"color":titlecolor});
+                var icon_color= jQuery(this).find(".aio-icon").data("iconcolor");             
+                jQuery(this).find(".ult_tab_icon").css({"color":icon_color});  
+                jQuery(this).parents("dt").next("dd").addClass('ult-tabto-accolapsed');        
+              }
+            });
+             open_accordion(tabid);
+          }
     }
-    if( maintab.parents(".ult-tabto-accordion").length > 0 && type == tabid && !class_name )
-        {          
-          maintab.parents(".ult-tabto-accordion").find(".ult-tabto-actitle").each(function(index, el) {
-            var id = jQuery(this).attr("id");
-            if(tabid!== id){
-              jQuery(this).parent().removeClass('current');
-              jQuery(this).removeClass('ult-tabto-actitleActive');
-              jQuery(this).css({"background":titlebg,"color":titlecolor});
-              var icon_color= jQuery(this).find(".aio-icon").data("iconcolor");             
-              jQuery(this).find(".ult_tab_icon").css({"color":icon_color});  
-              jQuery(this).parents("dt").next("dd").addClass('ult-tabto-accolapsed');        
-            }
-          });
-           open_accordion(tabid);
-        }
+
   });
 
  jQuery(this).find("a.ult-tabto-actitle").click(function(b) {

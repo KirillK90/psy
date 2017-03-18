@@ -570,13 +570,6 @@ a.ult_ivan_button {
 .ult_dual_button .aio-icon {
     display: block!important
 }
-.ult_dual_button .dual_img {
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    position: absolute
-}
 .icon-right1 {
     padding: 0 10px 0 22px!important
 }

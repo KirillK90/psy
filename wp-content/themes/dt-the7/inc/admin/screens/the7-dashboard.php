@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <?php settings_fields( 'the7_theme_registration' ); ?>
         
                     <?php if ( presscore_theme_is_activated() ): ?>
-                        <p><?php esc_html_e( 'Your purchase code is:', 'the7mk2' ); ?><br><code class="the7-code"><?php echo esc_attr( presscore_get_purchase_code() ); ?></code></p>
+                        <p><?php esc_html_e( 'Your purchase code is:', 'the7mk2' ); ?><br><code class="the7-code"><?php echo esc_html( presscore_get_censored_purchase_code() ); ?></code></p>
                     <?php endif; ?>
 
                     <?php if ( !presscore_theme_is_activated() ): ?>
@@ -101,6 +101,21 @@ if ( ! defined( 'ABSPATH' ) ) {
                         echo sprintf( __( '<code class="status-bad">No</code> Uploads folder must be writable to allow WordPress function properly.<br><span class="the7-tip">See <a href="%1$s" target="_blank" rel="noopener noreferrer">changing file permissions</a> or contact your hosting provider.</span>', 'the7mk2' ), 'https://codex.wordpress.org/Changing_File_Permissions' );
                     }
                 ?>
+                </td>
+            </tr>
+            <tr>
+                <td><?php _e( 'File System Accessible:', 'the7mk2' ); ?></td>
+                <td>
+			        <?php
+                    global $wp_filesystem;
+
+			        if ( $wp_filesystem || WP_Filesystem() ) {
+				        _e( '<code class="status-good">Yes</code>', 'the7mk2' );
+			        } else {
+				        _e( '<code class="status-bad">No</code> Theme has no direct access to the file system. Therefore plugins and pre-made websites installation is not possible.<br>
+Please try to insert the following code:<br><code>define( "FS_METHOD", "direct" );</code><br> before <code>/* That\'s all, stop editing! Happy blogging. */</code> in <code>wp-config.php</code>.', 'the7mk2' );
+			        }
+			        ?>
                 </td>
             </tr>
             <tr>

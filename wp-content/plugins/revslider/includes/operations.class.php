@@ -264,6 +264,15 @@ class RevSliderOperations extends RevSliderElementsBase{
 		);
 		
 		$arrAnimations['custom'] = array('handle' => __('## Custom Animation ##', 'revslider'));
+		$arrAnimations['vSFXs'] = array('handle' => '-----------------------------------');
+		$arrAnimations['vSFX'] = array('handle' => __('- SPECIAL EFFECTS -', 'revslider'));
+		$arrAnimations['vSFXe'] = array('handle' => '-----------------------------------');
+		
+		$arrAnimations['blockfromleft'] = array('handle' => 'Block-From-Left','params' => '{"movex":"inherit","movey":"inherit","movez":"0","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0px","mask_y":"0px","easing":"Power4.easeInOut","speed":"2000","split":"none","splitdelay":"10"}', 'settings' => array('version' => '5.3'));
+		$arrAnimations['blockfromright'] = array('handle' => 'Block-From-Right','params' => '{"movex":"inherit","movey":"inherit","movez":"0","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0px","mask_y":"0px","easing":"Power4.easeInOut","speed":"2000","split":"none","splitdelay":"10"}', 'settings' => array('version' => '5.3'));
+		$arrAnimations['blockfromtop'] = array('handle' => 'Block-From-Top','params' => '{"movex":"inherit","movey":"inherit","movez":"0","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0px","mask_y":"0px","easing":"Power4.easeInOut","speed":"2000","split":"none","splitdelay":"10"}', 'settings' => array('version' => '5.3'));
+		$arrAnimations['blockfrombottom'] = array('handle' => 'Block-From-Bottom','params' => '{"movex":"inherit","movey":"inherit","movez":"0","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0px","mask_y":"0px","easing":"Power4.easeInOut","speed":"2000","split":"none","splitdelay":"10"}', 'settings' => array('version' => '5.3'));
+
 		$arrAnimations['v5s'] = array('handle' => '-----------------------------------');
 		$arrAnimations['v5'] = array('handle' => __('- VERSION 5.0 ANIMATIONS -', 'revslider'));
 		$arrAnimations['v5e'] = array('handle' => '-----------------------------------');
@@ -335,6 +344,17 @@ class RevSliderOperations extends RevSliderElementsBase{
 		$arrAnimations = array();
 		$arrAnimations['custom'] = array('handle' => __('## Custom Animation ##', 'revslider'));
 		$arrAnimations['auto'] = array('handle' => __('Automatic Reverse', 'revslider'));
+		$arrAnimations['vSFXs'] = array('handle' => '-----------------------------------');
+		$arrAnimations['vSFX'] = array('handle' => __('- SPECIAL EFFECTS -', 'revslider'));
+		$arrAnimations['vSFXe'] = array('handle' => '-----------------------------------');
+		
+		$arrAnimations['blocktoleft'] = array('handle' => 'Block-To-Left','params' => '{"movex":"inherit","movey":"inherit","movez":"0","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0px","mask_y":"0px","easing":"Power4.easeInOut","speed":"2000","split":"none","splitdelay":"10"}', 'settings' => array('version' => '5.3'));
+		$arrAnimations['blocktoright'] = array('handle' => 'Block-To-Right','params' => '{"movex":"inherit","movey":"inherit","movez":"0","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0px","mask_y":"0px","easing":"Power4.easeInOut","speed":"2000","split":"none","splitdelay":"10"}', 'settings' => array('version' => '5.3'));
+		$arrAnimations['blocktotop'] = array('handle' => 'Block-To-Top','params' => '{"movex":"inherit","movey":"inherit","movez":"0","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0px","mask_y":"0px","easing":"Power4.easeInOut","speed":"2000","split":"none","splitdelay":"10"}', 'settings' => array('version' => '5.3'));
+		$arrAnimations['blocktobottom'] = array('handle' => 'Block-To-Bottom','params' => '{"movex":"inherit","movey":"inherit","movez":"0","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0px","mask_y":"0px","easing":"Power4.easeInOut","speed":"2000","split":"none","splitdelay":"10"}', 'settings' => array('version' => '5.3'));
+
+
+		
 		$arrAnimations['v5s'] = array('handle' => '-----------------------------------');
 		$arrAnimations['v5'] = array('handle' => __('- VERSION 5.0 ANIMATIONS -', 'revslider'));
 		$arrAnimations['v5e'] = array('handle' => '-----------------------------------');
