@@ -9,6 +9,11 @@ function remove_admin_bar_links() {
     /** @var $wp_admin_bar WP_Admin_Bar */
     global $wp_admin_bar;
     $wp_admin_bar->remove_menu('revslider');
+    $wp_admin_bar->remove_menu('options-framework-parent');
+    $wp_admin_bar->remove_menu('revslider');
+    $wp_admin_bar->remove_menu('wp-logo');
+    $wp_admin_bar->remove_menu('customize');
+    $wp_admin_bar->remove_menu('comments');
 }
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links', 999 );
 
