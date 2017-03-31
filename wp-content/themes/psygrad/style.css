@@ -2,7 +2,66 @@
  Theme Name:   Psygrad Theme
  Description:  Based on the7
  Template:     dt-the7
- Version:      1.0.0
+ Version:      1.0.12
  Tags:         multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site
  Text Domain:  psygrad
 */
+
+#site-name {
+    color: black;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    margin: 20px 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 10em;
+}
+
+.footer .widget {
+    margin-bottom: 10px;
+}
+
+.psy-ben-item {
+    float: left;
+    width: 14.2%;
+}
+
+.branding > a {
+    padding-right: 10px;
+}
+
+
+.psy-ben-title {
+    font-family: "Raleway",​Helvetica,​Arial,​Verdana,​sans-serif;
+    font-size: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.psy-ben-icon {
+    border: 6px solid #53c171;
+    border-radius: 50%;
+    display: block;
+    height: 65px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 80px;
+}
+
+.psy-ben-icon > img {
+    width: 50px;
+}
+
+.psy-ben-item > p {
+    color: black;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.psy-benefits {
+    margin-bottom: 55px;
+}

@@ -42,7 +42,7 @@ if ( ! class_exists( 'DT_Shortcode_Blog_Carousel', false ) ) :
 			$this->sc_name = 'dt_blog_carousel';
 			$this->unique_class_base = 'blog-carousel-shortcode-id';
 			$this->taxonomy = 'category';
-			$this->post_type = 'post';
+			$this->post_type = 'dt_team';
 
 			$this->default_atts = array(
 				'category' => '',

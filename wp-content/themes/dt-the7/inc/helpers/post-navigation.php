@@ -322,7 +322,16 @@ if ( ! function_exists( 'presscore_get_breadcrumbs' ) ) :
 			} elseif ( is_single() && !is_attachment() ) {
 
 				$post_type = get_post_type();
-				if ( $post_type !== 'post' ) {
+                if ( $post_type == 'dt_team' ) {
+
+                    $breadcrumbs_html .= sprintf($link, '/about', 'О Центре');
+                    $breadcrumbs_html .= sprintf($link, '/about/team', 'Специалисты');
+
+                    if ($showCurrent == 1) {
+                        $breadcrumbs_html .= $delimiter . $before . wp_trim_words( get_the_title(), 5 ) . $after;
+                    }
+
+                } elseif ( $post_type !== 'post' ) {
 
 					$post_type_obj = get_post_type_object( $post_type );
 					$breadcrumbs_html .= sprintf($link, get_post_type_archive_link( $post_type ), $post_type_obj->labels->singular_name);
