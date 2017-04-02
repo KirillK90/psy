@@ -2,10 +2,14 @@
  Theme Name:   Psygrad Theme
  Description:  Based on the7
  Template:     dt-the7
- Version:      1.0.21
+ Version:      1.0.24
  Tags:         multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site
  Text Domain:  psygrad
 */
+
+.scroll-top {
+    bottom: 50px;
+}
 
 .wpb_text_column li:before {
     color: #fff;
