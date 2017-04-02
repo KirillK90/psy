@@ -150,6 +150,7 @@ if ( ! function_exists( 'presscore_enqueue_scripts' ) ) :
 		}
 
 		$dt_local = apply_filters( 'presscore_localized_script', $dt_local );
+		$dt_local['themeSettings']['description'] = get_bloginfo( 'description' );
 
 		wp_localize_script( 'dt-above-fold', 'dtLocal', $dt_local );
 

@@ -27,3 +27,10 @@ function log_me($message) {
         }
     }
 }
+//
+function tinymce_paste_as_text( $init ) {
+    $init['paste_as_text'] = true;
+
+    return $init;
+}
+add_filter('tiny_mce_before_init', 'tinymce_paste_as_text');

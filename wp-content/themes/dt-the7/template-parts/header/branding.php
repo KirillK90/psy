@@ -30,4 +30,4 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 					<?php presscore_render_header_elements( 'near_logo_right' ); ?>
 
 				</div>
-<a id="site-name" href="/"><?php bloginfo( 'description' ); ?></a>
+<a class="site-name" href="/"><?php bloginfo( 'description' ); ?></a>

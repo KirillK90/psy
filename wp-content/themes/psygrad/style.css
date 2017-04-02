@@ -2,12 +2,77 @@
  Theme Name:   Psygrad Theme
  Description:  Based on the7
  Template:     dt-the7
- Version:      1.0.12
+ Version:      1.0.21
  Tags:         multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site
  Text Domain:  psygrad
 */
 
-#site-name {
+.wpb_text_column li:before {
+    color: #fff;
+    background-color: #4dc26b;
+}
+
+.wpb_text_column li:before {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.wpb_text_column li:after {
+    top: 0;
+    margin-top: 0;
+    height: 13px;
+    background-position: 0 center;
+}
+
+.wpb_text_column li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.wpb_text_column ul {
+    margin: 0 0 15px;
+}
+
+.wpb_text_column li:after, .wpb_text_column li:before {
+    position: absolute;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    content: "";
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
+    top: 6px;
+    margin-top: 0;
+}
+
+.wpb_text_column li:after {
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='13px' height='13px' viewBox='0 0 13 13' enable-background='new 0 0 13 13' fill='white' xml:space='preserve'%3E%3Cpolygon points='5.159,2.802 8.841,6.57 5.314,10.291 4.237,9.254 6.897,6.51 4.159,3.833 '/%3E%3C/svg%3E");
+}
+
+.widget-title {
+    font-size: 22px;
+}
+
+blockquote:not(.shortcode-blockquote), blockquote.shortcode-blockquote.block-style-widget, .block-style-widget {
+    background-color: inherit;
+    border-top: 3px double green;
+    border-bottom: 1px solid green;
+    font-style: italic;
+    font-weight: bold;
+    margin: 2em 0;
+    font-size: 1.3em;
+    float: left;
+}
+
+/*.bg-under-widget .sidebar-content .widget, .sidebar.bg-under-widget .widget, .solid-bg.sidebar-content .widget {*/
+    /*margin-bottom: 0;*/
+    /*padding: 0px 10px 15px;*/
+/*}*/
+
+.site-name {
     color: black;
     font-size: 1.1em;
     line-height: 1.3em;
