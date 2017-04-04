@@ -34,3 +34,6 @@ function tinymce_paste_as_text( $init ) {
     return $init;
 }
 add_filter('tiny_mce_before_init', 'tinymce_paste_as_text');
+
+add_image_size('doc-img', '80px', '160px');
+

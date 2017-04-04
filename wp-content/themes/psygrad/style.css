@@ -2,10 +2,28 @@
  Theme Name:   Psygrad Theme
  Description:  Based on the7
  Template:     dt-the7
- Version:      1.0.31
+ Version:      1.0.43
  Tags:         multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site
  Text Domain:  psygrad
 */
+
+.ult-carousel-wrapper.psy-docs-carousel {
+    margin-bottom: 0;
+}
+
+.eModal-1.dt-btn {
+    display: block;
+    margin: 10px 0;
+}
+
+#page .dt-btn.psy-service-btn {
+    margin: 5px 0;
+    display: block;
+}
+
+h2, h3, h4 {
+    margin-bottom: 20px;
+}
 
 .scroll-top {
     bottom: 50px;
@@ -14,6 +32,10 @@
 .wpb_text_column li:before {
     -webkit-border-radius: 50%;
     border-radius: 50%;
+}
+
+.wpb_text_column hr {
+    margin: 20px 0;
 }
 
 .wpb_text_column li:after {
@@ -51,25 +73,25 @@
     background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='13px' height='13px' viewBox='0 0 13 13' enable-background='new 0 0 13 13' fill='white' xml:space='preserve'%3E%3Cpolygon points='5.159,2.802 8.841,6.57 5.314,10.291 4.237,9.254 6.897,6.51 4.159,3.833 '/%3E%3C/svg%3E");
 }
 
+.wpb_text_column li:before {
+    color: #fff;
+    background-color: #4dc26b;
+}
+
 .widget-title {
     font-size: 22px;
 }
 
 blockquote:not(.shortcode-blockquote), blockquote.shortcode-blockquote.block-style-widget, .block-style-widget {
     background-color: inherit;
-    border-top: 3px double green;
+    border-top: 3px solid green;
     border-bottom: 1px solid green;
-    font-style: italic;
     font-weight: bold;
     margin: 2em 0;
-    font-size: 1.3em;
+    font-size: 1em;
     float: left;
 }
 
-/*.bg-under-widget .sidebar-content .widget, .sidebar.bg-under-widget .widget, .solid-bg.sidebar-content .widget {*/
-    /*margin-bottom: 0;*/
-    /*padding: 0px 10px 15px;*/
-/*}*/
 
 .site-name {
     color: black;
@@ -79,6 +101,10 @@ blockquote:not(.shortcode-blockquote), blockquote.shortcode-blockquote.block-sty
     text-transform: uppercase;
     text-decoration: none;
     width: 10em;
+}
+
+.site-name:hover {
+    color: inherit;
 }
 
 .footer .widget {
