@@ -66,9 +66,12 @@ function jivositeDelete(){
 }
 
 function jivositeAppend(){
-    echo jivosite::getInstance()->append(
-        jivosite::getInstance()->getId()
-    );
+    $user = wp_get_current_user();
+    if (!$user->exists()) {
+        echo jivosite::getInstance()->append(
+            jivosite::getInstance()->getId()
+        );
+    }
 }
 
 function jivositePreferences(){

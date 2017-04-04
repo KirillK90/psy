@@ -13,7 +13,11 @@ function get_benefits($atts) {
 
 add_shortcode('benefits', 'get_benefits');
 
+function get_services($attrs) {
+    return require_once 'services.php';
+}
 
+add_shortcode('psy-services', 'get_services');
 
 
 
