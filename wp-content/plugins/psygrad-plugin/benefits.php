@@ -17,7 +17,7 @@ $benefits = [
         'src' => '/wp-content/uploads/2016/06/napravleniya-konsultirovaniya2-1-120x120.png',
     ],
     [
-        'text' => 'Гибкая политика<br>цен',
+        'text' => 'Гибкая<br>политика цен',
         'url' => '/prices',
         'src' => '/wp-content/uploads/2016/06/gibkaya-politika-tsen-120x120.png',
     ],
@@ -53,10 +53,6 @@ HTML;
 $rowsHtml = implode("\n", $rows);
 return <<<HTML
 <div class="psy-benefits">
-    <h2 class="psy-ben-title">Наши преимущества</h2>
-    <div class="vc_row wpb_row vc_row-fluid">
 {$rowsHtml}        
-    </div>
-    <div class="clearfix"></div>
 </div>
 HTML;
