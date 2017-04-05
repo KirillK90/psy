@@ -19,6 +19,12 @@ function get_services($attrs) {
 
 add_shortcode('psy-services', 'get_services');
 
+function get_psy_spec_meta($attrs) {
+    return require_once 'psy_spec_meta.php';
+}
+
+add_shortcode('psy-spec-meta', 'get_psy_spec_meta');
+
 
 
 

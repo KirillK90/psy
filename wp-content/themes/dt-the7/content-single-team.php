@@ -18,6 +18,8 @@ global $post;
 
 	do_action( 'presscore_before_post_content' );
 
+    echo do_shortcode('[psy-spec-meta]');
+
 	the_content();
 
 	do_action( 'presscore_after_post_content' );

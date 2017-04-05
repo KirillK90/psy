@@ -2,10 +2,25 @@
  Theme Name:   Psygrad Theme
  Description:  Based on the7
  Template:     dt-the7
- Version:      1.0.43
+ Version:      1.0.49
  Tags:         multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site
  Text Domain:  psygrad
 */
+
+.psy-spec-metabox {
+    float: right;
+    padding: 0 20px 20px;
+}
+
+#content .psy-doc-img {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.psy-spec-meta-wrapper {
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+}
 
 .ult-carousel-wrapper.psy-docs-carousel {
     margin-bottom: 0;
@@ -16,47 +31,48 @@
     margin: 10px 0;
 }
 
-#page .dt-btn.psy-service-btn {
+#content .dt-btn.psy-service-btn {
     margin: 5px 0;
     display: block;
 }
 
 h2, h3, h4 {
     margin-bottom: 20px;
+    clear: none;
 }
 
 .scroll-top {
     bottom: 50px;
 }
 
-.wpb_text_column li:before {
+#content li:before {
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
 
-.wpb_text_column hr {
+#content hr {
     margin: 20px 0;
 }
 
-.wpb_text_column li:after {
+#content li:after {
     top: 0;
     margin-top: 0;
     height: 13px;
     background-position: 0 center;
 }
 
-.wpb_text_column li {
+#content li {
     position: relative;
     padding-left: 24px;
     margin-bottom: 10px;
     list-style: none;
 }
 
-.wpb_text_column ul {
+#content ul {
     margin: 0 0 15px;
 }
 
-.wpb_text_column li:after, .wpb_text_column li:before {
+#content li:after, #content li:before {
     position: absolute;
     left: 0;
     width: 13px;
@@ -69,11 +85,11 @@ h2, h3, h4 {
     margin-top: 0;
 }
 
-.wpb_text_column li:after {
+#content li:after {
     background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='13px' height='13px' viewBox='0 0 13 13' enable-background='new 0 0 13 13' fill='white' xml:space='preserve'%3E%3Cpolygon points='5.159,2.802 8.841,6.57 5.314,10.291 4.237,9.254 6.897,6.51 4.159,3.833 '/%3E%3C/svg%3E");
 }
 
-.wpb_text_column li:before {
+#content li:before {
     color: #fff;
     background-color: #4dc26b;
 }
