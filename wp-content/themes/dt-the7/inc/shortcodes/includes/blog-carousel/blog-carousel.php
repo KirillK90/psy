@@ -41,7 +41,7 @@ if ( ! class_exists( 'DT_Shortcode_Blog_Carousel', false ) ) :
 
 			$this->sc_name = 'dt_blog_carousel';
 			$this->unique_class_base = 'blog-carousel-shortcode-id';
-			$this->taxonomy = 'category';
+			$this->taxonomy = 'dt_team_category';
 			$this->post_type = 'dt_team';
 
 			$this->default_atts = array(
@@ -544,7 +544,7 @@ if ( ! class_exists( 'DT_Shortcode_Blog_Carousel', false ) ) :
 				'title' => _x( 'Blog Carousel', 'vc inline dummy', 'the7mk2' ),
 			) );
 		}
-	
+
 		protected function get_query_args() {
 			//$posts_total = -1;
 			$posts_total = $this->get_att( 'dis_posts_total', '-1' );
@@ -554,6 +554,11 @@ if ( ! class_exists( 'DT_Shortcode_Blog_Carousel', false ) ) :
 			if ( $category_att ) {
 				$terms_slugs = presscore_sanitize_explode_string( $category_att );
 			}
+            if (!is_front_page()) {
+                global $post;
+                $terms_slugs = $post->post_name;
+            }
+
 
 			$query_args =  array(
 				'orderby' => $this->get_att( 'orderby' ),
@@ -566,7 +571,7 @@ if ( ! class_exists( 'DT_Shortcode_Blog_Carousel', false ) ) :
 			return $query_args;
 		}
 	}
-	
+
 	// create shortcode
 	DT_Shortcode_Blog_Carousel::get_instance()->add_shortcode();
 endif;

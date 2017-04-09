@@ -27,4 +27,3 @@ add_shortcode('psy-spec-meta', 'get_psy_spec_meta');
 
 
 
-

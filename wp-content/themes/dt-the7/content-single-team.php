@@ -25,5 +25,5 @@ global $post;
 	do_action( 'presscore_after_post_content' );
 
 	?>
-
+<div class="clearfix"></div>
 </article><!-- #post-<?php the_ID(); ?> -->
