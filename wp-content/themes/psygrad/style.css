@@ -2,10 +2,20 @@
  Theme Name:   Psygrad Theme
  Description:  Based on the7
  Template:     dt-the7
- Version:      1.0.74
+ Version:      1.0.77
  Tags:         multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site
  Text Domain:  psygrad
 */
+
+.admin-bar #main {
+    padding: 50px 0;
+    min-height: 467px;
+}
+
+#main {
+    padding: 50px 0;
+    min-height: 485px;
+}
 
 /** Fancy date*/
 .circle-fancy-style .fancy-date a {
@@ -58,7 +68,7 @@
 @media (min-width: 800px) {
     .single .post:not(.type-event) .post-thumbnail {
         position: relative;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         line-height: 0;
         float: left;
         width: 52%;

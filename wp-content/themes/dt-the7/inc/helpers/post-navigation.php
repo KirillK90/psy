@@ -359,9 +359,9 @@ if ( ! function_exists( 'presscore_get_breadcrumbs' ) ) :
 						}
 					}
 
-					if ($showCurrent == 1) {
-						$breadcrumbs_html .= $before . wp_trim_words( get_the_title(), 5 ) . $after;
-					}
+//					if ($showCurrent == 1) {
+//						$breadcrumbs_html .= $before . wp_trim_words( get_the_title(), 5 ) . $after;
+//					}
 
 				}
 

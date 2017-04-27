@@ -19,7 +19,7 @@ if ( ! function_exists( 'presscore_get_page_title' ) ) :
 	function presscore_get_page_title() {
 		$default_page_title_strings = array(
 			'search' => __( 'Search Results for: %s', 'the7mk2' ),
-			'category' => __( 'Category Archives: %s', 'the7mk2' ),
+			'category' => __( '%s', 'the7mk2' ),
 			'tag' => __( 'Tag Archives: %s', 'the7mk2' ),
 			'author' => __( 'Author Archives: %s', 'the7mk2' ),
 			'day' => __( 'Daily Archives: %s', 'the7mk2' ),
