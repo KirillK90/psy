@@ -2,10 +2,73 @@
  Theme Name:   Psygrad Theme
  Description:  Based on the7
  Template:     dt-the7
- Version:      1.0.56
+ Version:      1.0.74
  Tags:         multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site
  Text Domain:  psygrad
 */
+
+/** Fancy date*/
+.circle-fancy-style .fancy-date a {
+    min-width: 45px;
+    min-height: 45px;
+}
+
+.fancy-date .entry-month, .fancy-date .entry-year {
+    font: 700 9px/17px Arial,Verdana,sans-serif;
+}
+.fancy-date .entry-date {
+    font: 700 16px/20px Arial,Verdana,sans-serif;
+}
+
+
+.entry-meta {
+    font-size: 14px;
+}
+
+.entry-content .entry-meta {
+    margin-top: 20px;
+}
+
+.entry-content .entry-meta .author .fn {
+    color: #4dc26b;
+    font-weight: 400;
+}
+/*
+.blog-content .entry-meta {
+    margin-top: -10px;
+    text-align: center;
+}*/
+
+#content .share-buttons-list {
+    list-style: none;
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+#content .share-buttons-list li {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+.single .post-meta {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+@media (min-width: 800px) {
+    .single .post:not(.type-event) .post-thumbnail {
+        position: relative;
+        margin-bottom: 20px;
+        line-height: 0;
+        float: left;
+        width: 52%;
+        margin-right: 3%;
+    }
+}
+
+.single .entry-content {
+    margin-bottom: 20px;
+}
 
 .emodal-title {
     margin-bottom: 20px;
@@ -57,34 +120,37 @@ h2, h3, h4 {
     bottom: 50px;
 }
 
-#content li:before {
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
-
 #content hr {
     margin: 20px 0;
 }
 
-#content li:after {
+/**  Список с зелеными стрелочками */
+
+.entry-content ul li:before {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+
+.entry-content ul li:after {
     top: 0;
     margin-top: 0;
     height: 13px;
     background-position: 0 center;
 }
 
-#content li {
+.entry-content ul li {
     position: relative;
     padding-left: 24px;
     margin-bottom: 10px;
     list-style: none;
 }
 
-#content ul {
+.entry-content ul {
     margin: 0 0 15px;
 }
 
-#content li:after, #content li:before {
+.entry-content ul li:after, .entry-content ul li:before {
     position: absolute;
     left: 0;
     width: 13px;
@@ -97,11 +163,11 @@ h2, h3, h4 {
     margin-top: 0;
 }
 
-#content li:after {
+.entry-content ul li:after {
     background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='13px' height='13px' viewBox='0 0 13 13' enable-background='new 0 0 13 13' fill='white' xml:space='preserve'%3E%3Cpolygon points='5.159,2.802 8.841,6.57 5.314,10.291 4.237,9.254 6.897,6.51 4.159,3.833 '/%3E%3C/svg%3E");
 }
 
-#content li:before {
+.entry-content ul li:before {
     color: #fff;
     background-color: #4dc26b;
 }
