@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-04-04 18:00:43+0000\n"
+"PO-Revision-Date: 2017-04-06 23:17:32+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -396,7 +396,7 @@ msgstr "Оптимизация контента: Оценка SEO Хорошо"
 
 #: languages/yoast-seo-js.php:324
 msgid "Good SEO score"
-msgstr "Хороший SEO счет"
+msgstr "Хорошая оценка SEO"
 
 #: languages/yoast-seo-js.php:318
 msgid "Content optimization: OK SEO score"
@@ -534,7 +534,7 @@ msgstr "Код авторизации"
 
 #: languages/yoast-components.php:75
 msgid "Reauthenticate with Google"
-msgstr "Идентификация с помощью Google"
+msgstr "Повторно авторизоваться с помощью Google"
 
 #: languages/yoast-components.php:72
 msgid "To allow %s to fetch your Google Search Console information, please enter your Google Authorization Code. Clicking the button below will open a new window."
@@ -704,11 +704,11 @@ msgstr "Сервисы"
 
 #: admin/views/tabs/metas/archives.php:44
 msgid "Date archives settings"
-msgstr "Настройка даты архива"
+msgstr "Настройка архивов по датам"
 
 #: admin/views/tabs/metas/archives.php:25
 msgid "Author archives settings"
-msgstr "Настройка автор архива"
+msgstr "Настройки архивов авторов"
 
 #: admin/formatter/class-metabox-formatter.php:53
 msgid "Remove keyword"
@@ -836,7 +836,7 @@ msgstr "SEO-заголовок"
 #. %3$s opens the link, %4$s closes the link.
 #: admin/config-ui/fields/class-field-upsell-configuration-service.php:25
 msgid "While we strive to make setting up %1$s as easy as possible, we understand it can be daunting. If you’d rather have us set up %1$s for you (and get a copy of %2$s in the process), order our %3$s%1$s configuration service%4$s here!"
-msgstr "В то время, как мы стремимся сделать настройки %1$s как можно проще, мы понимаем, это может быть сложной. Если вы не хотите, чтобы мы создали %1$sдля вас (и получить копию %2$s в процессе), заказать наш %3$s%1$s конфигурации службы %4$s здесь!"
+msgstr "В то время как мы стремимся сделать настройки %1$s как можно проще, мы понимаем, что они все равно могут быть для вас сложными. Если вы предпочитаете, чтобы мы установили %1$sдля вас (и получить копию %2$s в процессе), закажите нашу %3$s%1$s конфигурационную услугу%4$s здесь!"
 
 #. translators: %1$s expands to Yoast SEO.
 #: admin/config-ui/fields/class-field-upsell-configuration-service.php:19
@@ -1472,7 +1472,7 @@ msgstr "\"Макс записей на странице карты сайта\" 
 #. translators: %1$s expands to Yoast SEO
 #: admin/views/tabs/dashboard/dashboard.php:14
 msgid "%1$s Dashboard"
-msgstr "%1$s Информационная панель"
+msgstr "%1$s Информация"
 
 #: admin/views/partial-alerts-template.php:22
 msgid "Restore this item."
@@ -1649,7 +1649,7 @@ msgstr "Результатов не найдено."
 #: admin/class-admin.php:152 admin/class-admin.php:262
 #: admin/pages/dashboard.php:58 inc/wpseo-non-ajax-functions.php:268
 msgid "Dashboard"
-msgstr "Информационная панель"
+msgstr "Консоль"
 
 #. translators: %1$s resolves to the starting tag of the link to the permalink
 #. settings page, %2$s resolves to the closing tag of the link
@@ -1873,7 +1873,7 @@ msgstr "Подстраницы архивов"
 
 #: admin/views/tabs/metas/archives.php:29
 msgid "Author archives"
-msgstr "Архивы автора"
+msgstr "Архивы авторов"
 
 #. translators: %1$s expands to Yoast SEO
 #: admin/views/tabs/advanced/breadcrumbs.php:31
@@ -2844,7 +2844,7 @@ msgstr "Разделитель между «хлебными крошками»"
 
 #: admin/views/tabs/advanced/breadcrumbs.php:18
 msgid "Enable Breadcrumbs"
-msgstr "Включить «Мякиш»"
+msgstr "Включить «хлебные крошки»"
 
 #: admin/views/dashboard-widget.php:16
 msgid "Below are your published posts&#8217; SEO scores. Now is as good a time as any to start improving some of your posts!"
@@ -3113,7 +3113,7 @@ msgstr "Новые сайты сети унаследуют SEO-настройк
 
 #: admin/pages/network.php:104
 msgid "Super Admins only"
-msgstr " Только супер администраторы"
+msgstr " Только суперадминистраторы"
 
 #: admin/pages/network.php:103
 msgid "Site Admins (default)"

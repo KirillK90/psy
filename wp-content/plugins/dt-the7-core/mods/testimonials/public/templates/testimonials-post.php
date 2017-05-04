@@ -40,7 +40,7 @@ if ( $link ) {
 }
 
 // get position
-$position = get_post_meta( $post_id, '_dt_testimonial_options_position', true );
+$specialist = get_post_meta( $post_id, '_dt_testimonial_options_position', true );
 if ( $position ) {
 	$position = '<span class="text-secondary color-secondary">' . $position . '</span>';
 } else {
@@ -69,18 +69,27 @@ if ( get_post_meta( $post_id, '_dt_testimonial_options_go_to_single', true ) ) {
 
 $excerpt = $post->post_excerpt;
 $content = apply_filters( 'the_content', $excerpt ? get_the_excerpt() . $details_link : get_the_content() . $details_link );
+if ($specialist = get_field('specialist')) {
+    $specialist = sprintf(
+        '<a class="specialist vcard" href="%s" title="%s" rel="author">%s</a>',
+        esc_url( "/team/{$specialist->post_name}" ),
+        esc_attr( 'Cмотреть страницу специалиста'),
+        sprintf( '%s', $specialist->post_title)
+    );
+}
+
 
 // get it all togeather
 echo '<article>', "\n\t",
-		'<div class="testimonial-content">',
+        '<div class="testimonial-vcard">',
+            '<div class="wf-td">',
+                '<span class="testimonial-field-name">Имя:</span> '.$title,
+                '<span class="testimonial-field-name">Дата:</span> '.get_the_date().'</br>',
+                ($specialist ? '<span class="testimonial-field-name">Специалист:</span> '.$specialist : ''),
+            '</div>',
+        '</div>', "\n",
+        '<div class="testimonial-content">',
 			$content,
 		'</div>', "\n\t",
-		'<div class="testimonial-vcard">',
-			'<div class="wf-td">',
-				$avatar,
-			'</div>',
-			'<div class="wf-td">',
-				$title . $position,
-			'</div>',
-		'</div>', "\n",
+        presscore_post_edit_link(),
 	'</article>', "\n";

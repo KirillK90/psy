@@ -1083,12 +1083,14 @@ if ( ! function_exists( 'presscore_get_post_author' ) ) :
 	 * Get post author.
 	 */
 	function presscore_get_post_author( $html = '' ) {
-		$html .= sprintf(
-			'<a class="author vcard" href="%s" title="%s" rel="author">%s</a>',
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_attr( sprintf( __( 'View all posts by %s', 'the7mk2' ), get_the_author() ) ),
-				sprintf( __( 'By %s', 'the7mk2' ), '<span class="fn">' . get_the_author() . '</span>' )
-		);
+	    if ($author = get_field('author')) {
+            $html .= sprintf(
+                '<a class="author vcard" href="%s" title="%s" rel="author">%s</a>',
+                esc_url( "/team/{$author->post_name}" ),
+                esc_attr( 'Cмотреть все записи автора'),
+                sprintf( '%s', '<span class="fn">' . $author->post_title . '</span>' )
+            );
+        }
 
 		return $html;
 	}

@@ -17181,7 +17181,7 @@ jQuery(document).ready(function($) {
 		$(".mobile-header-bar .mobile-mini-widgets").append($mobileWidgets);
 		/*Append logo to mobile header-bar*/
 		$(".mobile-header-bar .mobile-branding").append($mobileLogo);
-		$(".mobile-header-bar .mobile-branding").append('<a class="site-name" href="'+logoURL+'">' + dtLocal.themeSettings.description +' </a>');
+		$(".mobile-header-bar .mobile-branding").append('<a class="site-name" href="/">' + dtLocal.themeSettings.description +' </a>');
 
 		var $mobileMenu = $(".dt-mobile-header");
 		if($mobileMenu.siblings().hasClass("dt-parent-menu-clickable")){
@@ -17673,7 +17673,7 @@ jQuery(document).ready(function($) {
 							$phantom.find(".logo-box").html(dtLocal.themeSettings.floatingHeader.logo.html);
 						}
 						else {
-							$phantom.find(".logo-box").html('<a href="'+logoURL+'">' + dtLocal.themeSettings.floatingHeader.logo.html +' </a>' + '<a class="site-name" href="'+logoURL+'">' + dtLocal.themeSettings.description +' </a>');
+							$phantom.find(".logo-box").html('<a href="'+logoURL+'">' + dtLocal.themeSettings.floatingHeader.logo.html +' </a>' + '<a class="site-name" href="/">' + dtLocal.themeSettings.description +' </a>');
 						};
 					};
 

@@ -45,6 +45,20 @@ class RevSliderWooCommerce{
 	
 	
 	/**
+	 * compare wc current version to given version
+	 */
+	public static function version_check( $version = '1.0' ) {
+		if(self::isWooCommerceExists()){
+			global $woocommerce;
+			if(version_compare($woocommerce->version, $version, '>=')){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	/**
 	 * 
 	 * get wc post types
 	 */

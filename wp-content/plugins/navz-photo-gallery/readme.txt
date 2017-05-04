@@ -2,7 +2,7 @@
 Contributors: navzme
 Tags: acf, advanced, custom, fields, photo gallery, album, fancybox, litebox
 Requires at least: 3.8
-Tested up to: 4.7.3
+Tested up to: 4.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,14 @@ If you want to talk to me directly, you can contact me via my website <https://w
 4. Please refer to the description for more info regarding the field type settings
 
 == Changelog ==
+=1.6.1=
+* [Bugfix] Edit image box disappears on click of pencil edit button reported by @rickytoof9
+
+=1.6.0=
+* [Bugfix] Error on saving post with empty gallery. Patch provided by @ugy
+* [Bugfix] Showing multiple photo gallery fields in the same page reported by @rickytoof9
+* [Added] Support for srcset. Special thanks to @ugy for the code
+
 = 1.5.0 =
 * [Added] Support for SVG
 * [Added] Support for legacy PHP version
@@ -91,20 +99,20 @@ If you want to talk to me directly, you can contact me via my website <https://w
 
 = 1.3.0 =
 * Change the meta_key from acf field_key to acf field_name
-* Added helper function acf_photo_gallery() to pull images
-* Added helper function acf_photo_gallery_resize_image to resize the image on fly and save it
-* Fixed issue with target parameter in config
-* Fixed issue with url not saving properly
+* [Added] Helper function acf_photo_gallery() to pull images
+* [Added] Helper function acf_photo_gallery_resize_image to resize the image on fly and save it
+* [Bugfix] Issue with target parameter in config
+* [Bugfix] Issue with url not saving properly
 
 = 1.2.0 =
-* Bug fix for WordPress 4.6
-* Some changes on on the display
-* Changes on how to fetch the data from the database
+* [Bugfix] Support for WordPress 4.6
+* [Added] Some changes on on the display
+* [Added] Fetch the data from the database
 
 = 1.1.0 =
-* Bug fix for Undefined index: acf-photo-gallery-field on file acf-photo_gallery-v4
-* When delete the photos from the gallery, the last photo was not deleting
-* Changes to the gallery photo was saving in the database
+* [Bugfix] Undefined index: acf-photo-gallery-field on file acf-photo_gallery-v4
+* [Bugfix] When delete the photos from the gallery, the last photo was not deleting
+* [Bugfix] Gallery photos was not saving in the database
 
 = 1.0.0 =
 * Initial Release.
